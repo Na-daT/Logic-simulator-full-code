@@ -96,7 +96,6 @@ enum DsgnMenuItem //The items of the design menu (you should add more items)
 
 
 	ITM_SWITCH,
-	ITM_CHANGE_SIWTCH,
 	ITM_LED,
 	ITM_CONNECTION,
 

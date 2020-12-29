@@ -130,7 +130,6 @@ void Output::CreateDesignToolBar() const
 	MenuItemImages[ITM_BUFF] = "Images\\Gates\\buffer.jpg";
 
 	MenuItemImages[ITM_SWITCH] = "Images\\Gates\\switch.jpg";
-	MenuItemImages[ITM_CHANGE_SIWTCH] = "Images\\Gates\\switch_HI.jpg";
 	MenuItemImages[ITM_LED] = "Images\\Gates\\LED.jpg";
 
 	MenuItemImages[ITM_CONNECTION] = "Images\\Gates\\connection.jpg";
