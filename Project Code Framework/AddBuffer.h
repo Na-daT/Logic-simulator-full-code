@@ -1,7 +1,7 @@
 #pragma once
 
 #include "Actions/Action.h"
-#include "Components\buffer.h"
+#include "buffer.h"
 
 class AddBuffer : public Action
 {

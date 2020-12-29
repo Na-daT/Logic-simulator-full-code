@@ -1,7 +1,7 @@
 #pragma once
 
 #include "Actions/Action.h"
-#include "Components\XOR2.h"
+#include "XOR2.h"
 
 class AddXORgate2 : public Action
 {

@@ -3,7 +3,7 @@
 #pragma once
 
 #include "Actions/Action.h"
-#include "Components\NAND3.h"
+#include "NAND3.h"
 
 class AddNANDgate3 : public Action
 {

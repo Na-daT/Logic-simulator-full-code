@@ -2,7 +2,7 @@
 
 
 #include "Actions/Action.h"
-#include "Components\NOT.h"
+#include "NOT.h"
 
 class AddNOTgate : public Action
 {

@@ -62,3 +62,4 @@ int NAND2::GetInputPinStatus(int n)
 void NAND2::setInputPinStatus(int n, STATUS s)
 {
 	m_InputPins[n - 1].setStatus(s);
+}

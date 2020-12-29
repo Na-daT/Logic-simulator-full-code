@@ -184,6 +184,51 @@
     <ClCompile Include="AddXORgate3.cpp">
       <Filter>Actions</Filter>
     </ClCompile>
+    <ClCompile Include="AND3.cpp">
+      <Filter>Components</Filter>
+    </ClCompile>
+    <ClCompile Include="buffer.cpp">
+      <Filter>Components</Filter>
+    </ClCompile>
+    <ClCompile Include="LED.cpp">
+      <Filter>Components</Filter>
+    </ClCompile>
+    <ClCompile Include="NAND2.cpp">
+      <Filter>Components</Filter>
+    </ClCompile>
+    <ClCompile Include="NAND3.cpp">
+      <Filter>Components</Filter>
+    </ClCompile>
+    <ClCompile Include="NOR2.cpp">
+      <Filter>Components</Filter>
+    </ClCompile>
+    <ClCompile Include="NOR3.cpp">
+      <Filter>Components</Filter>
+    </ClCompile>
+    <ClCompile Include="NOT.cpp">
+      <Filter>Components</Filter>
+    </ClCompile>
+    <ClCompile Include="OR2.cpp">
+      <Filter>Components</Filter>
+    </ClCompile>
+    <ClCompile Include="OR3.cpp">
+      <Filter>Components</Filter>
+    </ClCompile>
+    <ClCompile Include="SWITCH.cpp">
+      <Filter>Components</Filter>
+    </ClCompile>
+    <ClCompile Include="XNOR2.cpp">
+      <Filter>Components</Filter>
+    </ClCompile>
+    <ClCompile Include="XNOR3.cpp">
+      <Filter>Components</Filter>
+    </ClCompile>
+    <ClCompile Include="XOR2.cpp">
+      <Filter>Components</Filter>
+    </ClCompile>
+    <ClCompile Include="XOR3.cpp">
+      <Filter>Components</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Defs.H" />
@@ -333,6 +378,51 @@
     </ClInclude>
     <ClInclude Include="AddXORgate3.h">
       <Filter>Actions</Filter>
+    </ClInclude>
+    <ClInclude Include="AND3.h">
+      <Filter>Components</Filter>
+    </ClInclude>
+    <ClInclude Include="buffer.h">
+      <Filter>Components</Filter>
+    </ClInclude>
+    <ClInclude Include="LED.h">
+      <Filter>Components</Filter>
+    </ClInclude>
+    <ClInclude Include="NAND2.h">
+      <Filter>Components</Filter>
+    </ClInclude>
+    <ClInclude Include="NAND3.h">
+      <Filter>Components</Filter>
+    </ClInclude>
+    <ClInclude Include="NOR2.h">
+      <Filter>Components</Filter>
+    </ClInclude>
+    <ClInclude Include="NOR3.h">
+      <Filter>Components</Filter>
+    </ClInclude>
+    <ClInclude Include="NOT.h">
+      <Filter>Components</Filter>
+    </ClInclude>
+    <ClInclude Include="OR2.h">
+      <Filter>Components</Filter>
+    </ClInclude>
+    <ClInclude Include="OR3.h">
+      <Filter>Components</Filter>
+    </ClInclude>
+    <ClInclude Include="SWITCH.h">
+      <Filter>Components</Filter>
+    </ClInclude>
+    <ClInclude Include="XNOR2.h">
+      <Filter>Components</Filter>
+    </ClInclude>
+    <ClInclude Include="XNOR3.h">
+      <Filter>Components</Filter>
+    </ClInclude>
+    <ClInclude Include="XOR2.h">
+      <Filter>Components</Filter>
+    </ClInclude>
+    <ClInclude Include="XOR3.h">
+      <Filter>Components</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

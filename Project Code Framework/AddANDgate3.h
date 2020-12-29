@@ -1,6 +1,6 @@
 #pragma once
 #include "Actions/Action.h"
-#include "Components\AND3.h"
+#include "AND3.h"
 
 class AddANDgate3 : public Action
 {

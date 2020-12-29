@@ -1,7 +1,7 @@
 #pragma once
 
 #include "Actions/Action.h"
-#include "Components\NOR2.h"
+#include "NOR2.h"
 
 class AddNORgate2 : public Action
 {

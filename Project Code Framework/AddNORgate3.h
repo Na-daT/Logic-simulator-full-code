@@ -2,7 +2,7 @@
 
 
 #include "Actions/Action.h"
-#include "Components\NOR3.h"
+#include "NOR3.h"
 
 class AddNORgate3 : public Action
 {

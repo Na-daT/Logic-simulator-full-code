@@ -1,7 +1,7 @@
 #pragma once
 
 #include "Actions/Action.h"
-#include "Components\SWITCH.h"
+#include "SWITCH.h"
 
 class AddSwitch : public Action
 {

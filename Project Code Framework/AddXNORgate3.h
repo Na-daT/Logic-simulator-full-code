@@ -1,7 +1,7 @@
 #pragma once
 
 #include "Actions/Action.h"
-#include "Components\XNOR3.h"
+#include "XNOR3.h"
 
 class AddXNORgate3 : public Action
 {
