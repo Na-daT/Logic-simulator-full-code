@@ -40,12 +40,12 @@ void AddConnections::Execute()
 	Input* pIn = pManager->GetInput();
 
 	
-
+	/*
 	Connection* pA = new Connection(GfxInfo, );
 
 	pA->Draw(pOut);
 
-	
+	*/
 }
 
 void AddConnections::Undo()

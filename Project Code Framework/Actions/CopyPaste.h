@@ -1,4 +1,4 @@
-#ifndef _COPY_PASTE_H
+/*#ifndef _COPY_PASTE_H
 #define _COPY_PASTE_H
 
 
@@ -29,3 +29,4 @@ public:
 };
 
 #endif
+*/

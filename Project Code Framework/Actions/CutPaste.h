@@ -1,4 +1,4 @@
-#ifndef _CUT_PASTE_H
+/*#ifndef _CUT_PASTE_H
 #define _CUT_PASTE_H
 
 
@@ -29,4 +29,4 @@ public:
 };
 
 #endif
-
+*/

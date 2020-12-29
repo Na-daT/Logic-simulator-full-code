@@ -1,4 +1,4 @@
-#include "copypaste.h" 
+/*#include "copypaste.h" 
 #include "..\ApplicationManager.h"
 
 
@@ -51,3 +51,4 @@ void CopyPaste::Undo()
 
 void CopyPaste::Redo()
 {}
+*/

@@ -127,6 +127,8 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Actions\AddANDgate2.cpp" />
+    <ClCompile Include="Actions\CopyPaste.cpp" />
+    <ClCompile Include="Actions\CutPaste.cpp" />
     <ClCompile Include="Actions\Simulate_circuit.cpp" />
     <ClCompile Include="AddANDgate3.cpp" />
     <ClCompile Include="AddBuffer.cpp" />
@@ -209,6 +211,8 @@
   <ItemGroup>
     <ClInclude Include="Actions\Action.h" />
     <ClInclude Include="Actions\AddANDgate2.h" />
+    <ClInclude Include="Actions\CopyPaste.h" />
+    <ClInclude Include="Actions\CutPaste.h" />
     <ClInclude Include="Actions\Simulate_circuit.h" />
     <ClInclude Include="AddANDgate3.h" />
     <ClInclude Include="AddBuffer.h" />
