@@ -127,6 +127,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Actions\AddANDgate2.cpp" />
+    <ClCompile Include="Actions\Simulate_circuit.cpp" />
     <ClCompile Include="AddANDgate3.cpp" />
     <ClCompile Include="AddBuffer.cpp" />
     <ClCompile Include="AddConnections.cpp" />
@@ -208,6 +209,7 @@
   <ItemGroup>
     <ClInclude Include="Actions\Action.h" />
     <ClInclude Include="Actions\AddANDgate2.h" />
+    <ClInclude Include="Actions\Simulate_circuit.h" />
     <ClInclude Include="AddANDgate3.h" />
     <ClInclude Include="AddBuffer.h" />
     <ClInclude Include="AddConnections.h" />
