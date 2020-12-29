@@ -1,5 +1,6 @@
 #include "AddConnections.h"
 #include "ApplicationManager.h"
+#include "Components/Connection.h"
 
 AddConnections::AddConnections(ApplicationManager* pApp) :Action(pApp)
 {
@@ -33,10 +34,18 @@ void AddConnections::Execute()
 	//Get start and end points of connection
 	ReadActionParameters();
 
+	GraphicsInfo GfxInfo;
+
 	Output* pOut = pManager->GetOutput();
-	//pOut->DrawConnection();
-	//Connection* pA = new Connection(GInfo, AND2_FANOUT);
-	//pManager->AddComponent(pA);
+	Input* pIn = pManager->GetInput();
+
+	
+
+	Connection* pA = new Connection(GfxInfo, );
+
+	pA->Draw(pOut);
+
+	
 }
 
 void AddConnections::Undo()
