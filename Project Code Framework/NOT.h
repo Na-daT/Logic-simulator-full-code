@@ -7,6 +7,7 @@
 class NOT :
 	public Gate
 {
+public:
 	NOT(const GraphicsInfo& r_GfxInfo, int r_FanOut);
 	virtual void Operate();	//Calculates the output of the NOT gate
 	virtual void Draw(Output* pOut);	//Draws 1-input gate
