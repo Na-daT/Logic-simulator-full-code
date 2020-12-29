@@ -1,19 +1,15 @@
-#ifndef _AND2_H
-#define _AND2_H
+#pragma once
+#ifndef XNOR3_H_
+#define XNOR3_H_
 
-/*
-  Class AND2
-  -----------
-  represent the 2-input AND gate
-*/
+#include "Components/Gate.h"
 
-#include "Gate.h"
-
-class AND2 :public Gate
+class XNOR3 :
+	public Gate
 {
 public:
-	AND2(const GraphicsInfo& r_GfxInfo, int r_FanOut);
-	virtual void Operate();	//Calculates the output of the AND gate
+	XNOR3(const GraphicsInfo& r_GfxInfo, int r_FanOut);
+	virtual void Operate();	//Calculates the output of the XOR gate
 	virtual void Draw(Output* pOut);	//Draws 2-input gate
 
 	virtual int GetOutPinStatus();	//returns status of outputpin if LED, return -1
@@ -21,7 +17,5 @@ public:
 
 	virtual void setInputPinStatus(int n, STATUS s);	//set status of Inputpin # n, to be used by connection class.
 
-
 };
-
 #endif
