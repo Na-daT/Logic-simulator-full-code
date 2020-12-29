@@ -127,6 +127,22 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Actions\AddANDgate2.cpp" />
+    <ClCompile Include="AddANDgate3.cpp" />
+    <ClCompile Include="AddBuffer.cpp" />
+    <ClCompile Include="AddConnections.cpp" />
+    <ClCompile Include="AddLED.cpp" />
+    <ClCompile Include="AddNANDgate2.cpp" />
+    <ClCompile Include="AddNANDgate3.cpp" />
+    <ClCompile Include="AddNORgate2.cpp" />
+    <ClCompile Include="AddNORgate3.cpp" />
+    <ClCompile Include="AddNOTgate.cpp" />
+    <ClCompile Include="AddORgate2.cpp" />
+    <ClCompile Include="AddORgate3.cpp" />
+    <ClCompile Include="AddSwitch.cpp" />
+    <ClCompile Include="AddXNORgate2.cpp" />
+    <ClCompile Include="AddXNORgate3.cpp" />
+    <ClCompile Include="AddXORgate2.cpp" />
+    <ClCompile Include="AddXORgate3.cpp" />
     <ClCompile Include="CMUgraphicsLib\auxil.cpp" />
     <ClCompile Include="CMUgraphicsLib\CMUgraphics.cpp" />
     <ClCompile Include="CMUgraphicsLib\image.cpp" />
@@ -177,6 +193,22 @@
   <ItemGroup>
     <ClInclude Include="Actions\Action.h" />
     <ClInclude Include="Actions\AddANDgate2.h" />
+    <ClInclude Include="AddANDgate3.h" />
+    <ClInclude Include="AddBuffer.h" />
+    <ClInclude Include="AddConnections.h" />
+    <ClInclude Include="AddLED.h" />
+    <ClInclude Include="AddNANDgate2.h" />
+    <ClInclude Include="AddNANDgate3.h" />
+    <ClInclude Include="AddNORgate2.h" />
+    <ClInclude Include="AddNORgate3.h" />
+    <ClInclude Include="AddNOTgate.h" />
+    <ClInclude Include="AddORgate2.h" />
+    <ClInclude Include="AddORgate3.h" />
+    <ClInclude Include="AddSwitch.h" />
+    <ClInclude Include="AddXNORgate2.h" />
+    <ClInclude Include="AddXNORgate3.h" />
+    <ClInclude Include="AddXORgate2.h" />
+    <ClInclude Include="AddXORgate3.h" />
     <ClInclude Include="CMUgraphicsLib\auxil.h" />
     <ClInclude Include="CMUgraphicsLib\CMUgraphics.h" />
     <ClInclude Include="CMUgraphicsLib\colors.h" />
