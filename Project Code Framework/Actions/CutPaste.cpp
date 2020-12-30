@@ -1,55 +1,46 @@
-/*#include "CutPaste.h"
-#include "..\ApplicationManager.h"
+#include "copypaste.h"
 
+#include "../ApplicationManager.h"
 
-CutPaste::CopyPaste(ApplicationManager* pApp) :Action(pApp)
+CopyPaste::CopyPaste(ApplicationManager* pApp) :Action(pApp)
 {
 }
 
-CutPaste::CutPaste(void)
+CopyPaste::~CopyPaste(void)
 {
 }
 
-void CutPaste::ReadCopiedCompParameters()
+void CopyPaste::ReadActionParameters()
 {
 	//Get a Pointer to the Input / Output Interfaces
 	Output* pOut = pManager->GetOutput();
 	Input* pIn = pManager->GetInput();
 
 	//Print Action Message
-	pOut->PrintMsg("Click on the component you want to cut");
+	pOut->PrintMsg("Click on the item you want to copy");
 
 	//Wait for User Input
-	pIn->GetPointClicked(Vx, Vy);
+	pIn->GetPointClicked(x, y);
 
 	//Clear Status Bar
-	pOut->ClearStatusBar();
+	pOut->ClearStatusBar(); //de el mafrood nemsa7ha??
 
 }
 
-void CutPaste::Cut()
+void CopyPaste::Execute()
 {
-	//Get Center point of the Gate
-	ReadCopiedCompParameters();
+	ReadActionParameters();
+	//Get a Pointer to the Input / Output Interfaces
+	Output* pOut = pManager->GetOutput(); 
+	Input* pIn = pManager->GetInput();
 
-	//Calculate the rectangle Corners
-	int Length = UI.Component_Width;
-	int Width = UI.Component_Height;
+	string CopyPaste = pIn->GetSrting(pOut); // de kaman el mafrood nemsa7ha?? w ne7ot makanha eh?
+	pOut->PrintInDrawingArea(CopyPaste, x, y);
 
-	GraphicsInfo GInfo; //Gfx info to be used to construct the AND2 gate
-
-	GInfo.m1 = Vx - Length / 2;
-	GInfo.m2 = Vx + Length / 2;
-	GInfo.n1 = Vy - Width / 2;
-	GInfo.n2 = Vy + Width / 2;
-	AND2* pA = new Comp(GInfo, Component_FANOUT);
-	pManager->AddComponent(pA);
-	delete (pA);
 }
 
-void CutPaste::Undo()
+void CopyPaste::Undo()
 {}
 
-void CutPaste::Redo()
+void CopyPaste::Redo()
 {}
-*/
