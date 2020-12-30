@@ -37,8 +37,8 @@ public:
 	void DrawXNOR3(GraphicsInfo r_GfxInfo, bool selected = false) const;
 	void DrawOR3(GraphicsInfo r_GfxInfo, bool selected = false) const;
 	void DrawNAND3(GraphicsInfo r_GfxInfo, bool selected = false) const;
-	void DrawSwitch(GraphicsInfo r_GfxInfo, bool selected = false) const;
-	void DrawLED(GraphicsInfo r_GfxInfo, bool selected = false) const;
+	void DrawSwitch(GraphicsInfo r_GfxInfo, STATUS s=LOW, bool selected = false) const;
+	void DrawLED(GraphicsInfo r_GfxInfo, STATUS s=LOW, bool selected = false) const;
 	void DrawNOT(GraphicsInfo r_GfxInfo, bool selected = false) const;
 	void DrawBuffer(GraphicsInfo r_GfxInfo, bool selected = false) const;
 

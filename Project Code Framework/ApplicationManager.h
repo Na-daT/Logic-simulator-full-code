@@ -42,7 +42,11 @@ public:
 	//Adds a new component to the list of components
 	void AddComponent(Component* pComp);
 
+	int* ListofComp();
 
+	int GetCompCount();
+
+	Component* GetspecificComponentinList(int n);
 
 	//destructor
 	~ApplicationManager();
