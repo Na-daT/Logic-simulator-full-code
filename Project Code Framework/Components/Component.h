@@ -9,6 +9,7 @@ class Component
 {
 private:
 	string m_Label;
+	bool isSelected = false;
 protected:
 	GraphicsInfo m_GfxInfo;	//The parameters required to draw a component
 	int type;
@@ -25,6 +26,7 @@ public:
 	virtual int getType();
 
 	virtual bool IsClickInsideArea(int x , int y);
+	void setSelected(bool IsSel);
 	
 	
 	Component();	

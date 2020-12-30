@@ -13,13 +13,13 @@ bool Component::IsClickInsideArea(int x, int y)
 		return false;
 }
 
+void Component::setSelected(bool IsSel) 
+{
+	isSelected = IsSel;
+}
+
 Component::Component()
 {}
-
-void Component::setSelected(bool ifSel)
-{
-	selected = ifSel;
-}
 
 Component::~Component()
 {}

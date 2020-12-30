@@ -33,10 +33,15 @@ void Select::Execute()
 	//Get a Pointer to the Input / Output Interfaces
 	Output* pOut = pManager->GetOutput();
 	Input* pIn = pManager->GetInput();
-
 	// Code to show highlighted component
-	pOut->
 
+	for (int i = 0; i < pManager->GetCompCount(); i++)
+	{
+		if (pManager->GetspecificComponentinList(i)->IsClickInsideArea(x, y))
+		{
+			pManager->GetspecificComponentinList(i)->setSelected(true);
+		}
+	}
 
 
 }
