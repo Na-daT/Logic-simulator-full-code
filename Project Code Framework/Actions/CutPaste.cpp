@@ -23,7 +23,7 @@ void CutPaste::ReadActionParameters()
 	pIn->GetPointClicked(x, y);
 
 	//Clear Status Bar
-	pOut->ClearStatusBar(); //de el mafrood nemsa7ha??
+	pOut->ClearStatusBar(); 
 
 }
 
@@ -34,8 +34,8 @@ void CutPaste::Execute()
 	Output* pOut = pManager->GetOutput();
 	Input* pIn = pManager->GetInput();
 
-	string CutPaste = pIn->GetSrting(pOut); // de kaman el mafrood nemsa7ha?? w ne7ot makanha eh?
-	pOut->PrintInDrawingArea(CutPaste, x, y);
+	
+	pOut->PrintInDrawingArea(CutPaste, xx, yy);
 
 }
 

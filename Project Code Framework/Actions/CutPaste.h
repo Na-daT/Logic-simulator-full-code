@@ -5,6 +5,7 @@
 class CutPaste : public Action
 {
 	int x, y;
+	int xx, yy;
 public:
 	CutPaste(ApplicationManager* pApp);
 	virtual ~CutPaste(void);

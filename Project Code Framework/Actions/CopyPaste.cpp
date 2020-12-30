@@ -34,8 +34,8 @@ void CopyPaste::Execute()
 	Output* pOut = pManager->GetOutput(); 
 	Input* pIn = pManager->GetInput();
 
-	string CopyPaste = pIn->GetSrting(pOut); // de kaman el mafrood nemsa7ha?? w ne7ot makanha eh?
-	pOut->PrintInDrawingArea(CopyPaste, x, y);
+
+	pOut->PrintInDrawingArea(CopyPaste, xx, yy);
 
 }
 
