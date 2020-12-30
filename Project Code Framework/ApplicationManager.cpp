@@ -160,3 +160,16 @@ ApplicationManager::~ApplicationManager()
 	delete InputInterface;
 	
 }
+
+int ApplicationManager::GetCompCount()
+{
+	return CompCount;
+}
+
+void ApplicationManager::LoopCompList()
+{
+	for (int i = 0; i < CompCount; i++)
+	{
+
+	}
+}

@@ -5,6 +5,7 @@
 class CopyPaste : public Action
 {
 	int x, y;
+	int xx, yy;
 public:
 	CopyPaste(ApplicationManager* pApp);
 	virtual ~CopyPaste(void);

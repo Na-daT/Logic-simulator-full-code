@@ -8,6 +8,11 @@ Component::Component(const GraphicsInfo &r_GfxInfo)
 Component::Component()
 {}
 
+void Component::setSelected(bool ifSel)
+{
+	selected = ifSel;
+}
+
 Component::~Component()
 {}
 
