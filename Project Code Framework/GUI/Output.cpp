@@ -405,10 +405,17 @@ void Output::DrawConnection(GraphicsInfo r_GfxInfo, bool selected) const
 {
 	
 	//TODO: Add code to draw connection
+
 	int x1, y1, x2, y2;
 	pWind->WaitMouseClick(x1, y1);
 	pWind->WaitMouseClick(x2, y2);
-	pWind->DrawLine(x1, y1, x2, y2);
+	if (selected)
+	{
+		pWind->SetPen(RED, 3);
+		pWind->DrawLine(x1, y1, x2, y2);
+	}
+	else
+		pWind->DrawLine(x1, y1, x2, y2);
 }
 
 

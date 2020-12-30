@@ -1,4 +1,4 @@
-#include "cutpaste.h"
+/*#include "cutpaste.h"
 
 #include "../ApplicationManager.h"
 
@@ -44,3 +44,4 @@ void CutPaste::Undo()
 
 void CutPaste::Redo()
 {}
+*/

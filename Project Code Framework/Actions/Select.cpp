@@ -6,9 +6,10 @@ Select::Select(ApplicationManager* pApp) :Action(pApp)
 {
 }
 
-Select::~Select(void)
+/*Select::~Select()
 {
 }
+*/
 
 void Select::ReadActionParameters()
 {
@@ -29,13 +30,13 @@ void Select::ReadActionParameters()
 
 void Select::Execute()
 {
-	ReadActionParameters();
+	/*ReadActionParameters();
 	//Get a Pointer to the Input / Output Interfaces
 	Output* pOut = pManager->GetOutput();
 	Input* pIn = pManager->GetInput();
 
 	// Code to show highlighted component
-	pOut->
+	pOut->*/
 
 
 
