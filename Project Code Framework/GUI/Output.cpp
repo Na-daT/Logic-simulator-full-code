@@ -136,12 +136,12 @@ void Output::CreateDesignToolBar() const
 
 
 	MenuItemImages[ITM_LABEL] = "Images\\Gates\\AND_2.jpg";
-	MenuItemImages[ITM_SELECT] = "Images\\Gates\\AND_2.jpg";
+	MenuItemImages[ITM_SELECT] = "Images\\Menu\\Select.jpg";
 	MenuItemImages[ITM_UNSELECT] = "Images\\Gates\\AND_2.jpg";
-	MenuItemImages[ITM_DELETE] = "Images\\Gates\\AND_2.jpg";
+	MenuItemImages[ITM_DELETE] = "Images\\Menu\\Delete.jpg";
 	MenuItemImages[ITM_MOVE] = "Images\\Gates\\AND_2.jpg";
-	MenuItemImages[ITM_SAVE] = "Images\\Gates\\AND_2.jpg";
-	MenuItemImages[ITM_LOAD] = "Images\\Gates\\AND_2.jpg";
+	MenuItemImages[ITM_SAVE] = "Images\\Menu\\Save.jpg";
+	MenuItemImages[ITM_LOAD] = "Images\\Menu\\Load.jpg";
 	MenuItemImages[ITM_COPY] = "Images\\Gates\\AND_2.jpg";
 	MenuItemImages[ITM_CUT] = "Images\\Gates\\AND_2.jpg";
 	MenuItemImages[ITM_PASTE] = "Images\\Gates\\AND_2.jpg";
