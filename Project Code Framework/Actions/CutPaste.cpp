@@ -1,23 +1,23 @@
-#include "copypaste.h"
+#include "cutpaste.h"
 
 #include "../ApplicationManager.h"
 
-CopyPaste::CopyPaste(ApplicationManager* pApp) :Action(pApp)
+CutPaste::CutPaste(ApplicationManager* pApp) :Action(pApp)
 {
 }
 
-CopyPaste::~CopyPaste(void)
+CutPaste::~CutPaste(void)
 {
 }
 
-void CopyPaste::ReadActionParameters()
+void CutPaste::ReadActionParameters()
 {
 	//Get a Pointer to the Input / Output Interfaces
 	Output* pOut = pManager->GetOutput();
 	Input* pIn = pManager->GetInput();
 
 	//Print Action Message
-	pOut->PrintMsg("Click on the item you want to copy");
+	pOut->PrintMsg("Click on the item you want to cut");
 
 	//Wait for User Input
 	pIn->GetPointClicked(x, y);
@@ -27,20 +27,20 @@ void CopyPaste::ReadActionParameters()
 
 }
 
-void CopyPaste::Execute()
+void CutPaste::Execute()
 {
 	ReadActionParameters();
 	//Get a Pointer to the Input / Output Interfaces
-	Output* pOut = pManager->GetOutput(); 
+	Output* pOut = pManager->GetOutput();
 	Input* pIn = pManager->GetInput();
 
-	string CopyPaste = pIn->GetSrting(pOut); // de kaman el mafrood nemsa7ha?? w ne7ot makanha eh?
-	pOut->PrintInDrawingArea(CopyPaste, x, y);
+	string CutPaste = pIn->GetSrting(pOut); // de kaman el mafrood nemsa7ha?? w ne7ot makanha eh?
+	pOut->PrintInDrawingArea(CutPaste, x, y);
 
 }
 
-void CopyPaste::Undo()
+void CutPaste::Undo()
 {}
 
-void CopyPaste::Redo()
+void CutPaste::Redo()
 {}
