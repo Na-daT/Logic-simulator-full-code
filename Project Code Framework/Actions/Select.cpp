@@ -1,46 +1,42 @@
-#include "cutpaste.h"
+#include "Select.h"
+#include "../ApplicationManager.h" 
 
-#include "../ApplicationManager.h"
 
-CutPaste::CutPaste(ApplicationManager* pApp) :Action(pApp)
+Select::Select(ApplicationManager* pApp) :Action(pApp)
 {
 }
 
-CutPaste::~CutPaste(void)
+Select::~Select(void)
 {
 }
 
-void CutPaste::ReadActionParameters()
+void Select::ReadActionParameters()
 {
 	//Get a Pointer to the Input / Output Interfaces
 	Output* pOut = pManager->GetOutput();
 	Input* pIn = pManager->GetInput();
 
 	//Print Action Message
-	pOut->PrintMsg("Click on the item you want to cut");
+	pOut->PrintMsg("Component is selected");
 
 	//Wait for User Input
 	pIn->GetPointClicked(x, y);
 
 	//Clear Status Bar
-	pOut->ClearStatusBar(); 
+	pOut->ClearStatusBar();
 
 }
 
-void CutPaste::Execute()
+void Select::Execute()
 {
 	ReadActionParameters();
 	//Get a Pointer to the Input / Output Interfaces
 	Output* pOut = pManager->GetOutput();
 	Input* pIn = pManager->GetInput();
 
-	
-	pOut->PrintInDrawingArea(CutPaste, xx, yy);
+	// Code to show highlighted component
+	pOut->
+
+
 
 }
-
-void CutPaste::Undo()
-{}
-
-void CutPaste::Redo()
-{}
