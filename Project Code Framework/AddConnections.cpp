@@ -20,9 +20,8 @@ void AddConnections::ReadActionParameters()
 	pOut->PrintMsg("Click to add the connection");
 
 	//Wait for User Input
-	pIn->GetPointClicked(x1, y1);
-	pIn->GetPointClicked(x2, y2);
-
+	pIn->GetPointClicked(GfxInfo.x1, GfxInfo.y1);
+	pIn->GetPointClicked(GfxInfo.x2, GfxInfo.y2);
 
 	//Clear Status Bar
 	pOut->ClearStatusBar();
@@ -33,19 +32,10 @@ void AddConnections::Execute()
 {
 	//Get start and end points of connection
 	ReadActionParameters();
-
-	GraphicsInfo GfxInfo;
-
-	Output* pOut = pManager->GetOutput();
-	Input* pIn = pManager->GetInput();
-
-	
-	/*
-	Connection* pA = new Connection(GfxInfo, );
-
-	pA->Draw(pOut);
-
-	*/
+	Connection* pA = new Connection(GfxInfo,src,dst);
+	pA->setSourcePin(src);
+	pA->setDestPin(dst);
+	pManager->AddComponent(pA);
 }
 
 void AddConnections::Undo()

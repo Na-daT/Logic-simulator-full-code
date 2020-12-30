@@ -3,11 +3,15 @@
 #include "Actions/Action.h"
 #include "Components\Connection.h"
 
+
 class AddConnections : public Action
 {
 private:
 
-	int x1, y1, x2, y2;	//end and start points of connection made
+	GraphicsInfo GfxInfo;	//end and start points of connection made
+	OutputPin* src;
+	InputPin* dst;
+
 public:
 	//constructor
 	AddConnections(ApplicationManager* pApp);
