@@ -42,7 +42,7 @@ int* ApplicationManager::ListofComp()
 	{
 		x[i] = CompList[i]->getType();
 	}
-	return x;
+	
 }
 int ApplicationManager::GetCompCount()
 {
@@ -182,12 +182,4 @@ ApplicationManager::~ApplicationManager()
 int ApplicationManager::GetCompCount()
 {
 	return CompCount;
-}
-
-void ApplicationManager::LoopCompList()
-{
-	for (int i = 0; i < CompCount; i++)
-	{
-
-	}
 }
