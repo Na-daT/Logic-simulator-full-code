@@ -16,6 +16,7 @@
 #include "AddXNORgate2.h"
 #include "AddXNORgate3.h"
 #include "AddXORgate2.h"
+#include "Actions/Select.h"
 
 
 ApplicationManager::ApplicationManager()
@@ -135,7 +136,10 @@ void ApplicationManager::ExecuteAction(ActionType ActType)
 			//TODO: Create AddConection Action here
 			pAct = new AddConnections(this);
 			break;
-	
+
+		case SELECT:
+			pAct = new Select(this);
+			break;
 
 		case EXIT:
 			///TODO: create ExitAction here

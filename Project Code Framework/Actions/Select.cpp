@@ -6,10 +6,11 @@ Select::Select(ApplicationManager* pApp) :Action(pApp)
 {
 }
 
-/*Select::~Select()
+Select::~Select(void)
 {
+
 }
-*/
+
 
 void Select::ReadActionParameters()
 {
@@ -45,4 +46,14 @@ void Select::Execute()
 	}
 
 
+}
+
+void Select::Undo()
+{
+	return;
+}
+
+void Select::Redo()
+{
+	return;
 }
