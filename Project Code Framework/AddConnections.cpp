@@ -17,7 +17,7 @@ void AddConnections::ReadActionParameters()
 	Input* pIn = pManager->GetInput();
 
 	//Print Action Message
-	pOut->PrintMsg("Connections: Click to add the connection");
+	pOut->PrintMsg("Click to add the connection");
 
 	//Wait for User Input
 	pIn->GetPointClicked(x1, y1);

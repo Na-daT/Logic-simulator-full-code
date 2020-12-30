@@ -1,32 +1,19 @@
-/*#ifndef _COPY_PASTE_H
-#define _COPY_PASTE_H
-
-
-#include "action.h"
-#include "..\Components\Component.h"
-
+#pragma once
+#include "Action.h"
 
 
 class CopyPaste : public Action
 {
-private:
-	int Vx, Vy;
-	int m1, n1, m2, n2;
-
+	int x, y;
 public:
 	CopyPaste(ApplicationManager* pApp);
 	virtual ~CopyPaste(void);
 
-	//Reads parameters required for action to copy
-	virtual void ReadCopiedCompParameters();
+	//Reads parameters required for action to execute
+	virtual void ReadActionParameters();
 	//Execute action (code depends on action type)
-	virtual void Copy();
+	virtual void Execute();
 
 	virtual void Undo();
 	virtual void Redo();
-
-
 };
-
-#endif
-*/
