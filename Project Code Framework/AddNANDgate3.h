@@ -1,7 +1,5 @@
 #pragma once
 
-#pragma once
-
 #include "Actions/Action.h"
 #include "NAND3.h"
 
