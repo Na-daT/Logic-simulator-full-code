@@ -54,6 +54,9 @@ void Simulate_Circuit::Execute()
 	/*had to get the type of each gate in CompList first  then get the index of the specific
 	type i wanted then make the array of pointers point to it, if the type of gate didtn matter 
 	i couldve used another function to itterate over the compList and check whether the gate was clicked*/
+
+
+	/*still have to implement Leds being ON in this mode only not in drawing mode brdo*/
 }
 
 void Simulate_Circuit::Undo()

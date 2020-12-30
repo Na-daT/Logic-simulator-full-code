@@ -341,33 +341,23 @@ void Output::DrawNAND3(GraphicsInfo r_GfxInfo, bool selected) const
 void Output::DrawSwitch(GraphicsInfo r_GfxInfo, STATUS s, bool selected) const
 {
 	string GateImage;
-	if (s == HIGH)
+	if (UI.AppMode == SIMULATION)
 	{
-		if (selected)
-			GateImage = "images\\Gates\\switch_HI.jpg";
+		if (s == HIGH)
+		{
+			if (selected)
+				GateImage = "images\\Gates\\switch_HI.jpg";
+			else
+				GateImage = "images\\Gates\\switch_ON.jpg";
+		}
 		else
-			GateImage = "images\\Gates\\switch_ON.jpg";
-	}
-	else
-	{
-		if (selected)
-			GateImage = "images\\Gates\\switch_HI.jpg"; //IMAGE TO BE ADDED
-		else
-			GateImage = "images\\Gates\\switch.jpg";//IMAGE TO BE ADDED
-	}
-	pWind->DrawImage(GateImage, r_GfxInfo.x1, r_GfxInfo.y1, UI.Switch_Width, UI.Switch_Height);
-}
-
-void Output::DrawLED(GraphicsInfo r_GfxInfo, STATUS s, bool selected) const
-{
-	string GateImage;
-	if (s == HIGH)
-	{
-		if (selected)
-			GateImage = "images\\Gates\\LED_HI.jpg";
-		else
-			GateImage = "images\\Gates\\LED_ON.jpg";
-
+		{
+			if (selected)
+				GateImage = "images\\Gates\\switch_HI.jpg"; //IMAGE TO BE ADDED
+			else
+				GateImage = "images\\Gates\\switch.jpg";//IMAGE TO BE ADDED
+		}
+		pWind->DrawImage(GateImage, r_GfxInfo.x1, r_GfxInfo.y1, UI.Switch_Width, UI.Switch_Height);
 	}
 	else
 	{
@@ -375,8 +365,42 @@ void Output::DrawLED(GraphicsInfo r_GfxInfo, STATUS s, bool selected) const
 			GateImage = "images\\Gates\\LED_HI.jpg"; //IMAGE TO BE ADDED
 		else
 			GateImage = "images\\Gates\\LED.jpg";//IMAGE TO BE ADDED
+
+		pWind->DrawImage(GateImage, r_GfxInfo.x1, r_GfxInfo.y1, UI.Switch_Width, UI.Switch_Height);
 	}
-	pWind->DrawImage(GateImage, r_GfxInfo.x1, r_GfxInfo.y1, UI.LED_Width, UI.LED_Height);
+}
+
+void Output::DrawLED(GraphicsInfo r_GfxInfo, STATUS s, bool selected) const
+{
+	string GateImage;
+	if (UI.AppMode == SIMULATION)
+	{
+		if (s == HIGH)
+		{
+			if (selected)
+				GateImage = "images\\Gates\\LED_HI.jpg";
+			else
+				GateImage = "images\\Gates\\LED_ON.jpg";
+
+		}
+		else
+		{
+			if (selected)
+				GateImage = "images\\Gates\\LED_HI.jpg"; //IMAGE TO BE ADDED
+			else
+				GateImage = "images\\Gates\\LED.jpg";//IMAGE TO BE ADDED
+		}
+		pWind->DrawImage(GateImage, r_GfxInfo.x1, r_GfxInfo.y1, UI.LED_Width, UI.LED_Height);
+	}
+	else
+	{
+		if (selected)
+			GateImage = "images\\Gates\\LED_HI.jpg"; //IMAGE TO BE ADDED
+		else
+			GateImage = "images\\Gates\\LED.jpg";//IMAGE TO BE ADDED
+
+		pWind->DrawImage(GateImage, r_GfxInfo.x1, r_GfxInfo.y1, UI.Switch_Width, UI.Switch_Height);
+	}
 }
 
 void Output::DrawNOT(GraphicsInfo r_GfxInfo, bool selected) const
