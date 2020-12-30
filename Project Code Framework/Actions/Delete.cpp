@@ -1,3 +1,4 @@
+/*
 #include "Delete.h"
 #include "../ApplicationManager.h"
 Delete::Delete(ApplicationManager* pApp) :Action(pApp)
@@ -33,5 +34,6 @@ void Delete::Execute()
 	Input* pIn = pManager->GetInput();
 
 	// code to delete comp from array
-	/*pOut->*/
+	
 }
+*/

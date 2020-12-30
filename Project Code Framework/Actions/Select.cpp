@@ -6,9 +6,10 @@ Select::Select(ApplicationManager* pApp) :Action(pApp)
 {
 }
 
-Select::~Select(void)
+/*Select::~Select()
 {
 }
+*/
 
 void Select::ReadActionParameters()
 {

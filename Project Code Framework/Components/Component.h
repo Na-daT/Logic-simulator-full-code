@@ -26,8 +26,12 @@ public:
 	virtual int getType();
 
 	virtual bool IsClickInsideArea(int x , int y);
+
 	void setSelected(bool IsSel);
 	
+
+
+
 	
 	Component();	
 	

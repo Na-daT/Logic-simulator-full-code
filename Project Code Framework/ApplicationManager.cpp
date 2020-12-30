@@ -42,7 +42,7 @@ int* ApplicationManager::ListofComp()
 	{
 		x[i] = CompList[i]->getType();
 	}
-	
+	return x;
 }
 int ApplicationManager::GetCompCount()
 {
