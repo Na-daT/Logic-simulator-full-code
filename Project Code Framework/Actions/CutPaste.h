@@ -1,6 +1,7 @@
 #pragma once
 #include "Action.h"
-
+#ifndef _CUTPaset_h_
+#define _CUTPaset_h_
 
 class CutPaste : public Action
 {
@@ -19,4 +20,3 @@ public:
 };
 
 #endif
-};

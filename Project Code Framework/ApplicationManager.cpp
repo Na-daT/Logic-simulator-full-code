@@ -60,10 +60,10 @@ void ApplicationManager::ExecuteAction(ActionType ActType)
 			pAct = new AddORgate2(this);
 			break;
 
-	/*	case ADD_OR_GATE_3:
+		case ADD_OR_GATE_3:
 			pAct = new AddORgate3(this);
 			break;
-*/
+
 		case ADD_NAND_GATE_2:
 			pAct = new AddNANDgate2(this);
 			break;
@@ -100,18 +100,18 @@ void ApplicationManager::ExecuteAction(ActionType ActType)
 			pAct = new AddLED(this);
 			break;
 
-	/*	case ADD_Buffer:
+		case ADD_Buff:
 			pAct = new AddBuffer(this);
 			break;
 
-		case ADD_SWITCH:
+		case ADD_Switch:
 			pAct = new AddSwitch(this);
 			break;
 
-		case ADD_NOT_GATE:
+		case ADD_INV:
 			pAct = new AddNOTgate(this);
 			break;
-*/
+
 		case ADD_CONNECTION:
 			//TODO: Create AddConection Action here
 			pAct = new AddConnections(this);
