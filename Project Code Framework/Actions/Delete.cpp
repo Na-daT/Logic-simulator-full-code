@@ -1,47 +1,39 @@
-/*#include "cutpaste.h"
-
+/*
+#include "Delete.h"
 #include "../ApplicationManager.h"
-
-CutPaste::CutPaste(ApplicationManager* pApp) :Action(pApp)
+Delete::Delete(ApplicationManager* pApp) :Action(pApp)
 {
 }
 
-CutPaste::~CutPaste(void)
+Delete::~Delete(void)
 {
 }
 
-void CutPaste::ReadActionParameters()
+void Delete::ReadActionParameters()
 {
 	//Get a Pointer to the Input / Output Interfaces
 	Output* pOut = pManager->GetOutput();
 	Input* pIn = pManager->GetInput();
 
 	//Print Action Message
-	pOut->PrintMsg("Click on the item you want to cut");
+	pOut->PrintMsg("Component is selected");
 
 	//Wait for User Input
 	pIn->GetPointClicked(x, y);
 
 	//Clear Status Bar
-	pOut->ClearStatusBar(); 
+	pOut->ClearStatusBar();
 
 }
 
-void CutPaste::Execute()
+void Delete::Execute()
 {
 	ReadActionParameters();
 	//Get a Pointer to the Input / Output Interfaces
 	Output* pOut = pManager->GetOutput();
 	Input* pIn = pManager->GetInput();
 
+	// code to delete comp from array
 	
-	pOut->PrintInDrawingArea(CutPaste, xx, yy);
-
 }
-
-void CutPaste::Undo()
-{}
-
-void CutPaste::Redo()
-{}
 */

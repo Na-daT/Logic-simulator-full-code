@@ -1,14 +1,12 @@
 #pragma once
 #include "Action.h"
 
-
-class CopyPaste : public Action
+class Delete : public Action
 {
 	int x, y;
-	int xx, yy;
 public:
-	CopyPaste(ApplicationManager* pApp);
-	virtual ~CopyPaste(void);
+	Delete(ApplicationManager* pApp);
+	virtual ~Delete(void);
 
 	//Reads parameters required for action to execute
 	virtual void ReadActionParameters();

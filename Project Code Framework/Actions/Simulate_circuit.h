@@ -1,5 +1,7 @@
 #pragma once
-#include "..\ApplicationManager.h"
+#include "../ApplicationManager.h"
+#include "../LED.h"
+#include "../SWITCH.h"
 
 class Simulate_Circuit
 	:public Action

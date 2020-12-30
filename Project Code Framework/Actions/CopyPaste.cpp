@@ -1,4 +1,4 @@
-#include "copypaste.h"
+/*#include "copypaste.h"
 
 #include "../ApplicationManager.h"
 
@@ -33,9 +33,10 @@ void CopyPaste::Execute()
 	//Get a Pointer to the Input / Output Interfaces
 	Output* pOut = pManager->GetOutput(); 
 	Input* pIn = pManager->GetInput();
+	 
 
-	string CopyPaste = pIn->GetSrting(pOut); // de kaman el mafrood nemsa7ha?? w ne7ot makanha eh?
-	pOut->PrintInDrawingArea(CopyPaste, x, y);
+
+	pOut->PrintInDrawingArea(CopyPaste, xx, yy);
 
 }
 
@@ -44,3 +45,4 @@ void CopyPaste::Undo()
 
 void CopyPaste::Redo()
 {}
+*/

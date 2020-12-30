@@ -2,6 +2,7 @@
 
 SWITCH::SWITCH(const GraphicsInfo& r_GfxInfo, int r_FanOut) :Gate(0, r_FanOut)
 {
+	type = ITM_SWITCH;
 	m_GfxInfo.x1 = r_GfxInfo.x1;
 	m_GfxInfo.y1 = r_GfxInfo.y1;
 	m_GfxInfo.x2 = r_GfxInfo.x2;
@@ -22,7 +23,7 @@ void SWITCH::Operate()
 void SWITCH::Draw(Output* pOut)
 {
 	//Call output class and pass gate drawing info to it.
-	pOut->DrawSwitch(m_GfxInfo);
+	pOut->DrawSwitch(m_GfxInfo,(STATUS)GetOutPinStatus());
 }
 
 //returns status of outputpin
@@ -40,8 +41,9 @@ int SWITCH::GetInputPinStatus(int n)
 }
 
 //Set status of an input pin ot HIGH or LOW
-//NO INPUT PIN, NOTHING TO SET
+//NO INPUT PIN, will be changing stauts of output pin instead
 void SWITCH::setInputPinStatus(int n, STATUS s)
 {
-	return;
+	m_OutputPin.setStatus(s);
 }
+
