@@ -3,6 +3,7 @@
 LED::LED(const GraphicsInfo& r_GfxInfo)
 	:Gate(1, 0)
 {
+	type = ITM_LED;
 	m_GfxInfo.x1 = r_GfxInfo.x1;
 	m_GfxInfo.y1 = r_GfxInfo.y1;
 	m_GfxInfo.x2 = r_GfxInfo.x2;
@@ -16,7 +17,7 @@ void LED::Operate()
 
 void LED::Draw(Output* pOut)
 {
-	pOut->DrawLED(m_GfxInfo);
+	pOut->DrawLED(m_GfxInfo, (STATUS)GetInputPinStatus(1));
 }
 
 
@@ -33,4 +34,9 @@ int LED::GetInputPinStatus(int n)
 void LED::setInputPinStatus(int n, STATUS s)
 {
 	m_InputPins[n - 1].setStatus(s);
+}
+
+int LED::getType()
+{
+	return type;
 }

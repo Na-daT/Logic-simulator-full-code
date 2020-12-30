@@ -22,7 +22,7 @@ void SWITCH::Operate()
 void SWITCH::Draw(Output* pOut)
 {
 	//Call output class and pass gate drawing info to it.
-	pOut->DrawSwitch(m_GfxInfo);
+	pOut->DrawSwitch(m_GfxInfo,(STATUS)GetOutPinStatus());
 }
 
 //returns status of outputpin
@@ -40,8 +40,9 @@ int SWITCH::GetInputPinStatus(int n)
 }
 
 //Set status of an input pin ot HIGH or LOW
-//NO INPUT PIN, NOTHING TO SET
+//NO INPUT PIN, will be changing stauts of output pin instead
 void SWITCH::setInputPinStatus(int n, STATUS s)
 {
-	return;
+	m_OutputPin.setStatus(s);
 }
+
