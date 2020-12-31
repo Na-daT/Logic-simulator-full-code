@@ -362,9 +362,9 @@ void Output::DrawSwitch(GraphicsInfo r_GfxInfo, STATUS s, bool selected) const
 	else
 	{
 		if (selected)
-			GateImage = "images\\Gates\\LED_HI.jpg"; //IMAGE TO BE ADDED
+			GateImage = "images\\Gates\\switch_HI.jpg"; //IMAGE TO BE ADDED
 		else
-			GateImage = "images\\Gates\\LED.jpg";//IMAGE TO BE ADDED
+			GateImage = "images\\Gates\\switch.jpg";//IMAGE TO BE ADDED
 
 		pWind->DrawImage(GateImage, r_GfxInfo.x1, r_GfxInfo.y1, UI.Switch_Width, UI.Switch_Height);
 	}
