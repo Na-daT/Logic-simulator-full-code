@@ -430,16 +430,17 @@ void Output::DrawConnection(GraphicsInfo r_GfxInfo, bool selected) const
 	
 	//TODO: Add code to draw connection
 
-	int x1, y1, x2, y2;
-	pWind->WaitMouseClick(x1, y1);
-	pWind->WaitMouseClick(x2, y2);
+
+
+
 	if (selected)
 	{
 		pWind->SetPen(RED, 3);
-		pWind->DrawLine(x1, y1, x2, y2);
+		pWind->DrawLine(r_GfxInfo.x1,r_GfxInfo.y1, r_GfxInfo.x2, r_GfxInfo.y2);//graphics info 
 	}
 	else
-		pWind->DrawLine(x1, y1, x2, y2);
+		pWind->DrawLine(r_GfxInfo.x1, r_GfxInfo.y1, r_GfxInfo.x2, r_GfxInfo.y2);
+	//check allignment of x, y >> draw multiple lines 
 }
 
 
