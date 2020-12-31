@@ -18,11 +18,13 @@ void Select::ReadActionParameters()
 	Output* pOut = pManager->GetOutput();
 	Input* pIn = pManager->GetInput();
 
-	//Print Action Message
-	pOut->PrintMsg("Component is selected");
+	pOut->PrintMsg("click on gate to select or deselct");
 
 	//Wait for User Input
 	pIn->GetPointClicked(x, y);
+
+	//Print Action Message
+	pOut->PrintMsg("Component is selected");
 
 	//Clear Status Bar
 	pOut->ClearStatusBar();
@@ -41,14 +43,12 @@ void Select::Execute()
 
 	for (int i = 0; i < pManager->GetCompCount(); i++)
 	{
-		ListofComponent[i]->setSelected(false);
-	}
-
-	for (int i = 0; i < pManager->GetCompCount(); i++)
-	{
 		if (ListofComponent[i]->IsClickInsideArea(x, y))
 		{
-			ListofComponent[i]->setSelected(true);
+			if (ListofComponent[i]->GetSelected())
+				ListofComponent[i]->setSelected(false);
+			else 
+				ListofComponent[i]->setSelected(true);
 		}
 	}
 

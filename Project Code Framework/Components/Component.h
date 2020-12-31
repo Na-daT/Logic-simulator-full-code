@@ -32,6 +32,8 @@ public:
 
 	void setSelected(bool IsSel);
 
+	bool GetSelected();
+
 	/*
 	virtual void Save()=0;
 	virtual void Load()=0;

@@ -24,6 +24,11 @@ void Component::setSelected(bool IsSel)
 	isSelected = IsSel;
 }
 
+bool Component::GetSelected()
+{
+	return isSelected;
+}
+
 Component::Component()
 {}
 
