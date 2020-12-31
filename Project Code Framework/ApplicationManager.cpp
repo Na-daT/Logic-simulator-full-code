@@ -17,6 +17,7 @@
 #include "AddXNORgate3.h"
 #include "AddXORgate2.h"
 #include "Actions/Select.h"
+#include "Actions/Label.h"
 
 
 ApplicationManager::ApplicationManager()
@@ -139,6 +140,10 @@ void ApplicationManager::ExecuteAction(ActionType ActType)
 
 		case SELECT:
 			pAct = new Select(this);
+			break;
+
+		case ADD_Label:
+			pAct = new Label(this);
 			break;
 
 		case EXIT:

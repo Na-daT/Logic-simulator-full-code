@@ -3,6 +3,7 @@
 
 #include "..\Defs.h"
 #include "..\GUI\Output.h"
+#include <fstream>
 
 //Base class for classes Gate, Switch, and LED.
 class Component
@@ -13,6 +14,7 @@ private:
 protected:
 	GraphicsInfo m_GfxInfo;	//The parameters required to draw a component
 	int type;
+	//int ID;
 public:
 	Component(const GraphicsInfo &r_GfxInfo);
 	virtual void Operate() = 0;	//Calculates the output according to the inputs
@@ -28,7 +30,11 @@ public:
 	virtual bool IsClickInsideArea(int x , int y);
 
 	void setSelected(bool IsSel);
-	
+
+	/*
+	virtual void Save()=0;
+	virtual void Load()=0;
+	*/
 
 
 

@@ -158,6 +158,29 @@ enum FANOUT
 
 };
 
+/*
+enum ComponentType
+{
+	AND_2_gate,
+	OR_2_gate,
+	AND_3_gate,
+	OR_3_gate,
+	NAND_2_gate,
+	NAND_3_gate,
+	NOR_2_gate,
+	NOR_3_gate,
+	XOR_2_gate,
+	XOR_3_gate,
+	XNOR_2_gate,
+	XNOR_3_gate,
+	NOT_gate,
+	BUFFER_gate,
+	Switch_gate,
+	Led_gate,
+	Connection_
+};
+*/
+
 //A structure to contain drawing parameters for each component
 //Each component occupies a rectangluar area so it needs 2 points to represent that area
 //this structure can be extended if desired

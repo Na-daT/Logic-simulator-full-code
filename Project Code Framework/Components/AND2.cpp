@@ -64,3 +64,14 @@ void AND2::setInputPinStatus(int n, STATUS s)
 {
 	m_InputPins[n - 1].setStatus(s);
 }
+
+/*
+void AND2::Save()
+{
+	ofstream SavedFile;
+	SavedFile.open("file1.txt", ios::out);
+
+	SavedFile << (ComponentType)type << " ";
+
+}
+*/
