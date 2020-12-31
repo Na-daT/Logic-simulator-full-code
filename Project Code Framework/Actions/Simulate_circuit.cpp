@@ -25,7 +25,7 @@ void Simulate_Circuit::Execute()
 		List = pManager->VectorCompList(); //get component list as a vector
 	}
 
-	Component* n;
+	Component* n = NULL;
 	Component** list = pManager->CompListGetter();
 
 	for (int i = 0;i < pManager->GetCompCount(); i++)
@@ -40,8 +40,11 @@ void Simulate_Circuit::Execute()
 		}
 	}
 
-	delete[]n;
-	delete[]list;
+	if (n)
+		delete[]n;
+	
+	list = NULL;
+
 	/*
 	int* y = pManager->ListofCompTypes();//copying type of components from CompList in AppManager
 
