@@ -53,14 +53,13 @@ Component** ApplicationManager::CompListGetter()
 	return CompList;
 }
 
-vector<Component*> ApplicationManager::VectorCompList()
+Component* ApplicationManager::IsGateinsideArea(int x, int y)
 {
-	vector <Component*> list;
 	for (int i = 0; i < CompCount; i++)
 	{
-		list[i] = CompList[i];
+		if (CompList[i]->IsClickInsideArea(x, y))
+			return CompList[i];
 	}
-	return list;
 }
 
 

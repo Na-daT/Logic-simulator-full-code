@@ -49,7 +49,7 @@ public:
 
 	Component** CompListGetter();
 
-	vector<Component*> VectorCompList();
+	Component* IsGateinsideArea(int x, int y);
 
 	//destructor
 	~ApplicationManager();
