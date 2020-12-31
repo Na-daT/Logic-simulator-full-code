@@ -1,6 +1,6 @@
 #ifndef _ACTION_H
 #define _ACTION_H
-
+#include <vector>
 class ApplicationManager; //forward class declaration
 
 

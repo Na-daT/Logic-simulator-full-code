@@ -18,6 +18,7 @@
 #include "AddXORgate2.h"
 #include "Actions/Select.h"
 #include "Actions/Label.h"
+#include  <vector>
 
 
 ApplicationManager::ApplicationManager()
@@ -36,7 +37,8 @@ void ApplicationManager::AddComponent(Component* pComp)
 {
 	CompList[CompCount++] = pComp;		
 }
-int* ApplicationManager::ListofComp()
+/// //////////////////////////////////////////////////////////////
+int* ApplicationManager::ListofCompTypes()
 {
 	int* x = new int[CompCount];
 
@@ -55,6 +57,23 @@ Component* ApplicationManager::GetspecificComponentinList(int n)
 {
 	return CompList[n];
 }
+
+Component** ApplicationManager::CompListGetter()
+{
+	return CompList;
+}
+
+vector<Component*> ApplicationManager::VectorCompList()
+{
+	vector <Component*> list;
+	for (int i = 0; i < CompCount; i++)
+	{
+		list[i] = CompList[i];
+	}
+	return list;
+}
+
+
 ////////////////////////////////////////////////////////////////////
 
 ActionType ApplicationManager::GetUserAction()

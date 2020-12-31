@@ -17,7 +17,33 @@ void Simulate_Circuit::ReadActionParameters()
 void Simulate_Circuit::Execute()
 {
 	ReadActionParameters();
-	int* y = pManager->ListofComp();//copying type of components from CompList in AppManager
+
+	vector <Component*> List;
+
+	for (int i = 0; i < pManager->GetCompCount(); i++)
+	{
+		List = pManager->VectorCompList(); //get component list as a vector
+	}
+
+	Component* n;
+	Component** list = pManager->CompListGetter();
+
+	for (int i = 0;i < pManager->GetCompCount(); i++)
+	{
+		int c = 0;
+		if (List[i] = dynamic_cast <SWITCH*>(n)) //dynamic cast components in complist to check wether they are a switch
+		{
+			if (list[i]->GetOutPinStatus() == HIGH)
+				list[i]->setInputPinStatus(1, LOW); //this function in the switch class changes the output pin as there is no input pin
+			else
+				list[i]->setInputPinStatus(1, HIGH);
+		}
+	}
+
+	delete[]n;
+	delete[]list;
+	/*
+	int* y = pManager->ListofCompTypes();//copying type of components from CompList in AppManager
 
 	int n_switches = 0;//no of switches found in the list
 	int* switches_ids = new int[n_switches];//index of the switches
@@ -57,6 +83,8 @@ void Simulate_Circuit::Execute()
 
 
 	/*still have to implement Leds being ON in this mode only not in drawing mode brdo*/
+
+
 }
 
 void Simulate_Circuit::Undo()

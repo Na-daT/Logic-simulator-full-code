@@ -2,6 +2,7 @@
 #include "../ApplicationManager.h"
 #include "../LED.h"
 #include "../SWITCH.h"
+#include <vector>
 
 class Simulate_Circuit
 	:public Action
