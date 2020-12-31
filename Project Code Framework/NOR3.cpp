@@ -32,7 +32,7 @@ void NOR3::Operate()
 
 void NOR3::Draw(Output* pOut)
 {
-	pOut->DrawNOR3(m_GfxInfo);
+	pOut->DrawNOR3(m_GfxInfo, isSelected);
 
 }
 

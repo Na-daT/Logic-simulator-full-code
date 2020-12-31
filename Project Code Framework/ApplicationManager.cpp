@@ -38,17 +38,7 @@ void ApplicationManager::AddComponent(Component* pComp)
 	CompList[CompCount++] = pComp;		
 }
 /// //////////////////////////////////////////////////////////////
-int* ApplicationManager::ListofCompTypes()
-{
-	int* x = new int[CompCount];
 
-	for (int i = 0; i < CompCount; i++)
-	{
-		x[i] = CompList[i]->getType();
-	}
-	return x;
-	
-}
 int ApplicationManager::GetCompCount()
 {
 	return CompCount;

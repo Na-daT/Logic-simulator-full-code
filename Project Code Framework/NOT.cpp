@@ -21,7 +21,7 @@ void NOT::Operate()
 
 void NOT::Draw(Output* pOut)
 {
-	pOut->DrawNOT(m_GfxInfo);
+	pOut->DrawNOT(m_GfxInfo, isSelected);
 
 }
 

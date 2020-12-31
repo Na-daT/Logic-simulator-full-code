@@ -32,7 +32,7 @@ void OR3::Operate()
 
 void OR3::Draw(Output* pOut)
 {
-	pOut->DrawOR3(m_GfxInfo);
+	pOut->DrawOR3(m_GfxInfo, isSelected);
 
 }
 

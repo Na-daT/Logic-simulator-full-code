@@ -10,10 +10,11 @@ class Component
 {
 private:
 	string m_Label;
-	bool isSelected = false;
+	
 protected:
 	GraphicsInfo m_GfxInfo;	//The parameters required to draw a component
 	int type;
+	bool isSelected = false;
 	//int ID;
 public:
 	Component(const GraphicsInfo &r_GfxInfo);

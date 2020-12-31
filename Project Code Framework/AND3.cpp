@@ -33,7 +33,7 @@ void AND3::Operate()
 
 void AND3::Draw(Output* pOut)
 {
-	pOut->DrawAND3(m_GfxInfo);
+	pOut->DrawAND3(m_GfxInfo, isSelected);
 }
 
 int AND3::GetOutPinStatus()

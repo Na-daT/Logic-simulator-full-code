@@ -18,6 +18,7 @@ void Simulate_Circuit::Execute()
 {
 	ReadActionParameters();
 
+	/*
 	vector <Component*> List;
 
 	for (int i = 0; i < pManager->GetCompCount(); i++)
@@ -30,7 +31,6 @@ void Simulate_Circuit::Execute()
 
 	for (int i = 0;i < pManager->GetCompCount(); i++)
 	{
-		int c = 0;
 		if (List[i] = dynamic_cast <SWITCH*>(n)) //dynamic cast components in complist to check wether they are a switch
 		{
 			if (list[i]->GetOutPinStatus() == HIGH)
@@ -44,6 +44,25 @@ void Simulate_Circuit::Execute()
 		delete[]n;
 	
 	list = NULL;
+	*/
+
+	///////////////////////////////////
+
+	Component** ListCopy = pManager->CompListGetter();
+	for (int i = 0; i < pManager->GetCompCount(); i++)
+	{
+		if (ListCopy[i]->getType()==ITM_SWITCH && ListCopy[i]->IsClickInsideArea(Cx,Cy))
+		{
+			if (ListCopy[i]->GetOutPinStatus() == HIGH)
+				ListCopy[i]->setInputPinStatus(1, LOW); //this function in the switch class changes the output pin as there is no input pin
+			else
+				ListCopy[i]->setInputPinStatus(1, HIGH);
+		}
+			
+	}
+
+
+	///////////////////////////////////
 
 	/*
 	int* y = pManager->ListofCompTypes();//copying type of components from CompList in AppManager

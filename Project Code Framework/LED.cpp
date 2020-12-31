@@ -17,7 +17,7 @@ void LED::Operate()
 
 void LED::Draw(Output* pOut)
 {
-	pOut->DrawLED(m_GfxInfo, (STATUS)GetInputPinStatus(1));
+	pOut->DrawLED(m_GfxInfo, (STATUS)GetInputPinStatus(1), isSelected);
 }
 
 
