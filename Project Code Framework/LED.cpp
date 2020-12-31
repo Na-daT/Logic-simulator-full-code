@@ -12,7 +12,7 @@ LED::LED(const GraphicsInfo& r_GfxInfo)
 
 void LED::Operate()
 {
-
+	//no operation led on/off depends on inputpin status
 }
 
 void LED::Draw(Output* pOut)
