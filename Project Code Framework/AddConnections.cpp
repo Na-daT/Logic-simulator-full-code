@@ -22,6 +22,7 @@ void AddConnections::ReadActionParameters()
 	//Wait for User Input
 	pIn->GetPointClicked(GfxInfo.x1, GfxInfo.y1);
 	pIn->GetPointClicked(GfxInfo.x2, GfxInfo.y2);
+	//pManager>> get which gate cllicked, da el src, the other clicked gate is dst
 
 	//Clear Status Bar
 	pOut->ClearStatusBar();
