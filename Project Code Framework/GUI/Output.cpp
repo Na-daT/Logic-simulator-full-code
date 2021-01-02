@@ -429,18 +429,31 @@ void Output::DrawConnection(GraphicsInfo r_GfxInfo, bool selected) const
 {
 	
 	//TODO: Add code to draw connection
-
-
-
-
-	if (selected)
+	if (UI.AppMode == SIMULATION)
 	{
-		pWind->SetPen(RED, 3);
-		pWind->DrawLine(r_GfxInfo.x1,r_GfxInfo.y1, r_GfxInfo.x2, r_GfxInfo.y2);//graphics info 
-	}
-	else
-		pWind->DrawLine(r_GfxInfo.x1, r_GfxInfo.y1, r_GfxInfo.x2, r_GfxInfo.y2);
-	//check allignment of x, y >> draw multiple lines 
+		//draw highlighted connection
+		if (selected)
+		{
+			pWind->SetPen(RED, 3);
+			pWind->DrawLine(r_GfxInfo.x1, r_GfxInfo.y1, r_GfxInfo.x2, r_GfxInfo.y2);//graphics info 
+		}
+		//draw normal connection
+		else
+			pWind->DrawLine(r_GfxInfo.x1, r_GfxInfo.y1, r_GfxInfo.x2, r_GfxInfo.y2);
+
+
+		//draw straight connection
+		if ((r_GfxInfo.x1 != r_GfxInfo.x2 && r_GfxInfo.y1 == r_GfxInfo.y2) || (r_GfxInfo.x1 == r_GfxInfo.x2 && r_GfxInfo.y1 != r_GfxInfo.y2))
+		{
+			pWind->DrawLine(r_GfxInfo.x1, r_GfxInfo.y1, r_GfxInfo.x2, r_GfxInfo.y2);
+		}
+		//draw broken connection
+		else if (r_GfxInfo.x1 != r_GfxInfo.x2 && r_GfxInfo.y1 != r_GfxInfo.y2)
+		{
+			pWind->DrawLine(r_GfxInfo.x1, r_GfxInfo.y1, r_GfxInfo.x2, r_GfxInfo.y1);
+			pWind->DrawLine(r_GfxInfo.x2, r_GfxInfo.y1, r_GfxInfo.x2, r_GfxInfo.y2);
+		}
+	} 
 }
 
 
