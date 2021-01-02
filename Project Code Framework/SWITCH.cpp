@@ -12,7 +12,10 @@ SWITCH::SWITCH(const GraphicsInfo& r_GfxInfo, int r_FanOut) :Gate(0, r_FanOut)
 
 void SWITCH::Operate()
 {
-
+	if (GetOutPinStatus() == 1)
+		m_OutputPin.setStatus((STATUS)0);
+	else if (GetOutPinStatus() == 0)
+		m_OutputPin.setStatus((STATUS)1);
 
 	// no operation as switch value depends on user action
 }
@@ -44,6 +47,6 @@ int SWITCH::GetInputPinStatus(int n)
 //NO INPUT PIN, will be changing stauts of output pin instead
 void SWITCH::setInputPinStatus(int n, STATUS s)
 {
-	m_OutputPin.setStatus(s);
+	return;
 }
 

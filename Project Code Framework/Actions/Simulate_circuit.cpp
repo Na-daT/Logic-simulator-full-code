@@ -11,12 +11,13 @@ void Simulate_Circuit::ReadActionParameters()
 	Input* pIn = pManager->GetInput();
 
 	pOut->PrintMsg("Simulating circuit, click on any switch to change value, then click enter when done");
+	
 	pIn->GetPointClicked(Cx, Cy);//we need a point to see if user click on a switch
 }
 
 void Simulate_Circuit::Execute()
 {
-	ReadActionParameters();
+	
 
 	/*
 	vector <Component*> List;
@@ -47,7 +48,7 @@ void Simulate_Circuit::Execute()
 	*/
 
 	///////////////////////////////////
-
+	/*
 	Component** ListCopy = pManager->CompListGetter();
 	for (int i = 0; i < pManager->GetCompCount(); i++)
 	{
@@ -60,6 +61,34 @@ void Simulate_Circuit::Execute()
 		}
 			
 	}
+	*/
+
+	ReadActionParameters();
+	Component* switchptr;
+	Output* pOut = pManager->GetOutput();
+
+	do {
+		pOut->PrintMsg("please click on a switch to change its status");
+		ReadActionParameters();
+		switchptr = pManager->IsGateinsideArea(Cx, Cy);
+
+	} while (switchptr->getType() != ITM_SWITCH);
+
+	if (switchptr)
+	{
+		switchptr->Operate();
+	}
+
+	Component** switchArray;
+	int s;
+
+	switchArray = pManager->GetArrayofSwitches(s);
+	/*
+	for (int i = 0; i < s; i++)
+	{
+		switchArray[i]->
+	}
+	*/
 
 
 	///////////////////////////////////

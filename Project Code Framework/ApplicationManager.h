@@ -51,6 +51,9 @@ public:
 
 	Component* IsGateinsideArea(int x, int y);
 
+	Component** ArrayofSwitches();
+
+
 	//destructor
 	~ApplicationManager();
 };
