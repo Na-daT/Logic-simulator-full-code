@@ -51,7 +51,7 @@ public:
 
 	Component* IsGateinsideArea(int x, int y);
 
-	Component** ArrayofSwitches();
+	Component** GetArrayofSwitches(int& s);
 
 
 	//destructor
