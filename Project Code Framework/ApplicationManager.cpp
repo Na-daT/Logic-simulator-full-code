@@ -64,8 +64,8 @@ Component* ApplicationManager::IsGateinsideArea(int x, int y)
 
 Component** ApplicationManager::GetArrayofSwitches(int& s)
 {
-	Component** x = new Component * [];
 	int c = 0;
+	Component** x = new Component* [c];
 	for (int i = 0; i < CompCount; i++)
 	{
 		if (CompList[i]->getType() == ITM_SWITCH)
