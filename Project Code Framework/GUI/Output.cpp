@@ -461,10 +461,6 @@ void Output::DrawConnection(GraphicsInfo r_GfxInfo, bool selected) const
 				pWind->DrawLine(r_GfxInfo.x2, r_GfxInfo.y1, r_GfxInfo.x2, r_GfxInfo.y2);
 			}
 		}
-			
-
-
-		//draw straight connection
 		
 	} 
 }

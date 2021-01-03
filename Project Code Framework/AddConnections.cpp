@@ -72,7 +72,7 @@ bool AddConnections::SetSrcPin()
 
 bool AddConnections::SetDstPin()
 {
-	Component* c = pManager->IsGateinsideArea(GfxInfo.x1, GfxInfo.y1);
+	Component* c = pManager->IsGateinsideArea(GfxInfo.x2, GfxInfo.y2);
 	Gate* g;
 	g = (Gate*)c;
 	IndexDstPin = g->getInputIndex();
