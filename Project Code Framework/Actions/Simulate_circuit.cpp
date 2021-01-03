@@ -10,7 +10,7 @@ void Simulate_Circuit::ReadActionParameters()
 	Output* pOut = pManager->GetOutput();
 	Input* pIn = pManager->GetInput();
 
-	pOut->PrintMsg("Simulating circuit, click on any switch to change value, then click enter when done");
+	pOut->PrintMsg("Simulating circuit, click on any switch to change value");
 	
 	pIn->GetPointClicked(Cx, Cy);//we need a point to see if user click on a switch
 }
@@ -67,14 +67,9 @@ void Simulate_Circuit::Execute()
 	Component* switchptr;
 	Output* pOut = pManager->GetOutput();
 
-	do {
-		pOut->PrintMsg("please click on a switch to change its status");
-		ReadActionParameters();
-		switchptr = pManager->IsGateinsideArea(Cx, Cy);
+	switchptr = pManager->IsGateinsideArea(Cx, Cy);
 
-	} while (switchptr->getType() != ITM_SWITCH);
-
-	if (switchptr)
+	if (switchptr && switchptr->getType()==ITM_SWITCH)
 	{
 		switchptr->Operate();
 	}

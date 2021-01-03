@@ -19,6 +19,7 @@
 #include "Actions/Select.h"
 #include "Actions/Label.h"
 #include  <vector>
+#include "Actions/Delete.h"
 
 
 ApplicationManager::ApplicationManager()
@@ -64,20 +65,25 @@ Component* ApplicationManager::IsGateinsideArea(int x, int y)
 
 void ApplicationManager::DeleteSelectedinComplist()
 {
-	do
+	while (CompList[CompCount-1]->GetSelected() == true)
 	{
-		CompList[CompCount] = NULL;
+		delete CompList[CompCount - 1];
+		CompList[CompCount-1] = NULL;
 		CompCount--;
-
-	} while (CompList[CompCount]->GetSelected() == true);
+	}
 
 	for (int i = 0; i < CompCount; i++)
 	{
 		if (CompList[i]->GetSelected())
 		{
+			delete CompList[i];
 			CompList[i] = NULL;
-			CompList[i] = CompList[CompCount];
-			CompList[CompCount] = NULL;
+
+			CompList[i] = CompList[CompCount-1];
+
+			delete CompList[CompCount - 1];
+			CompList[CompCount-1] = NULL;
+
 			CompCount--;
 		}
 	}
@@ -189,6 +195,10 @@ void ApplicationManager::ExecuteAction(ActionType ActType)
 
 		case ADD_Label:
 			pAct = new Label(this);
+			break;
+
+		case DEL:
+			pAct = new Delete(this);
 			break;
 
 		case EXIT:
