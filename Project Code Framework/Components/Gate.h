@@ -22,7 +22,11 @@ protected:
 
 public:
 	Gate(int r_Inputs, int r_FanOut);
-
+	virtual void GetOutputPinCoordinates(int &x, int &y);
+	virtual void GetInputPinCoordinates(int &x, int& y, int n);
+	virtual OutputPin* getSrcPin() = 0;
+	virtual InputPin* getDstPin(int n) = 0;
+	virtual int getInputIndex(); //returns available input pins to connect to
 
 };
 

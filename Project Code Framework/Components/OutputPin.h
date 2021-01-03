@@ -22,6 +22,7 @@ private:
 public:
 	OutputPin(int r_FanOut);	
 	bool ConnectTo(Connection *r_Conn);	//connect to a new connection
+	bool NotAvailable(); //checks if output pin connections reached the max connections allowed
 };
 
 #endif

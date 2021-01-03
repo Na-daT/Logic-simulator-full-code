@@ -11,6 +11,7 @@ private:
 	GraphicsInfo GfxInfo;	//end and start points of connection made
 	OutputPin* src;
 	InputPin* dst;
+	int IndexDstPin;
 
 public:
 	//constructor
@@ -26,6 +27,8 @@ public:
 	virtual void Undo();
 	virtual void Redo();
 
+	virtual bool SetSrcPin(); //sets output pin of selected gate as source pin
+	virtual bool SetDstPin(); //sets input pin of selected gate as destination pin
 
 };
 

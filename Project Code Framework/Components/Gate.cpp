@@ -13,5 +13,31 @@ Gate::Gate(int r_Inputs, int r_FanOut):m_OutputPin(r_FanOut)
 	//Associate all input pins to this gate
 	for(int i=0; i<m_Inputs; i++)
 		m_InputPins[i].setComponent(this);
+	
+
 }
 
+void Gate::GetOutputPinCoordinates(int& x, int& y)
+{
+
+}
+
+void Gate::GetInputPinCoordinates(int& x, int& y, int n)
+{
+
+}
+
+int Gate::getInputIndex()
+{
+	for (int i = 0; i < m_Inputs; i++)
+	{
+		bool s;
+		s = m_InputPins[i].getConnected();
+		if (s == false)
+		{
+			m_InputPins[i].setConnected(!s);
+			return i;
+		}
+	}
+	return -1; //if no input pin available
+}

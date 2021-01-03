@@ -12,3 +12,13 @@ Component* InputPin::getComponent()
 {
 	return pComp;
 }
+
+void InputPin::setConnected(bool s)
+{
+	Connected = s;
+}
+
+bool InputPin::getConnected()
+{
+	return Connected;
+}
