@@ -15,10 +15,7 @@ void Delete::ReadActionParameters()
 	Input* pIn = pManager->GetInput();
 
 	//Print Action Message
-	pOut->PrintMsg("Component is selected");
-
-	//Wait for User Input
-	pIn->GetPointClicked(x, y);
+	pOut->PrintMsg("Deleteing Selected gates");
 
 	//Clear Status Bar
 	pOut->ClearStatusBar();
@@ -28,18 +25,9 @@ void Delete::ReadActionParameters()
 void Delete::Execute()
 {
 	ReadActionParameters();
-	//Get a Pointer to the Input / Output Interfaces
-	Output* pOut = pManager->GetOutput();
-	Input* pIn = pManager->GetInput();
 
 	// code to delete comp from array
-	
-	Component* pComp = pManager->IsGateinsideArea(x, y);
-	if (pManager)
-	{
-		if (pComp->IsClickInsideArea(x, y))
-			pManager->UpdateComplist();
-	}
+	pManager->DeleteSelectedinComplist();
 	
 
 }

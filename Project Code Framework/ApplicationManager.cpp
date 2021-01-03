@@ -64,12 +64,18 @@ Component* ApplicationManager::IsGateinsideArea(int x, int y)
 
 void ApplicationManager::UpdateComplist()
 {
+	do
+	{
+		CompList[CompCount] = NULL;
+		CompCount--;
+
+	} while (CompList[CompCount]->GetSelected() == true);
+
 	for (int i = 0; i < CompCount; i++)
 	{
 		if (CompList[i]->GetSelected())
-			CompList[i] = NULL;
-		if (!CompList[CompCount]->GetSelected())
 		{
+			CompList[i] = NULL;
 			CompList[i] = CompList[CompCount];
 			CompList[CompCount] = NULL;
 			CompCount--;

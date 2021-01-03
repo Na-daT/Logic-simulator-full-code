@@ -53,7 +53,7 @@ public:
 
 	Component** GetArrayofSwitches(int& s);
 
-	void UpdateComplist();
+	void DeleteSelectedinComplist();
 
 
 
