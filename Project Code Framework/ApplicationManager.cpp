@@ -62,7 +62,7 @@ Component* ApplicationManager::IsGateinsideArea(int x, int y)
 	}
 }
 
-void ApplicationManager::UpdateComplist()
+void ApplicationManager::DeleteSelectedinComplist()
 {
 	do
 	{
