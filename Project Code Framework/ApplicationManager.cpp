@@ -62,6 +62,21 @@ Component* ApplicationManager::IsGateinsideArea(int x, int y)
 	}
 }
 
+void ApplicationManager::UpdateComplist()
+{
+	for (int i = 0; i < CompCount; i++)
+	{
+		if (CompList[i]->GetSelected())
+			CompList[i] = NULL;
+		if (!CompList[CompCount]->GetSelected())
+		{
+			CompList[i] = CompList[CompCount];
+			CompList[CompCount] = NULL;
+			CompCount--;
+		}
+	}
+}
+
 Component** ApplicationManager::GetArrayofSwitches(int& s)
 {
 	int c = 0;

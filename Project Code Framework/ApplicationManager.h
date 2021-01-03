@@ -53,6 +53,10 @@ public:
 
 	Component** GetArrayofSwitches(int& s);
 
+	void UpdateComplist();
+
+
+
 
 	//destructor
 	~ApplicationManager();

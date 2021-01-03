@@ -1,4 +1,3 @@
-/*
 #include "Delete.h"
 #include "../ApplicationManager.h"
 Delete::Delete(ApplicationManager* pApp) :Action(pApp)
@@ -35,5 +34,12 @@ void Delete::Execute()
 
 	// code to delete comp from array
 	
+	Component* pComp = pManager->IsGateinsideArea(x, y);
+	if (pManager)
+	{
+		if (pComp->IsClickInsideArea(x, y))
+			pManager->UpdateComplist();
+	}
+	
+
 }
-*/

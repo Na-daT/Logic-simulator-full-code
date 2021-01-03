@@ -39,19 +39,15 @@ void Select::Execute()
 	Input* pIn = pManager->GetInput();
 	// Code to show highlighted component
 
-	Component** ListofComponent = pManager->CompListGetter();
-
-	for (int i = 0; i < pManager->GetCompCount(); i++)
+	Component* pComp;
+	pComp = pManager->IsGateinsideArea(x, y);
+	if (pComp)
 	{
-		if (ListofComponent[i]->IsClickInsideArea(x, y))
-		{
-			if (ListofComponent[i]->GetSelected())
-				ListofComponent[i]->setSelected(false);
-			else 
-				ListofComponent[i]->setSelected(true);
-		}
+		if (pComp->GetSelected())
+			pComp->setSelected(false);
+		else
+			pComp->setSelected(true);
 	}
-
 
 }
 
