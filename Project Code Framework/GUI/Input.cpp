@@ -96,6 +96,7 @@ ActionType Input::GetUserAction() const
 			case ITM_BUFF:return ADD_Buff;
 			case ITM_SWITCH_TO_SIMULATION: return SIM_MODE;
 			case ITM_XNOR3: return ADD_XNOR_GATE_3;
+			case ITM_DELETE: return DEL;
 
 			
 				//endnada
