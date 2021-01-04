@@ -13,6 +13,7 @@ LED::LED(const GraphicsInfo& r_GfxInfo)
 
 void LED::Operate()
 {
+	return;
 	//no operation led on/off depends on inputpin status
 }
 
@@ -29,7 +30,7 @@ int LED::GetOutPinStatus()
 
 int LED::GetInputPinStatus(int n)
 {
-	return m_InputPins[n - 1].getStatus();
+	return (int)m_InputPins[n - 1].getStatus();
 }
 
 void LED::setInputPinStatus(int n, STATUS s)

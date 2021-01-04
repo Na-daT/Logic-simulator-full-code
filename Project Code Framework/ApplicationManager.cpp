@@ -86,14 +86,29 @@ void ApplicationManager::DeleteSelectedinComplist()
 void ApplicationManager::OperateALLgates()
 {
 	int c = 0;
+	int valid =0;
 	while (c != CompCount)
 	{
 		for (int i = 0; i < CompCount; i++)
 		{
-			for (int j = 0; i<CompList[i]->GetInputPinStatus())
+			for (int j = 0; j < CompList[i]->GetnumberofInputPins(); j++)
+			{
+				if (CompList[i]->GetInputPinStatus(j) == NOT_ASSIGNED)
+					break;
+				else
+				{
+					valid++;
+				}
+				if (valid == CompList[i]->GetnumberofInputPins())
+				{
+					CompList[i]->Operate();
+					valid = 0;
+					c++;
+				}
+			}
+
 		}
 	}
-
 }
 
 Component** ApplicationManager::GetArrayofSwitches(int& s)

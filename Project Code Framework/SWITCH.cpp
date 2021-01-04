@@ -15,6 +15,7 @@ SWITCH::SWITCH(const GraphicsInfo& r_GfxInfo, int r_FanOut) :Gate(0, r_FanOut)
 
 void SWITCH::Operate()
 {
+	return;
 	// no operation as switch value depends on user action
 }
 

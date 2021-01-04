@@ -78,10 +78,6 @@ void Simulate_Circuit::Execute()
 	}
 
 	pManager->OperateALLgates();
-
-	/*still have to implement Leds being ON in this mode only not in drawing mode brdo*/
-
-
 }
 
 void Simulate_Circuit::Undo()
