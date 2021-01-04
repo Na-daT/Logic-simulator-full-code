@@ -40,3 +40,13 @@ void NOT::setInputPinStatus(int n, STATUS s)
 	m_InputPins[n - 1].setStatus(s);
 
 }
+
+OutputPin* NOT::getSrcPin()
+{
+	return &m_OutputPin;
+}
+
+InputPin* NOT::getDstPin(int n)
+{
+	return &m_InputPins[n];
+}

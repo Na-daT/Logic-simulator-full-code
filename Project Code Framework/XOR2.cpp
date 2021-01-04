@@ -53,3 +53,13 @@ void XOR2::setInputPinStatus(int n, STATUS s)
 {
 	m_InputPins[n - 1].setStatus(s);
 }
+
+OutputPin* XOR2::getSrcPin()
+{
+	return &m_OutputPin;
+}
+
+InputPin* XOR2::getDstPin(int n)
+{
+	return &m_InputPins[n];
+}

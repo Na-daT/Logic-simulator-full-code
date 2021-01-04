@@ -54,3 +54,13 @@ void XNOR2::setInputPinStatus(int n, STATUS s)
 	m_InputPins[n - 1].setStatus(s);
 
 }
+
+OutputPin* XNOR2::getSrcPin()
+{
+	return &m_OutputPin;
+}
+
+InputPin* XNOR2::getDstPin(int n)
+{
+	return &m_InputPins[n];
+}

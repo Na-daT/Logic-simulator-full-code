@@ -45,3 +45,13 @@ void buffer::setInputPinStatus(int n, STATUS s)
 {
 	m_InputPins[n - 1].setStatus(s);
 }
+
+OutputPin* buffer::getSrcPin()
+{
+	return &m_OutputPin;
+}
+
+InputPin* buffer::getDstPin(int n)
+{
+	return &m_InputPins[n];
+}

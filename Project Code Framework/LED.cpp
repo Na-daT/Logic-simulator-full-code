@@ -35,3 +35,14 @@ void LED::setInputPinStatus(int n, STATUS s)
 {
 	m_InputPins[n - 1].setStatus(s);
 }
+
+
+InputPin* LED::getDstPin(int n)
+{
+	return &m_InputPins[n];
+}
+
+OutputPin* LED::getSrcPin()
+{
+	return NULL;
+}

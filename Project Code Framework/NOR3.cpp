@@ -51,3 +51,13 @@ void NOR3::setInputPinStatus(int n, STATUS s)
 	m_InputPins[n - 1].setStatus(s);
 
 }
+
+OutputPin* NOR3::getSrcPin()
+{
+	return &m_OutputPin;
+}
+
+InputPin* NOR3::getDstPin(int n)
+{
+	return &m_InputPins[n];
+}

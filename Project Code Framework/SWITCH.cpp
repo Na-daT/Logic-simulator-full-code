@@ -50,3 +50,12 @@ void SWITCH::setInputPinStatus(int n, STATUS s)
 	return;
 }
 
+OutputPin* SWITCH::getSrcPin()
+{
+	return &m_OutputPin;
+}
+
+InputPin* SWITCH::getDstPin(int n)
+{
+	return NULL;
+}

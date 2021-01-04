@@ -65,6 +65,17 @@ void AND2::setInputPinStatus(int n, STATUS s)
 	m_InputPins[n - 1].setStatus(s);
 }
 
+
+OutputPin* AND2::getSrcPin()
+{
+	return &m_OutputPin;
+}
+
+InputPin* AND2::getDstPin(int n)
+{
+	return &m_InputPins[n];
+}
+
 /*
 void AND2::Save()
 {

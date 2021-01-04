@@ -50,3 +50,13 @@ void AND3::setInputPinStatus(int n, STATUS s)
 {
 	m_InputPins[n - 1].setStatus(s);
 }
+
+OutputPin* AND3::getSrcPin()
+{
+	return &m_OutputPin;
+}
+
+InputPin* AND3::getDstPin(int n)
+{
+	return &m_InputPins[n];
+}

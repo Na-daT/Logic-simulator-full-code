@@ -24,7 +24,7 @@ void Gate::GetOutputPinCoordinates(int& x, int& y)
 
 void Gate::GetInputPinCoordinates(int& x, int& y, int n)
 {
-
+	
 }
 
 int Gate::getInputIndex()

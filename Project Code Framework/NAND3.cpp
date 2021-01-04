@@ -50,3 +50,13 @@ void NAND3::setInputPinStatus(int n, STATUS s)
 {
 	m_InputPins[n - 1].setStatus(s);
 }
+
+OutputPin* NAND3::getSrcPin()
+{
+	return &m_OutputPin;
+}
+
+InputPin* NAND3::getDstPin(int n)
+{
+	return &m_InputPins[n];
+}
