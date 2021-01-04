@@ -47,15 +47,6 @@ int ApplicationManager::GetCompCount()
 {
 	return CompCount;
 }
-Component* ApplicationManager::GetspecificComponentinList(int n)
-{
-	return CompList[n];
-}
-
-Component** ApplicationManager::CompListGetter()
-{
-	return CompList;
-}
 
 Component* ApplicationManager::IsGateinsideArea(int x, int y)
 {
