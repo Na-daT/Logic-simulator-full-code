@@ -143,6 +143,7 @@ void ApplicationManager::PasteToCompList()
 }
  
 
+
 ////////////////////////////////////////////////////////////////////
 
 ActionType ApplicationManager::GetUserAction()

@@ -1,4 +1,4 @@
-/* #include "Cut.h"
+#include "Cut.h"
 
 #include "../ApplicationManager.h"
 
@@ -16,26 +16,24 @@ void Cut::ReadActionParameters()
 	Output* pOut = pManager->GetOutput();
 	Input* pIn = pManager->GetInput();
 
-	//Print Action Message
-	pOut->PrintMsg("Add Label to item");
 
-	//Wait for User Input
-	pIn->GetPointClicked(x, y);
+
+
+
 
 	//Clear Status Bar
 	pOut->ClearStatusBar();
 
 }
 
-void Cut:Execute()
+void Cut::Execute()
 {
 	ReadActionParameters();
 	//Get a Pointer to the Input / Output Interfaces
 	Output* pOut = pManager->GetOutput();
 	Input* pIn = pManager->GetInput();
-
-	string Cut = pIn->GetSrting(pOut);
-	pOut->PrintInDrawingArea(CutPaste, x, y);
+	pManager->AddToClipboard();
+	pManager->DeleteSelectedinComplist();
 
 }
 
@@ -44,4 +42,3 @@ void Cut::Undo()
 
 void Cut::Redo()
 {}
-*/

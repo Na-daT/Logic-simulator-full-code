@@ -1,8 +1,9 @@
 #pragma once
-/* #include "Action.h"
+#include "Action.h"
 
 
- class Cut : public Action
+
+class Cut : public Action
 {
 	int x, y;
 public:
@@ -17,6 +18,6 @@ public:
 	virtual void Undo();
 	virtual void Redo();
 };
-*/
+
 
 
