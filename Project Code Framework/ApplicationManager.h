@@ -46,6 +46,8 @@ public:
 
 	void AddToClipboard();
 
+	void PasteToCompList();
+
 	int GetCompCount();
 
 	Component* GetspecificComponentinList(int n);
