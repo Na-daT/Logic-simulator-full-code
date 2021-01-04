@@ -18,7 +18,9 @@
 #include "AddXORgate2.h"
 #include "Actions/Select.h"
 #include "Actions/Label.h"
-
+#include  "Actions/Copy.h"
+#include "Actions/Cut.h"
+#include "Components/Paste.h"
 #include  <vector>
 #include "Actions/Delete.h"
 
@@ -237,6 +239,12 @@ void ApplicationManager::ExecuteAction(ActionType ActType)
 		case DEL:
 			pAct = new Delete(this);
 			break;
+
+		case COPY:
+			pAct = new Copy(this);
+
+		case PASTE:
+			pAct = new Paste(this);
 
 		case EXIT:
 			///TODO: create ExitAction here

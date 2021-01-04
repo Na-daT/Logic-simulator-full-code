@@ -97,7 +97,8 @@ ActionType Input::GetUserAction() const
 			case ITM_SWITCH_TO_SIMULATION: return SIM_MODE;
 			case ITM_XNOR3: return ADD_XNOR_GATE_3;
 			case ITM_DELETE: return DEL;
-
+			case ITM_COPY: return COPY;
+			case ITM_PASTE: return PASTE;
 			
 				//endnada
 			case ITM_EXIT: return EXIT;
