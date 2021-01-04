@@ -232,12 +232,6 @@
     <ClCompile Include="Actions\Simulate_circuit.cpp">
       <Filter>Actions</Filter>
     </ClCompile>
-    <ClCompile Include="Actions\CopyPaste.cpp">
-      <Filter>Actions</Filter>
-    </ClCompile>
-    <ClCompile Include="Actions\CutPaste.cpp">
-      <Filter>Actions</Filter>
-    </ClCompile>
     <ClCompile Include="Actions\Label.cpp">
       <Filter>Actions</Filter>
     </ClCompile>
@@ -245,6 +239,15 @@
       <Filter>Actions</Filter>
     </ClCompile>
     <ClCompile Include="Actions\Delete.cpp">
+      <Filter>Actions</Filter>
+    </ClCompile>
+    <ClCompile Include="Components\Paste.cpp">
+      <Filter>Actions</Filter>
+    </ClCompile>
+    <ClCompile Include="Actions\Copy.cpp">
+      <Filter>Actions</Filter>
+    </ClCompile>
+    <ClCompile Include="Actions\Cut.cpp">
       <Filter>Actions</Filter>
     </ClCompile>
   </ItemGroup>
@@ -445,12 +448,6 @@
     <ClInclude Include="Actions\Simulate_circuit.h">
       <Filter>Actions</Filter>
     </ClInclude>
-    <ClInclude Include="Actions\CopyPaste.h">
-      <Filter>Actions</Filter>
-    </ClInclude>
-    <ClInclude Include="Actions\CutPaste.h">
-      <Filter>Actions</Filter>
-    </ClInclude>
     <ClInclude Include="Actions\Label.h">
       <Filter>Actions</Filter>
     </ClInclude>
@@ -458,6 +455,15 @@
       <Filter>Actions</Filter>
     </ClInclude>
     <ClInclude Include="Actions\Delete.h">
+      <Filter>Actions</Filter>
+    </ClInclude>
+    <ClInclude Include="Components\Paste.h">
+      <Filter>Actions</Filter>
+    </ClInclude>
+    <ClInclude Include="Actions\Copy.h">
+      <Filter>Actions</Filter>
+    </ClInclude>
+    <ClInclude Include="Actions\Cut.h">
       <Filter>Actions</Filter>
     </ClInclude>
   </ItemGroup>

@@ -1,14 +1,13 @@
 #pragma once
-#include "Action.h"
+#include "../Actions/Action.h"
 
 
-class CopyPaste : public Action
+class Paste : public Action
 {
 	int x, y;
-	int xx, yy;
 public:
-	CopyPaste(ApplicationManager* pApp);
-	virtual ~CopyPaste(void);
+	Paste(ApplicationManager* pApp);
+	virtual ~Paste(void);
 
 	//Reads parameters required for action to execute
 	virtual void ReadActionParameters();
@@ -18,3 +17,5 @@ public:
 	virtual void Undo();
 	virtual void Redo();
 };
+
+

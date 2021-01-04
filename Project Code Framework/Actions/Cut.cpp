@@ -1,47 +1,47 @@
-/*#include "cutpaste.h"
+/* #include "Cut.h"
 
 #include "../ApplicationManager.h"
 
-CutPaste::CutPaste(ApplicationManager* pApp) :Action(pApp)
+Cut::Cut(ApplicationManager* pApp) :Action(pApp)
 {
 }
 
-CutPaste::~CutPaste(void)
+Cut::~Cut(void)
 {
 }
 
-void CutPaste::ReadActionParameters()
+void Cut::ReadActionParameters()
 {
 	//Get a Pointer to the Input / Output Interfaces
 	Output* pOut = pManager->GetOutput();
 	Input* pIn = pManager->GetInput();
 
 	//Print Action Message
-	pOut->PrintMsg("Click on the item you want to cut");
+	pOut->PrintMsg("Add Label to item");
 
 	//Wait for User Input
 	pIn->GetPointClicked(x, y);
 
 	//Clear Status Bar
-	pOut->ClearStatusBar(); 
+	pOut->ClearStatusBar();
 
 }
 
-void CutPaste::Execute()
+void Cut:Execute()
 {
 	ReadActionParameters();
 	//Get a Pointer to the Input / Output Interfaces
 	Output* pOut = pManager->GetOutput();
 	Input* pIn = pManager->GetInput();
 
-	
-	pOut->PrintInDrawingArea(CutPaste, xx, yy);
+	string Cut = pIn->GetSrting(pOut);
+	pOut->PrintInDrawingArea(CutPaste, x, y);
 
 }
 
-void CutPaste::Undo()
+void Cut::Undo()
 {}
 
-void CutPaste::Redo()
+void Cut::Redo()
 {}
 */

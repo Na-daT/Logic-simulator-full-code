@@ -39,13 +39,13 @@ void AddConnections::Execute()
 	bool s = SetSrcPin();
 	if (s == false)
 	{
-		pOut->PrintMsg("Invalid source pin");
+		pOut->PrintMsg("Invalid pin");
 		return;
 	}
 	bool d = SetDstPin();
 	if (d == false)
 	{
-		pOut->PrintMsg("Invalid destination pin");
+		pOut->PrintMsg("Invalid pin");
 		return;
 	}
 
@@ -60,9 +60,9 @@ bool AddConnections::SetSrcPin()
 {
 	Component* c = pManager->IsGateinsideArea(GfxInfo.x1, GfxInfo.y1);
 	Gate* g;
-	g = (Gate*)c;
+	//g = (Gate*)c;
 	//g->GetOutputPinCoordinates(GfxInfo.x1, GfxInfo.y1);
-	src = g->getSrcPin();
+	//src = g->getSrcPin();
 	if (src->NotAvailable())
 	{
 		return false;
@@ -79,10 +79,9 @@ bool AddConnections::SetDstPin()
 	if (IndexDstPin == -1)
 		return false;
 	//g->GetInputPinCoordinates(GfxInfo.x2, GfxInfo.y2, IndexDstPin);
-	dst = g->getDstPin(IndexDstPin);
+	/*dst = g->getDstPin(IndexDstPin);*/
 	return true;
 }
-
 
 
 
