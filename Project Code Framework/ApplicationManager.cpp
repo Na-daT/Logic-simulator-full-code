@@ -18,7 +18,9 @@
 #include "AddXORgate2.h"
 #include "Actions/Select.h"
 #include "Actions/Label.h"
-
+#include  "Actions/Copy.h"
+#include "Actions/Cut.h"
+#include "Components/Paste.h"
 #include  <vector>
 #include "Actions/Delete.h"
 
@@ -44,15 +46,6 @@ void ApplicationManager::AddComponent(Component* pComp)
 int ApplicationManager::GetCompCount()
 {
 	return CompCount;
-}
-Component* ApplicationManager::GetspecificComponentinList(int n)
-{
-	return CompList[n];
-}
-
-Component** ApplicationManager::CompListGetter()
-{
-	return CompList;
 }
 
 Component* ApplicationManager::IsGateinsideArea(int x, int y)
@@ -238,6 +231,12 @@ void ApplicationManager::ExecuteAction(ActionType ActType)
 		case DEL:
 			pAct = new Delete(this);
 			break;
+
+		case COPY:
+			pAct = new Copy(this);
+
+		case PASTE:
+			pAct = new Paste(this);
 
 		case EXIT:
 			///TODO: create ExitAction here

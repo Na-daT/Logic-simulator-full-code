@@ -50,10 +50,6 @@ public:
 
 	int GetCompCount();
 
-	Component* GetspecificComponentinList(int n);
-
-	Component** CompListGetter();
-
 	Component* IsGateinsideArea(int x, int y);
 
 	Component** GetArrayofSwitches(int& s);
