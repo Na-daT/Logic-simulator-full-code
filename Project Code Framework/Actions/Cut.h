@@ -2,13 +2,12 @@
 #include "Action.h"
 
 
-class CopyPaste : public Action
+class Cut : public Action
 {
 	int x, y;
-	int xx, yy;
 public:
-	CopyPaste(ApplicationManager* pApp);
-	virtual ~CopyPaste(void);
+	Cut(ApplicationManager* pApp);
+	virtual ~Cut(void);
 
 	//Reads parameters required for action to execute
 	virtual void ReadActionParameters();
@@ -18,3 +17,4 @@ public:
 	virtual void Undo();
 	virtual void Redo();
 };
+

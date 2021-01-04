@@ -18,6 +18,7 @@
 #include "AddXORgate2.h"
 #include "Actions/Select.h"
 #include "Actions/Label.h"
+
 #include  <vector>
 
 
@@ -99,6 +100,42 @@ Component** ApplicationManager::GetArrayofSwitches(int& s)
 	return x;
 }
 
+void ApplicationManager::AddToClipboard()
+{
+	if (ClipboardCount != 0)
+	{
+		for (int i = 0; i < ClipboardCount; i++)
+		{
+			delete Clipboard[i];
+			Clipboard[i] = NULL;
+		}
+		ClipboardCount = 0;
+	}
+	int c = 0;
+
+	for (int i = 0; i < CompCount; i++)
+	{
+		if (CompList[i]->GetSelected() == true)
+		{
+			Clipboard[c] = CompList[i];
+			c++;
+		}
+	}
+	ClipboardCount = c;
+
+}
+void ApplicationManager::PasteToCompList()
+{
+	int j = 0;
+	for (int i = CompCount; i < (CompCount + ClipboardCount); i++)
+	{
+	
+		CompList[i] = Clipboard[j];
+		CompCount++;
+		j++;
+	}
+}
+ 
 
 ////////////////////////////////////////////////////////////////////
 

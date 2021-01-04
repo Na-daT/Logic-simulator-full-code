@@ -16,8 +16,9 @@ class ApplicationManager
 
 private:
 	int CompCount;		//Actual number of Components
+	int ClipboardCount; 
 	Component* CompList[MaxCompCount];	//List of all Components (Array of pointers)
-
+	Component* Clipboard[MaxCompCount];
 	Output* OutputInterface; //pointer to the Output Clase Interface
 	Input* InputInterface; //pointer to the Input Clase Interface
 
@@ -42,6 +43,8 @@ public:
 
 	//Adds a new component to the list of components
 	void AddComponent(Component* pComp);
+
+	void AddToClipboard();
 
 	int GetCompCount();
 

@@ -1,15 +1,13 @@
 #pragma once
-#include "Action.h"
-#ifndef _CUTPaset_h_
-#define _CUTPaset_h_
+#include "../Actions/Action.h"
 
-class CutPaste : public Action
+
+class Paste : public Action
 {
 	int x, y;
-	int xx, yy;
 public:
-	CutPaste(ApplicationManager* pApp);
-	virtual ~CutPaste(void);
+	Paste(ApplicationManager* pApp);
+	virtual ~Paste(void);
 
 	//Reads parameters required for action to execute
 	virtual void ReadActionParameters();
@@ -20,4 +18,4 @@ public:
 	virtual void Redo();
 };
 
-#endif
+
