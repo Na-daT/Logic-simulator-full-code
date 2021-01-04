@@ -71,62 +71,13 @@ void Simulate_Circuit::Execute()
 
 	if (switchptr && switchptr->getType()==ITM_SWITCH)
 	{
-		switchptr->Operate();
+		if (switchptr->GetOutPinStatus() == 1)
+			switchptr->setInputPinStatus(0, (STATUS)0);
+		else if (switchptr->GetOutPinStatus() == 0)
+			switchptr->setInputPinStatus(0, (STATUS)1);
 	}
 
-	Component** switchArray;
-	int s;
-
-	switchArray = pManager->GetArrayofSwitches(s);
-	/*
-	for (int i = 0; i < s; i++)
-	{
-		switchArray[i]->
-	}
-	*/
-
-
-	///////////////////////////////////
-
-	/*
-	int* y = pManager->ListofCompTypes();//copying type of components from CompList in AppManager
-
-	int n_switches = 0;//no of switches found in the list
-	int* switches_ids = new int[n_switches];//index of the switches
-
-
-	for (int i = 0; i < pManager->GetCompCount(); i++)//loop over the array of component types y to get number of switches and leds
-	{
-		if (y[i] == ITM_SWITCH)
-		{
-			switches_ids[n_switches] = i;
-			n_switches++;
-		}
-	}
-
-	Component** ListofSwitches= new Component*[n_switches]; //array of pointers to the switches in CompList (dynamically allocated )
-	
-
-	for (int i = 0; i < n_switches; i++)
-	{
-		ListofSwitches[i] = pManager->GetspecificComponentinList(i); //point to each switch
-	}
-
-	for (int i = 0; i < n_switches; i++)
-	{
-		if (ListofSwitches[i]->IsClickInsideArea(Cx, Cy))//check if user clicks on a switch
-		{//check if the output pin is high to change to low and vice versa
-			if (ListofSwitches[i]->GetOutPinStatus() == HIGH)
-				ListofSwitches[i]->setInputPinStatus(1, LOW);//this function in the switch class changes the output pin as there is no input pin
-			else
-				ListofSwitches[i]->setInputPinStatus(1, HIGH);
-		}
-	}
-
-	/*had to get the type of each gate in CompList first  then get the index of the specific
-	type i wanted then make the array of pointers point to it, if the type of gate didtn matter 
-	i couldve used another function to itterate over the compList and check whether the gate was clicked*/
-
+	pManager->OperateALLgates();
 
 	/*still have to implement Leds being ON in this mode only not in drawing mode brdo*/
 

@@ -15,6 +15,8 @@ protected:
 	GraphicsInfo m_GfxInfo;	//The parameters required to draw a component
 	int type;
 	bool isSelected = false;
+	int numberofinputpins;
+
 	//int ID;
 public:
 	Component(const GraphicsInfo &r_GfxInfo);
@@ -34,6 +36,10 @@ public:
 
 	bool GetSelected();
 
+	virtual int GetnumberofInputPins();
+
+
+	
 	/*
 	virtual void Save()=0;
 	virtual void Load()=0;

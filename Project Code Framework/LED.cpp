@@ -3,6 +3,7 @@
 LED::LED(const GraphicsInfo& r_GfxInfo)
 	:Gate(1, 0)
 {
+	numberofinputpins = 1;
 	type = ITM_LED;
 	m_GfxInfo.x1 = r_GfxInfo.x1;
 	m_GfxInfo.y1 = r_GfxInfo.y1;

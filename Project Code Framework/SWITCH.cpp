@@ -2,21 +2,19 @@
 
 SWITCH::SWITCH(const GraphicsInfo& r_GfxInfo, int r_FanOut) :Gate(0, r_FanOut)
 {
+	numberofinputpins = 0;
+
 	type = ITM_SWITCH;
 	m_GfxInfo.x1 = r_GfxInfo.x1;
 	m_GfxInfo.y1 = r_GfxInfo.y1;
 	m_GfxInfo.x2 = r_GfxInfo.x2;
 	m_GfxInfo.y2 = r_GfxInfo.y2;
+	m_OutputPin.setStatus((STATUS)0);
 }
 
 
 void SWITCH::Operate()
 {
-	if (GetOutPinStatus() == 1)
-		m_OutputPin.setStatus((STATUS)0);
-	else if (GetOutPinStatus() == 0)
-		m_OutputPin.setStatus((STATUS)1);
-
 	// no operation as switch value depends on user action
 }
 
@@ -32,7 +30,7 @@ void SWITCH::Draw(Output* pOut)
 //returns status of outputpin
 int SWITCH::GetOutPinStatus()
 {
-	return m_OutputPin.getStatus();
+	return (int)m_OutputPin.getStatus();
 }
 
 
@@ -44,11 +42,12 @@ int SWITCH::GetInputPinStatus(int n)
 }
 
 //Set status of an input pin ot HIGH or LOW
-//NO INPUT PIN, will be changing stauts of output pin instead
+//NO INPUT PINs, will be modifying output pin instead
 void SWITCH::setInputPinStatus(int n, STATUS s)
 {
-	return;
+	m_OutputPin.setStatus(s);
 }
+
 
 OutputPin* SWITCH::getSrcPin()
 {

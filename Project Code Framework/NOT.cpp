@@ -1,6 +1,8 @@
 #include "NOT.h"
 NOT::NOT(const GraphicsInfo& r_GfxInfo, int r_FanOut) :Gate(1, r_FanOut)
 {
+	numberofinputpins = 1;
+
 	type = ITM_NOT;
 	m_GfxInfo.x1 = r_GfxInfo.x1;
 	m_GfxInfo.y1 = r_GfxInfo.y1;

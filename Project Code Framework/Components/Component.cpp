@@ -29,6 +29,11 @@ bool Component::GetSelected()
 	return isSelected;
 }
 
+int Component::GetnumberofInputPins()
+{
+	return numberofinputpins;
+}
+
 Component::Component()
 {}
 
