@@ -127,8 +127,8 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Actions\AddANDgate2.cpp" />
-    <ClCompile Include="Actions\CopyPaste.cpp" />
-    <ClCompile Include="Actions\CutPaste.cpp" />
+    <ClCompile Include="Actions\Copy.cpp" />
+    <ClCompile Include="Actions\Cut.cpp" />
     <ClCompile Include="Actions\Delete.cpp" />
     <ClCompile Include="Actions\Label.cpp" />
     <ClCompile Include="Actions\Select.cpp" />
@@ -192,6 +192,7 @@
     <ClCompile Include="Components\Gate.cpp" />
     <ClCompile Include="Components\InputPin.cpp" />
     <ClCompile Include="Components\OutputPin.cpp" />
+    <ClCompile Include="Components\Paste.cpp" />
     <ClCompile Include="Components\Pin.cpp" />
     <ClCompile Include="ApplicationManager.cpp" />
     <ClCompile Include="GUI\Input.cpp" />
@@ -214,8 +215,8 @@
   <ItemGroup>
     <ClInclude Include="Actions\Action.h" />
     <ClInclude Include="Actions\AddANDgate2.h" />
-    <ClInclude Include="Actions\CopyPaste.h" />
-    <ClInclude Include="Actions\CutPaste.h" />
+    <ClInclude Include="Actions\Copy.h" />
+    <ClInclude Include="Actions\Cut.h" />
     <ClInclude Include="Actions\Delete.h" />
     <ClInclude Include="Actions\Label.h" />
     <ClInclude Include="Actions\Select.h" />
@@ -264,6 +265,7 @@
     <ClInclude Include="Components\Gate.h" />
     <ClInclude Include="Components\InputPin.h" />
     <ClInclude Include="Components\OutputPin.h" />
+    <ClInclude Include="Components\Paste.h" />
     <ClInclude Include="Components\Pin.h" />
     <ClInclude Include="ApplicationManager.h" />
     <ClInclude Include="Defs.H" />

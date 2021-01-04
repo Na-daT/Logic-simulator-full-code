@@ -1,4 +1,4 @@
-#include "Cut.h"
+/* #include "Cut.h"
 
 #include "../ApplicationManager.h"
 
@@ -44,3 +44,4 @@ void Cut::Undo()
 
 void Cut::Redo()
 {}
+*/
