@@ -207,6 +207,7 @@
     <ClCompile Include="OR2.cpp" />
     <ClCompile Include="OR3.cpp" />
     <ClCompile Include="SWITCH.cpp" />
+    <ClCompile Include="switch_toSim_mode.cpp" />
     <ClCompile Include="XNOR2.cpp" />
     <ClCompile Include="XNOR3.cpp" />
     <ClCompile Include="XOR2.cpp" />
@@ -281,6 +282,7 @@
     <ClInclude Include="OR2.h" />
     <ClInclude Include="OR3.h" />
     <ClInclude Include="SWITCH.h" />
+    <ClInclude Include="switch_toSIM_mode.h" />
     <ClInclude Include="XNOR2.h" />
     <ClInclude Include="XNOR3.h" />
     <ClInclude Include="XOR2.h" />

@@ -21,8 +21,8 @@
 #include  "Actions/Copy.h"
 #include "Actions/Cut.h"
 #include "Components/Paste.h"
-#include  <vector>
 #include "Actions/Delete.h"
+#include "switch_toSIM_mode.h"
 
 
 ApplicationManager::ApplicationManager()
@@ -59,26 +59,33 @@ Component* ApplicationManager::IsGateinsideArea(int x, int y)
 
 void ApplicationManager::DeleteSelectedinComplist()
 {
-	while (CompList[CompCount-1]->GetSelected() == true)
-	{
-		delete CompList[CompCount - 1];
-		CompList[CompCount-1] = NULL;
-		CompCount--;
-	}
-
-	for (int i = 0; i < CompCount; i++)
-	{
-		if (CompList[i]->GetSelected())
+		while (CompList[CompCount - 1]->GetSelected() == true)
 		{
-			delete CompList[i];
-			CompList[i] = NULL;
-
-			CompList[i] = CompList[CompCount-1];
-
 			delete CompList[CompCount - 1];
-			CompList[CompCount-1] = NULL;
-
+			CompList[CompCount - 1] = NULL;
 			CompCount--;
+
+			if (CompCount == 0)
+				break;
+		}
+	
+
+	if (CompCount != 0)
+	{
+		for (int i = 0; i < CompCount; i++)
+		{
+			if (CompList[i]->GetSelected())
+			{
+				delete CompList[i];
+				CompList[i] = NULL;
+
+				CompList[i] = CompList[CompCount - 1];
+
+				delete CompList[CompCount - 1];
+				CompList[CompCount - 1] = NULL;
+
+				CompCount--;
+			}
 		}
 	}
 }
@@ -262,9 +269,15 @@ void ApplicationManager::ExecuteAction(ActionType ActType)
 
 		case COPY:
 			pAct = new Copy(this);
+			break;
 
 		case PASTE:
 			pAct = new Paste(this);
+			break;
+
+		case (ActionType)38:
+			pAct = new switch_toSIM_mode(this);
+			break;
 
 		case EXIT:
 			///TODO: create ExitAction here
@@ -281,9 +294,15 @@ void ApplicationManager::ExecuteAction(ActionType ActType)
 
 void ApplicationManager::UpdateInterface()
 {
-		for(int i=0; i<CompCount; i++)
+	if (CompCount == 0)
+	{
+		OutputInterface->ClearDrawingArea();
+	}
+	else 
+	{
+		for (int i = 0; i < CompCount; i++)
 			CompList[i]->Draw(OutputInterface);
-
+	}
 }
 
 ////////////////////////////////////////////////////////////////////
