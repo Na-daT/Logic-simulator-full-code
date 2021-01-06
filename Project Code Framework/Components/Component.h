@@ -38,8 +38,8 @@ public:
 
 	virtual int GetnumberofInputPins();
 
-
-	
+	virtual void SetLabel(string s);
+ 
 	/*
 	virtual void Save()=0;
 	virtual void Load()=0;

@@ -194,7 +194,7 @@ void Output::CreateSimulationToolBar() const
 //								Components Drawing Functions							//
 //======================================================================================//
 
-void Output::DrawAND2(GraphicsInfo r_GfxInfo, bool selected) const
+void Output::DrawAND2(GraphicsInfo r_GfxInfo, bool selected, string label) const
 {
 	string GateImage;
 	if (selected)	//use image in the highlighted case
@@ -203,10 +203,13 @@ void Output::DrawAND2(GraphicsInfo r_GfxInfo, bool selected) const
 	}
 	else
 		GateImage = "images\\Gates\\AND_2.jpg";
-
+	int x12 = r_GfxInfo.x1 - 100;
+	int y12 = r_GfxInfo.y1 - 100;
 	//Draw AND2 Gate at Gfx_Info (1st corner)
 	//Set the Image Width & Height by AND2 Image Parameter in UI_Info
+	PrintInDrawingArea(label, x12, y12);
 	pWind->DrawImage(GateImage, r_GfxInfo.x1, r_GfxInfo.y1, UI.AND2_Width, UI.AND2_Height);
+
 }
 
 //TODO: Add similar functions to draw all components

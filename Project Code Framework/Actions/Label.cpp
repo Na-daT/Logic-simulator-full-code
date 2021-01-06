@@ -35,7 +35,12 @@ void Label::Execute()
 	Input* pIn = pManager->GetInput();
 
 	string label = pIn->GetSrting(pOut);
-	pOut->PrintInDrawingArea(label, x, y);
+	Component* pComp;
+	pComp = pManager->IsGateinsideArea(x, y);
+	if (pComp)
+	{
+		pComp->SetLabel(label);
+	}
 
 }
 

@@ -34,6 +34,12 @@ int Component::GetnumberofInputPins()
 	return numberofinputpins;
 }
 
+void Component::SetLabel(string s)
+{
+	m_Label = s;
+}
+
+
 Component::Component()
 {}
 

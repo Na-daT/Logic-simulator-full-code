@@ -195,6 +195,7 @@
     <ClCompile Include="Components\Paste.cpp" />
     <ClCompile Include="Components\Pin.cpp" />
     <ClCompile Include="ApplicationManager.cpp" />
+    <ClCompile Include="Edit.cpp" />
     <ClCompile Include="GUI\Input.cpp" />
     <ClCompile Include="GUI\Output.cpp" />
     <ClCompile Include="LED.cpp" />
@@ -270,6 +271,7 @@
     <ClInclude Include="Components\Pin.h" />
     <ClInclude Include="ApplicationManager.h" />
     <ClInclude Include="Defs.H" />
+    <ClInclude Include="Edit.h" />
     <ClInclude Include="GUI\Input.h" />
     <ClInclude Include="GUI\Output.h" />
     <ClInclude Include="GUI\UI_Info.h" />
