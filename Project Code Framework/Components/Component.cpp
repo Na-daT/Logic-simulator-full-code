@@ -39,6 +39,11 @@ void Component::SetLabel(string s)
 	m_Label = s;
 }
 
+string Component::GetLabel()
+{
+	return m_Label;
+}
+
 
 Component::Component()
 {}
