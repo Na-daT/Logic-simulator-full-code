@@ -119,6 +119,7 @@ enum DsgnMenuItem //The items of the design menu (you should add more items)
 	ITM_CUT,
 	ITM_PASTE,
 	ITM_SWITCH_TO_SIMULATION,
+	ITM_EDIT,
 	//TODO: Add more items names here
 
 	ITM_EXIT,  //Exit item

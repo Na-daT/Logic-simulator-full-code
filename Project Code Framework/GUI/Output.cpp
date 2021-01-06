@@ -146,6 +146,7 @@ void Output::CreateDesignToolBar() const
 	MenuItemImages[ITM_CUT] = "Images\\Gates\\AND_2.jpg";
 	MenuItemImages[ITM_PASTE] = "Images\\Gates\\AND_2.jpg";
 	MenuItemImages[ITM_SWITCH_TO_SIMULATION] = "Images\\Gates\\AND_2.jpg";
+	MenuItemImages[ITM_EDIT] = "Images\\Gates\\AND_2.jpg";
 	MenuItemImages[ITM_EXIT] = "Images\\Gates\\AND_2.jpg";
 	//TODO: Prepare image for each menu item and add it to the list
 

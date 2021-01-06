@@ -23,6 +23,7 @@
 #include "Components/Paste.h"
 #include "Actions/Delete.h"
 #include "switch_toSIM_mode.h"
+#include "Edit.h"
 
 
 ApplicationManager::ApplicationManager()
@@ -277,6 +278,10 @@ void ApplicationManager::ExecuteAction(ActionType ActType)
 
 		case (ActionType)38:
 			pAct = new switch_toSIM_mode(this);
+			break;
+
+		case EDIT_Label:
+			pAct = new Edit(this);
 			break;
 
 		case EXIT:

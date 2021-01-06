@@ -1,4 +1,4 @@
-/*#include "../Project Code Framework/ApplicationManager.h" 
+#include "../Project Code Framework/ApplicationManager.h" 
 #include "Edit.h"
 #include "Actions/Label.h"
 
@@ -34,22 +34,22 @@ void Edit::ReadActionParameters()
 
 void Edit::Execute()
 {
-/*	ReadActionParameters();
+	ReadActionParameters();
 	//Get a Pointer to the Input / Output Interfaces
 	Output* pOut = pManager->GetOutput();
 	Input* pIn = pManager->GetInput();
 	pOut->PrintMsg("Enter New Label");
-	Component* pComp;
 
-	pComp = pManager->IsGateinsideArea(x, y);
+	string s = pIn->GetSrting(pOut);
+
+	Component* pComp = pManager->IsGateinsideArea(x, y);
 	if (pComp)
-	{
-		pComp->SetLabel( s);
-	}
+		pComp->SetLabel(s);
+
 }
 
-void Label::Undo()
+void Edit::Undo()
 {}
 
-void Label::Redo()
-{}*/
+void Edit::Redo()
+{}

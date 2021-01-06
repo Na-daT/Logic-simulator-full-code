@@ -1,4 +1,4 @@
-/*#pragma once
+#pragma once
 #include "Actions/Action.h"
 
 class Edit : public Action
@@ -15,4 +15,4 @@ public:
 
 	virtual void Undo();
 	virtual void Redo();
-};*/
+};

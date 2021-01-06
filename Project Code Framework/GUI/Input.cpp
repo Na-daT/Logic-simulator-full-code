@@ -99,6 +99,7 @@ ActionType Input::GetUserAction() const
 			case ITM_DELETE: return DEL;
 			case ITM_COPY: return COPY;
 			case ITM_PASTE: return PASTE;
+			case ITM_EDIT: return EDIT_Label;
 			
 				//endnada
 			case ITM_EXIT: return EXIT;
