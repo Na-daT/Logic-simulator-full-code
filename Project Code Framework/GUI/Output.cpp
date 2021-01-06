@@ -433,8 +433,7 @@ void Output::DrawConnection(GraphicsInfo r_GfxInfo, bool selected) const
 {
 	
 	//TODO: Add code to draw connection
-	if (UI.AppMode == SIMULATION)
-	{
+	
 		//draw highlighted connection
 		if (selected)
 		{
@@ -466,7 +465,6 @@ void Output::DrawConnection(GraphicsInfo r_GfxInfo, bool selected) const
 			}
 		}
 		
-	} 
 }
 
 

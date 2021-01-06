@@ -1,7 +1,9 @@
 #include "InputPin.h"
 
 InputPin::InputPin()
-{}
+{
+	Connected = false;
+}
 
 void InputPin::setComponent(Component *pCmp)
 {

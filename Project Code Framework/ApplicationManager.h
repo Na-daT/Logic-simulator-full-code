@@ -6,7 +6,7 @@
 #include "GUI\Input.h"
 #include "Actions\Action.h"
 #include "Components\Component.h"
-#include <vector>
+
 
 //Main class that manages everything in the application.
 class ApplicationManager
@@ -21,7 +21,6 @@ private:
 	Component* Clipboard[MaxCompCount];
 	Output* OutputInterface; //pointer to the Output Clase Interface
 	Input* InputInterface; //pointer to the Input Clase Interface
-
 
 public:
 

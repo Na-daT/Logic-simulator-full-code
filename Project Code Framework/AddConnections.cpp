@@ -52,6 +52,7 @@ void AddConnections::Execute()
 	Connection* pA = new Connection(GfxInfo,src,dst);
 	pA->setSourcePin(src);
 	pA->setDestPin(dst);
+
 	pManager->AddComponent(pA);
 }
 
@@ -63,10 +64,7 @@ bool AddConnections::SetSrcPin()
 	g = (Gate*)c;
 	//g->GetOutputPinCoordinates(GfxInfo.x1, GfxInfo.y1);
 	src = g->getSrcPin();
-	if (src->NotAvailable())
-	{
-		return false;
-	}
+
 	return true;
 }
 

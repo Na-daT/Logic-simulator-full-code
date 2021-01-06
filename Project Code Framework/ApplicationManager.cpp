@@ -24,7 +24,7 @@
 #include "Actions/Delete.h"
 #include "switch_toSIM_mode.h"
 #include "Edit.h"
-
+#include "Actions/Simulate_circuit.h"
 
 ApplicationManager::ApplicationManager()
 {
@@ -43,6 +43,7 @@ void ApplicationManager::AddComponent(Component* pComp)
 	CompList[CompCount++] = pComp;		
 }
 /// //////////////////////////////////////////////////////////////
+
 
 int ApplicationManager::GetCompCount()
 {
@@ -308,6 +309,9 @@ void ApplicationManager::UpdateInterface()
 		for (int i = 0; i < CompCount; i++)
 			CompList[i]->Draw(OutputInterface);
 	}
+
+
+
 }
 
 ////////////////////////////////////////////////////////////////////
