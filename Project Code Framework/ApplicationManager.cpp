@@ -285,6 +285,10 @@ void ApplicationManager::ExecuteAction(ActionType ActType)
 			pAct = new Edit(this);
 			break;
 
+		case SIMULATE_CIRCUIT:
+			pAct = new Simulate_Circuit(this);
+			break;
+
 		case EXIT:
 			///TODO: create ExitAction here
 			break;
