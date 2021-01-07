@@ -75,6 +75,12 @@ void Output::PrintInDrawingArea(string msg, int X, int Y) const
 	pWind->SetPen(UI.MsgColor);
 	pWind->DrawString(X, Y, msg);
 }
+void Output::ClearDesignToolBar() const
+{
+	pWind->SetPen(RED, 1);
+	pWind->SetBrush(WHITE);
+	pWind->DrawRectangle(0, UI.ToolBarHeight, UI.width, UI.ToolBarHeight);
+}
 //////////////////////////////////////////////////////////////////////////////////
 void Output::ClearStatusBar()const
 {

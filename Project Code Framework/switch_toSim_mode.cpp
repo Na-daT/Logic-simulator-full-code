@@ -27,6 +27,8 @@ void switch_toSIM_mode::Execute()
 	//Get Center point of the Gate
 	ReadActionParameters();
 	Output* pOut = pManager->GetOutput();
+
+	pOut->ClearDesignToolBar();
 	pOut->CreateSimulationToolBar();
 	
 
