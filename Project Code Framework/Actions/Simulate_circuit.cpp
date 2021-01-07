@@ -62,6 +62,8 @@ void Simulate_Circuit::Execute()
 			
 	}
 	*/
+	pManager->OperateALLgates();
+
 
 	ReadActionParameters();
 	Component* switchptr;
@@ -79,7 +81,8 @@ void Simulate_Circuit::Execute()
 				switchptr->setInputPinStatus(0, (STATUS)1);
 		}
 	}
-	pManager->OperateALLgates();
+
+
 }
 
 void Simulate_Circuit::Undo()

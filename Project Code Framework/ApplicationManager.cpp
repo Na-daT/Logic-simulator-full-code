@@ -83,7 +83,6 @@ void ApplicationManager::DeleteSelectedinComplist()
 
 				CompList[i] = CompList[CompCount - 1];
 
-				delete CompList[CompCount - 1];
 				CompList[CompCount - 1] = NULL;
 
 				CompCount--;
@@ -100,15 +99,20 @@ void ApplicationManager::OperateALLgates()
 	{
 		for (int i = 0; i < CompCount; i++)
 		{
+			if (CompList[i]->getType() == ITM_SWITCH)
+			{
+				c++;
+			}
+
+			if (CompList[i]->getType() == ITM_CONNECTION)
+			{
+				CompList[i]->Operate();
+				c++;
+			}
 			for (int j = 0; j < CompList[i]->GetnumberofInputPins(); j++)
 			{
-				if (CompList[i]->getType() == ITM_CONNECTION)
+				if (CompList[i]->getType() != ITM_CONNECTION && CompList[i]->getType()!=ITM_SWITCH)
 				{
-					CompList[i]->Operate();
-					c++;
-
-				}
-				else {
 					if (CompList[i]->GetInputPinStatus(j) == NOT_ASSIGNED)
 						break;
 					else
@@ -312,15 +316,13 @@ void ApplicationManager::ExecuteAction(ActionType ActType)
 
 void ApplicationManager::UpdateInterface()
 {
-	if (CompCount == 0)
-	{
+
+	
 		OutputInterface->ClearDrawingArea();
-	}
-	else 
-	{
+
 		for (int i = 0; i < CompCount; i++)
 			CompList[i]->Draw(OutputInterface);
-	}
+	
 
 
 
