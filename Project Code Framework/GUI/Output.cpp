@@ -170,9 +170,9 @@ void Output::CreateSimulationToolBar() const
 	
 	string MenuItemImages[ITM_SIM_CNT];
 	MenuItemImages[ITM_SIM] = "images\\Menu\\SIMULATE.jpg";
-	MenuItemImages[ITM_TRUTH] = "images\\Menu\\Menu_AND2.jpg";
-	MenuItemImages[ITM_VALIDATE] = "images\\Menu\\Menu_AND2.jpg";
-	MenuItemImages[ITM_SWITCH_TO_DESIGN_MODE] = "images\\Menu\\Menu_AND2.jpg";	
+	MenuItemImages[ITM_TRUTH] = "images\\Gates\\AND_2.jpg";
+	MenuItemImages[ITM_VALIDATE] = "images\\Gates\\AND_2.jpg";
+	MenuItemImages[ITM_SWITCH_TO_DESIGN_MODE] = "images\\Gates\\AND_2.jpg";	
 	
 	//DONE: Prepare image for each menu item and add it to the list
 

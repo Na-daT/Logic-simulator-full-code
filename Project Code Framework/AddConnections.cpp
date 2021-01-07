@@ -49,9 +49,15 @@ void AddConnections::Execute()
 		return;
 	}
 
+	dst->setConnected(true);
+	dst->setStatus(src->getStatus());
+
 	Connection* pA = new Connection(GfxInfo,src,dst);
 	pA->setSourcePin(src);
 	pA->setDestPin(dst);
+
+	src->ConnectTo(pA);
+
 
 	pManager->AddComponent(pA);
 }

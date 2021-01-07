@@ -16,6 +16,16 @@ void AND2::Operate()
 	//caclulate the output status as the ANDing of the two input pins
 
 	//Add you code here
+	/*for(int i = 0; i < m_Inputs ; i++)
+	{ 
+		Component* connectedto;
+		if (m_InputPins[i].getConnected())
+		{
+			connectedto = m_InputPins[i].getComponent();
+			m_InputPins[i].setStatus((STATUS)connectedto->GetOutPinStatus());
+		}
+	}*/
+	
 	int* x = new int[m_Inputs];
 
 	for (int i = 0; i < m_Inputs; i++)
@@ -57,7 +67,7 @@ int AND2::GetOutPinStatus()
 //returns status of Inputpin #n
 int AND2::GetInputPinStatus(int n)
 {
-	return m_InputPins[n - 1].getStatus();	//n starts from 1 but array index starts from 0.
+	return m_InputPins[n].getStatus();	//n starts from 1 but array index starts from 0.
 }
 
 //Set status of an input pin ot HIGH or LOW

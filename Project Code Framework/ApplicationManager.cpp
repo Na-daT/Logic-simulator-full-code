@@ -102,17 +102,25 @@ void ApplicationManager::OperateALLgates()
 		{
 			for (int j = 0; j < CompList[i]->GetnumberofInputPins(); j++)
 			{
-				if (CompList[i]->GetInputPinStatus(j) == NOT_ASSIGNED)
-					break;
-				else
-				{
-					valid++;
-				}
-				if (valid == CompList[i]->GetnumberofInputPins())
+				if (CompList[i]->getType() == ITM_CONNECTION)
 				{
 					CompList[i]->Operate();
-					valid = 0;
 					c++;
+
+				}
+				else {
+					if (CompList[i]->GetInputPinStatus(j) == NOT_ASSIGNED)
+						break;
+					else
+					{
+						valid++;
+					}
+					if (valid == CompList[i]->GetnumberofInputPins())
+					{
+						CompList[i]->Operate();
+						valid = 0;
+						c++;
+					}
 				}
 			}
 

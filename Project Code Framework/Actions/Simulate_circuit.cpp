@@ -69,14 +69,16 @@ void Simulate_Circuit::Execute()
 
 	switchptr = pManager->IsGateinsideArea(Cx, Cy);
 
-	if (switchptr && switchptr->getType()==ITM_SWITCH)
+	if (switchptr)
 	{
-		if (switchptr->GetOutPinStatus() == 1)
-			switchptr->setInputPinStatus(0, (STATUS)0);
-		else if (switchptr->GetOutPinStatus() == 0)
-			switchptr->setInputPinStatus(0, (STATUS)1);
+		if (switchptr->getType() == ITM_SWITCH)
+		{
+			if (switchptr->GetOutPinStatus() == 1)
+				switchptr->setInputPinStatus(0, (STATUS)0);
+			else if (switchptr->GetOutPinStatus() == 0)
+				switchptr->setInputPinStatus(0, (STATUS)1);
+		}
 	}
-
 	pManager->OperateALLgates();
 }
 
