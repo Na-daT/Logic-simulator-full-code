@@ -20,7 +20,7 @@ void AND2::Operate()
 
 	for (int i = 0; i < m_Inputs; i++)
 	{
-		x[i] = m_InputPins[i].getStatus();
+		x[i] = GetInputPinStatus(i);
 	}
 
 	int sum = 0;
@@ -29,7 +29,7 @@ void AND2::Operate()
 		sum = sum + x[i];
 	}
 
-	if (sum > m_Inputs - 1)
+	if (sum = m_Inputs)
 		m_OutputPin.setStatus((STATUS)1);
 	else
 		m_OutputPin.setStatus((STATUS)0);

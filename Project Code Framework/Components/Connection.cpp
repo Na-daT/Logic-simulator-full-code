@@ -3,6 +3,7 @@
 Connection::Connection(const GraphicsInfo &r_GfxInfo, OutputPin *pSrcPin,InputPin *pDstPin):Component(r_GfxInfo)	
 	
 {
+	type = ITM_CONNECTION;
 	SrcPin = pSrcPin;
 	DstPin = pDstPin;
 	m_GfxInfo.x1 = r_GfxInfo.x1;

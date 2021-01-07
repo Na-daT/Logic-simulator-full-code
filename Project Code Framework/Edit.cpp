@@ -44,7 +44,16 @@ void Edit::Execute()
 
 	Component* pComp = pManager->IsGateinsideArea(x, y);
 	if (pComp)
-		pComp->SetLabel(s);
+	{
+		if (pComp->getType() != ITM_CONNECTION)
+		{
+			pComp->SetLabel(s);
+		}
+		else
+		{
+
+		}
+	}
 
 }
 
