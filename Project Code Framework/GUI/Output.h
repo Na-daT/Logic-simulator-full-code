@@ -27,7 +27,7 @@ public:
 
 	///TODO: Make similar functions for drawing all other gates, switch, and LED, .. etc
 	
-	void DrawOR2(GraphicsInfo r_GfxInfo, bool selected = false) const;
+	void DrawOR2(GraphicsInfo r_GfxInfo, bool selected = false, string label=" ") const;
 	void DrawNAND2(GraphicsInfo r_GfxInfo, bool selected = false) const;
 	void DrawNOR2(GraphicsInfo r_GfxInfo, bool selected = false) const;
 	void DrawXOR2(GraphicsInfo r_GfxInfo, bool selected = false) const;
