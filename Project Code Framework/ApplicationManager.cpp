@@ -184,7 +184,12 @@ void ApplicationManager::PasteToCompList()
 	}
 }
  
-
+void ApplicationManager::Save(ofstream& SavedFile) {
+	for (int i = 0; i < CompCount; i++) 
+	{
+			CompList[i]->Save(SavedFile);
+	}
+}
 
 ////////////////////////////////////////////////////////////////////
 

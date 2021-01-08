@@ -1,5 +1,6 @@
 #include "AND2.h"
 
+
 AND2::AND2(const GraphicsInfo& r_GfxInfo, int r_FanOut) :Gate(2, r_FanOut)
 {
 	type = ITM_AND2;
@@ -87,13 +88,14 @@ InputPin* AND2::getDstPin(int n)
 	return &m_InputPins[n];
 }
 
-/*
-void AND2::Save()
-{
-	ofstream SavedFile;
-	SavedFile.open("file1.txt", ios::out);
 
-	SavedFile << (ComponentType)type << " ";
+void AND2::Save(ofstream& SavedFile)
+{
+	SavedFile.open("file1.txt", ios::out);
+	SavedFile << "AND2" << " " << /*ID*/ m_GfxInfo.x1 << " " << m_GfxInfo.y1 << endl;	
+}
+
+void AND2::Load()
+{
 
 }
-*/

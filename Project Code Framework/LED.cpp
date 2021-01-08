@@ -48,3 +48,14 @@ OutputPin* LED::getSrcPin()
 {
 	return NULL;
 }
+
+void LED::Save(ofstream& SavedFile)
+{
+	SavedFile.open("file1.txt", ios::out);
+	SavedFile << "LED" << " " /*ID*/ << m_GfxInfo.x1 << " " << m_GfxInfo.y1 << endl;
+}
+
+void LED::Load()
+{
+
+}

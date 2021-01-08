@@ -19,6 +19,7 @@ struct UI_Info	//User Interface Info.
 						StatusBarHeight = 50,	//Status Bar Height
 						ToolBarHeight = 30,		//Tool Bar Height (distance from top of window to bottom line of toolbar)
 						ToolItemWidth = 30;		//Width of each item in toolbar menu
+	static const int DistBetPins = 10; // distance between pins of the gate
 
 	color DrawColor;		//Drawing color
 	color SelectColor;		//Highlighting color

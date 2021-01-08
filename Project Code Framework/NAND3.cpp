@@ -62,3 +62,14 @@ InputPin* NAND3::getDstPin(int n)
 {
 	return &m_InputPins[n];
 }
+
+void NAND3::Save(ofstream& SavedFile)
+{
+	SavedFile.open("file1.txt", ios::out);
+	SavedFile << "NAND3" << " " /*ID*/ << m_GfxInfo.x1 << " " << m_GfxInfo.y1 << endl;
+}
+
+void NAND3::Load()
+{
+
+}

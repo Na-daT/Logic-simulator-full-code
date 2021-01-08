@@ -18,6 +18,8 @@ public:
 	virtual void setInputPinStatus(int n, STATUS s);	//set status of Inputpin # n, to be used by connection class.
 	virtual OutputPin* getSrcPin();
 	virtual InputPin* getDstPin(int n);
+	virtual void Save(ofstream& SavedFile);
+	virtual void Load();
 };
 
 #endif

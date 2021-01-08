@@ -62,3 +62,14 @@ InputPin* AND3::getDstPin(int n)
 {
 	return &m_InputPins[n];
 }
+
+void AND3::Save(ofstream& SavedFile)
+{
+	SavedFile.open("file1.txt", ios::out);
+	SavedFile << "AND3" << " " /*ID*/ << m_GfxInfo.x1 << " " << m_GfxInfo.y1 << endl;
+}
+
+void AND3::Load()
+{
+
+}

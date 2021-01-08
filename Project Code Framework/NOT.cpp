@@ -52,3 +52,14 @@ InputPin* NOT::getDstPin(int n)
 {
 	return &m_InputPins[n];
 }
+
+void NOT::Save(ofstream& SavedFile)
+{
+	SavedFile.open("file1.txt", ios::out);
+	SavedFile << "NOT" << " " /*ID*/ << m_GfxInfo.x1 << " " << m_GfxInfo.y1 << endl;
+}
+
+void NOT::Load()
+{
+
+}

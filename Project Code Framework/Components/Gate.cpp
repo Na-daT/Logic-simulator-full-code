@@ -23,12 +23,24 @@ Gate::Gate(int r_Inputs, int r_FanOut):m_OutputPin(r_FanOut)
 
 void Gate::GetOutputPinCoordinates(int& x, int& y)
 {
-
+	x = m_GfxInfo.x2;
+	y = m_GfxInfo.y1+(m_GfxInfo.y2 - m_GfxInfo.y1) / 2;
 }
 
-void Gate::GetInputPinCoordinates(int& x, int& y, int n)
+void Gate::GetInputPinCoordinates(int& x, int& y, int m_Inputs)
 {
-	
+	x = m_GfxInfo.x1;
+	switch (m_Inputs)
+	{
+	case 1:
+			y = m_GfxInfo.y1 + (m_GfxInfo.y2 - m_GfxInfo.y1) / 2;
+			break;
+	case 2:
+		y = m_GfxInfo.y1 + (m_GfxInfo.y2 - m_GfxInfo.y1) / 2 + (UI.DistBetPins / 2);
+		break;
+	case 3:
+		y = m_GfxInfo.y1 + (m_GfxInfo.y2 - m_GfxInfo.y1) / 2 + UI.DistBetPins;
+	}
 }
 
 int Gate::getInputIndex()

@@ -42,10 +42,10 @@ public:
 
 	virtual string GetLabel();
  
-	/*
-	virtual void Save()=0;
+
+	virtual void Save(ofstream& SavedFile)=0;
 	virtual void Load()=0;
-	*/
+
 
 
 

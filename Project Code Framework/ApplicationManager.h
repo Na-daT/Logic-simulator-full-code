@@ -56,7 +56,7 @@ public:
 	void DeleteSelectedinComplist();
 
 	void OperateALLgates();
-
+	void Save(ofstream& SavedFile);
 
 
 	//destructor

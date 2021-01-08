@@ -66,3 +66,14 @@ InputPin* XNOR2::getDstPin(int n)
 {
 	return &m_InputPins[n];
 }
+
+void XNOR2::Save(ofstream& SavedFile)
+{
+	SavedFile.open("file1.txt", ios::out);
+	SavedFile << "XNOR2" << " " /*ID*/ << m_GfxInfo.x1 << " " << m_GfxInfo.y1 << endl;
+}
+
+void XNOR2::Load()
+{
+
+}

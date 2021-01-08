@@ -52,3 +52,13 @@ void Connection::setInputPinStatus(int n, STATUS s)
 	SrcPin->setStatus(s);
 }
 
+void Connection::Save(ofstream& SavedFile)
+{
+	SavedFile.open("file1.txt", ios::out);
+	SavedFile << "CONNECTION" << " " /*ID*/ << " " << m_GfxInfo.x1 << " " << m_GfxInfo.y1 << " " << m_GfxInfo.x2 << " " << m_GfxInfo.y2 << endl;
+}
+
+void Connection::Load()
+{
+
+}
