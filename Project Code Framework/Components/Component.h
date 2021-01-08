@@ -16,6 +16,7 @@ protected:
 	int type;
 	bool isSelected = false;
 	int numberofinputpins;
+	int ID;
 
 	//int ID;
 public:
@@ -46,7 +47,8 @@ public:
 	virtual void Save(ofstream& SavedFile)=0;
 	virtual void Load()=0;
 
-
+	void SetID(int id);
+	int GetID();
 
 
 	

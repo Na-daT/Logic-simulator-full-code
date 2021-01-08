@@ -8,6 +8,8 @@
 */
 
 #include "Pin.h"
+#include "Component.h"
+
 class Connection;	//Forward class declartion
 
 
@@ -19,9 +21,12 @@ private:
 	Connection* m_Connections[MAX_CONNS];	
 	int m_FanOut;	//Maximum No. of connections connected to that output pin (depends on the component)
 	int m_Conn;		//Actual No. of connections connected to that output pin
+	Component* pComp;
 public:
 	OutputPin(int r_FanOut);	
 	bool ConnectTo(Connection *r_Conn);	//connect to a new connection
+	Component* gettheComponent();
+	void setComp(Component* comp);
 };
 
 #endif

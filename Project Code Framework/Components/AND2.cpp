@@ -91,8 +91,7 @@ InputPin* AND2::getDstPin(int n)
 
 void AND2::Save(ofstream& SavedFile)
 {
-	SavedFile.open("file1.txt", ios::out);
-	SavedFile << "AND2" << " " << /*ID*/ m_GfxInfo.x1 << " " << m_GfxInfo.y1 << endl;	
+	SavedFile << "AND2" << " " << GetID()<< " " << GetLabel()<< " " << m_GfxInfo.x1 << " " << m_GfxInfo.y1 << endl;	
 }
 
 void AND2::Load()

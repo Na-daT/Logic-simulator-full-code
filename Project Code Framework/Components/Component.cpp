@@ -45,6 +45,16 @@ string Component::GetLabel()
 }
 
 
+void Component::SetID(int id)
+{
+	ID = id;
+}
+
+int Component::GetID()
+{
+	return ID;
+}
+
 Component::Component()
 {}
 

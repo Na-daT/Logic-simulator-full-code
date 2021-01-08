@@ -1,5 +1,6 @@
 #include "OutputPin.h"
 #include "Connection.h"
+#include "Component.h"
 
 OutputPin::OutputPin(int r_FanOut)
 {
@@ -18,5 +19,15 @@ bool OutputPin::ConnectTo(Connection *r_Conn)
 		return true;
 	}
 	return false;	//can't connect to any more connections
+}
+
+Component* OutputPin::gettheComponent()
+{
+	return pComp;
+}
+
+void OutputPin::setComp(Component* comp)
+{
+	pComp = comp;
 }
 

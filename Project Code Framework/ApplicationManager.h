@@ -56,9 +56,9 @@ public:
 	void DeleteSelectedinComplist();
 
 	void OperateALLgates();
-	void Save(ofstream& SavedFile);
+	void SaveAction(ofstream& SavedFile);
 
-
+	int RetrunIndex();
 	//destructor
 	~ApplicationManager();
 };

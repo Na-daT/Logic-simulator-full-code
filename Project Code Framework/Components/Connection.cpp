@@ -24,6 +24,16 @@ void Connection::setDestPin(InputPin *pDstPin)
 InputPin* Connection::getDestPin()
 {	return DstPin;	}
 
+int Connection::GetDstPinIndex()
+{
+	return DstPinIndex;
+}
+
+void Connection::SetDstPinIndec(int indx)
+{
+	DstPinIndex = indx;
+}
+
 
 void Connection::Operate()
 {
@@ -54,8 +64,7 @@ void Connection::setInputPinStatus(int n, STATUS s)
 
 void Connection::Save(ofstream& SavedFile)
 {
-	SavedFile.open("file1.txt", ios::out);
-	SavedFile << "CONNECTION" << " " /*ID*/ << " " << m_GfxInfo.x1 << " " << m_GfxInfo.y1 << " " << m_GfxInfo.x2 << " " << m_GfxInfo.y2 << endl;
+	SavedFile << "CONNECTION" << " " << SrcPin->gettheComponent()->GetID() << " " << DstPin->getComponent()->GetID() << " " << GetDstPinIndex() << endl;
 }
 
 void Connection::Load()

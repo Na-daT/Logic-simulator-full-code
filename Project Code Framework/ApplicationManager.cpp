@@ -25,6 +25,7 @@
 #include "switch_toSIM_mode.h"
 #include "Edit.h"
 #include "Actions/Simulate_circuit.h"
+#include "Save.h"
 
 ApplicationManager::ApplicationManager()
 {
@@ -184,11 +185,25 @@ void ApplicationManager::PasteToCompList()
 	}
 }
  
-void ApplicationManager::Save(ofstream& SavedFile) {
+void ApplicationManager::SaveAction(ofstream& SavedFile) {
 	for (int i = 0; i < CompCount; i++) 
 	{
+		if(CompList[i]->getType()!=ITM_CONNECTION)
 			CompList[i]->Save(SavedFile);
 	}
+
+	SavedFile << "CONNECTIONS" << endl;
+
+	for (int i = 0; i < CompCount; i++)
+	{
+		if(CompList[i]->getType() == ITM_CONNECTION)
+			CompList[i]->Save(SavedFile);
+	}
+}
+
+int ApplicationManager::RetrunIndex()
+{
+	return CompCount;
 }
 
 ////////////////////////////////////////////////////////////////////
@@ -304,6 +319,10 @@ void ApplicationManager::ExecuteAction(ActionType ActType)
 
 		case SIMULATE_CIRCUIT:
 			pAct = new Simulate_Circuit(this);
+			break;
+
+		case SAVE:
+			pAct = new Save(this);
 			break;
 
 		case EXIT:

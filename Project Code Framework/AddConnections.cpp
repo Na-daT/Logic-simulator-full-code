@@ -51,14 +51,16 @@ void AddConnections::Execute()
 
 	dst->setConnected(true);
 	dst->setStatus(src->getStatus());
+	dst->setComponent(pManager->IsGateinsideArea(GfxInfo.x2, GfxInfo.y2));
 
 	Connection* pA = new Connection(GfxInfo,src,dst);
 	pA->setSourcePin(src);
 	pA->setDestPin(dst);
 
 	src->ConnectTo(pA);
+	src->setComp(pManager->IsGateinsideArea(GfxInfo.x1, GfxInfo.y1));
 
-
+	pA->SetDstPinIndec(IndexDstPin);
 	pManager->AddComponent(pA);
 }
 
