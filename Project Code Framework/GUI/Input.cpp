@@ -129,7 +129,7 @@ ActionType Input::GetUserAction() const
 			case ITM_SIM: return SIMULATE_CIRCUIT;
 			case ITM_TRUTH: return Create_TruthTable;
 			case ITM_VALIDATE: return VALIDATE_CIRCUIT;
-			case ITM_SWITCH_TO_DESIGN_MODE: return SIM_MODE;
+			case ITM_SWITCH_TO_DESIGN_MODE: return DSN_MODE;
 
 			default: return SIM_TOOL;
 			}

@@ -27,6 +27,7 @@
 #include "Actions/Simulate_circuit.h"
 #include "Save.h"
 #include "Actions/ChangeSwitchInput.h"
+#include "Design_mode.h"
 
 ApplicationManager::ApplicationManager()
 {
@@ -401,6 +402,10 @@ void ApplicationManager::ExecuteAction(ActionType ActType)
 
 		case Change_Switch:
 			pAct = new ChangeSwitchInput(this);
+			break;
+
+		case DSN_MODE:
+			pAct = new Design_mode(this);
 			break;
 
 		case EXIT:

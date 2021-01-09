@@ -140,7 +140,7 @@ void Output::CreateDesignToolBar() const
 	MenuItemImages[ITM_CONNECTION] = "Images\\Gates\\connection.jpg";
 
 
-	MenuItemImages[ITM_LABEL] = "Images\\Menu\\tag.jpg";
+	MenuItemImages[ITM_LABEL] = "Images\\Menu\\tag1.jpg";
 	MenuItemImages[ITM_SELECT] = "Images\\Menu\\Select.jpg";
 	MenuItemImages[ITM_UNSELECT] = "Images\\Gates\\AND_2.jpg";
 	MenuItemImages[ITM_DELETE] = "Images\\Menu\\Delete.jpg";
@@ -175,9 +175,9 @@ void Output::CreateSimulationToolBar() const
 	
 	string MenuItemImages[ITM_SIM_CNT];
 	MenuItemImages[ITM_SIM] = "images\\Menu\\SIMULATE.jpg";
-	MenuItemImages[ITM_TRUTH] = "images\\Gates\\AND_2.jpg";
+	MenuItemImages[ITM_TRUTH] = "images\\Menu\\TruthTable.jpg";
 	MenuItemImages[ITM_VALIDATE] = "images\\Gates\\AND_2.jpg";
-	MenuItemImages[ITM_SWITCH_TO_DESIGN_MODE] = "images\\Gates\\AND_2.jpg";	
+	MenuItemImages[ITM_SWITCH_TO_DESIGN_MODE] = "images\\Menu\\draw.jpg";	
 	
 	//DONE: Prepare image for each menu item and add it to the list
 

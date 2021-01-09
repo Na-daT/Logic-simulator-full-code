@@ -262,6 +262,7 @@
     <ClCompile Include="Actions\ChangeSwitchInput.cpp">
       <Filter>Actions</Filter>
     </ClCompile>
+    <ClCompile Include="Design_mode.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Defs.H" />
@@ -488,6 +489,9 @@
       <Filter>Actions</Filter>
     </ClInclude>
     <ClInclude Include="Actions\ChangeSwitchInput.h">
+      <Filter>Actions</Filter>
+    </ClInclude>
+    <ClInclude Include="Design_mode.h">
       <Filter>Actions</Filter>
     </ClInclude>
   </ItemGroup>
