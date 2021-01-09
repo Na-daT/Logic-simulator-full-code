@@ -34,12 +34,19 @@ void Label::Execute()
 	Output* pOut = pManager->GetOutput();
 	Input* pIn = pManager->GetInput();
 
-	string label = pIn->GetSrting(pOut);
 	Component* pComp;
 	pComp = pManager->IsGateinsideArea(x, y);
+	
+	
 	if (pComp)
 	{
+		string label = pIn->GetSrting(pOut);
 		pComp->SetLabel(label);
+	}
+	else
+	{
+		pOut->PrintMsg("no gate selected");
+		return;
 	}
 
 }

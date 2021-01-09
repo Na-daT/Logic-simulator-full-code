@@ -140,7 +140,7 @@ void Output::CreateDesignToolBar() const
 	MenuItemImages[ITM_CONNECTION] = "Images\\Gates\\connection.jpg";
 
 
-	MenuItemImages[ITM_LABEL] = "Images\\Menu\\tag1.jpg";
+	MenuItemImages[ITM_LABEL] = "Images\\Menu\\tag.jpg";
 	MenuItemImages[ITM_SELECT] = "Images\\Menu\\Select.jpg";
 	MenuItemImages[ITM_UNSELECT] = "Images\\Gates\\AND_2.jpg";
 	MenuItemImages[ITM_DELETE] = "Images\\Menu\\Delete.jpg";

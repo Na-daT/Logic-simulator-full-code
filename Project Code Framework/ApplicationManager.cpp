@@ -55,11 +55,13 @@ int ApplicationManager::GetCompCount()
 
 Component* ApplicationManager::IsGateinsideArea(int x, int y)
 {
+	Component* n = NULL;
 	for (int i = 0; i < CompCount; i++)
 	{
 		if (CompList[i]->IsClickInsideArea(x, y))
-			return CompList[i];
+			n =  CompList[i];
 	}
+	return n;
 }
 
 void ApplicationManager::DeleteSelectedinComplist()
