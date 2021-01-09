@@ -17,7 +17,7 @@ void Copy::ReadActionParameters()
 	Input* pIn = pManager->GetInput();
 
 	
-
+	pOut->PrintMsg("copied");
 
 	
 

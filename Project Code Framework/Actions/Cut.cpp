@@ -16,7 +16,7 @@ void Cut::ReadActionParameters()
 	Output* pOut = pManager->GetOutput();
 	Input* pIn = pManager->GetInput();
 
-
+	pOut->PrintMsg("copied to clipboard");
 
 
 
