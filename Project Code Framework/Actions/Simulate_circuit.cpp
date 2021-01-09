@@ -10,20 +10,26 @@ void Simulate_Circuit::ReadActionParameters()
 	Output* pOut = pManager->GetOutput();
 	Input* pIn = pManager->GetInput();
 
-	pOut->PrintMsg("Simulating circuit, click on any switch to change value");
+	pOut->PrintMsg("Simulating circuit");
 	pIn->GetPointClicked(Cx, Cy);//we need a point to see if user click on a switch
 }
 
 void Simulate_Circuit::Execute()
 {
-	
+	Output* pOut = pManager->GetOutput();
 	int ClickedItemOrder=1;
 	
 
 	while (!Stop_Sim)
 	{
-
-		pManager->OperateALLgates();
+		bool Valide = true;
+		Valide = pManager->OperateALLgates();
+		
+		if (!Valide)
+		{
+			return;
+		}
+		pManager->UpdateInterface();
 
 		ReadActionParameters();
 		if (Cy >= 0 && Cy < UI.ToolBarHeight)
@@ -40,11 +46,8 @@ void Simulate_Circuit::Execute()
 		}
 	}
 
-	if (Stop_Sim)
-	{
-		pManager->ExecuteAction(SIM_MODE);
-		return;
-	}
+	return;
+
 
 
 

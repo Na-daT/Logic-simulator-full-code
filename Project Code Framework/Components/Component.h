@@ -17,6 +17,7 @@ protected:
 	bool isSelected = false;
 	int numberofinputpins;
 	int ID;
+	bool operated = false;
 
 	//int ID;
 public:
@@ -50,6 +51,8 @@ public:
 	void SetID(int id);
 	int GetID();
 
+	virtual bool IsOperated();
+	virtual void SetOperated(bool op);
 
 	
 	Component();	

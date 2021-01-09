@@ -93,41 +93,53 @@ void ApplicationManager::DeleteSelectedinComplist()
 	}
 }
 
-void ApplicationManager::OperateALLgates()
+bool ApplicationManager::OperateALLgates()
 {
 	int c = 0;
 	int valid =0;
 	int NofConn = 0;
+	int NofSwitches = 0;
 	int x = 0;
 	while (c != CompCount)
 	{
-		
-			while (NofConn != getNConnections())
-			{
-				for (int i = 0; i < CompCount; i++) 
-				{
-					if (CompList[i]->getType() == ITM_CONNECTION)
-					{
-						CompList[i]->Operate();
-						c++;
-						NofConn++;
+		if (getNConnections() == 0 || getNSwitches() == 0)
+			return false;
 
-					}
+		while (NofConn != getNConnections())
+		{
+			for (int i = 0; i < CompCount; i++) 
+			{
+				if (CompList[i]->getType() == ITM_CONNECTION)
+				{
+					CompList[i]->Operate();
+					c++;
+					NofConn++;
+
 				}
 			}
-
+		}
+		if (NofSwitches != getNSwitches())
+		{
 			for (int i = 0; i < CompCount; i++)
 			{
 				if (CompList[i]->getType() == ITM_SWITCH)
 				{
 					c++;
+					NofSwitches++;
 				}
+			}
+		}
+		for (int i = 0; i < CompCount; i++)
+		{
 
-				for (int j = 0; j < CompList[i]->GetnumberofInputPins(); j++)
+			if (CompList[i]->getType() != ITM_SWITCH && CompList[i]->getType() != ITM_CONNECTION)
+			{
+				if (!CompList[i]->IsOperated())
 				{
-					if (CompList[i]->getType() != ITM_SWITCH && CompList[i]->getType() != ITM_CONNECTION)
+					for (int j = 0; j < CompList[i]->GetnumberofInputPins(); j++)
 					{
-						if (CompList[i]->GetInputPinStatus(j+1) == NOT_ASSIGNED)
+
+						if (CompList[i]->GetInputPinStatus(j + 1) == NOT_ASSIGNED)
 							break;
 						else
 						{
@@ -138,25 +150,39 @@ void ApplicationManager::OperateALLgates()
 							CompList[i]->Operate();
 							valid = 0;
 							c++;
+							CompList[i]->SetOperated(true);
 						}
-						while (x != getNConnections())
+						if (x != getNConnections())
 						{
-							for (int i = 0; i < CompCount; i++)
+							for (int n = 0; n < CompCount; n++)
 							{
-								if (CompList[i]->getType() == ITM_CONNECTION)
+								if (CompList[n]->getType() == ITM_CONNECTION)
 								{
-									CompList[i]->Operate();
+									CompList[n]->Operate();
 									x++;
 
 								}
 							}
 						}
 						x = 0;
+
 					}
 				}
-
 			}
+
+		}
 	}
+	c = 0;
+	valid = 0;
+	NofConn = 0;
+	NofSwitches = 0;
+	for (int i = 0; i < CompCount; i++)
+	{
+		if (CompList[i]->IsOperated())
+			CompList[i]->SetOperated(false);
+	}
+	return true;
+
 }
 
 Component** ApplicationManager::GetArrayofSwitches(int& s)
@@ -181,6 +207,17 @@ int ApplicationManager::getNConnections()
 	for (int i = 0; i < CompCount; i++)
 	{
 		if (CompList[i]->getType() == ITM_CONNECTION)
+			c++;
+	}
+	return c;
+}
+
+int ApplicationManager::getNSwitches()
+{
+	int c = 0;
+	for (int i = 0; i < CompCount; i++)
+	{
+		if (CompList[i]->getType() == ITM_SWITCH)
 			c++;
 	}
 	return c;

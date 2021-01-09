@@ -55,6 +55,16 @@ int Component::GetID()
 	return ID;
 }
 
+bool Component::IsOperated()
+{
+	return operated;
+}
+
+void Component::SetOperated(bool op)
+{
+	operated = op;
+}
+
 Component::Component()
 {}
 

@@ -17,7 +17,7 @@ void NOT::Operate()
 	if (x == 1)
 		m_OutputPin.setStatus((STATUS)0);
 	else
-		m_OutputPin.setStatus((STATUS)0);
+		m_OutputPin.setStatus((STATUS)1);
 
 }
 

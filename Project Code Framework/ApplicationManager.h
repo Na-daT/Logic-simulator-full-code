@@ -54,10 +54,10 @@ public:
 	Component** GetArrayofSwitches(int& s);
 
 	int getNConnections();
-
+	int getNSwitches();
 	void DeleteSelectedinComplist();
 
-	void OperateALLgates();
+	bool OperateALLgates();
 	void SaveAction(ofstream& SavedFile);
 
 	int RetrunIndex();
