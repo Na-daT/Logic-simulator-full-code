@@ -259,6 +259,9 @@
     <ClCompile Include="Save.cpp">
       <Filter>Actions</Filter>
     </ClCompile>
+    <ClCompile Include="Actions\ChangeSwitchInput.cpp">
+      <Filter>Actions</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Defs.H" />
@@ -482,6 +485,9 @@
       <Filter>Actions</Filter>
     </ClInclude>
     <ClInclude Include="Save.h">
+      <Filter>Actions</Filter>
+    </ClInclude>
+    <ClInclude Include="Actions\ChangeSwitchInput.h">
       <Filter>Actions</Filter>
     </ClInclude>
   </ItemGroup>

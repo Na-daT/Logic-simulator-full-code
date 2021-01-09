@@ -26,7 +26,7 @@ void AND3::Operate()
 		sum = sum + x[i];
 	}
 
-	if (sum > m_Inputs)
+	if (sum == m_Inputs)
 		m_OutputPin.setStatus((STATUS)1);
 	else
 		m_OutputPin.setStatus((STATUS)0);

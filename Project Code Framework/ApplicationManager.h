@@ -53,6 +53,8 @@ public:
 
 	Component** GetArrayofSwitches(int& s);
 
+	int getNConnections();
+
 	void DeleteSelectedinComplist();
 
 	void OperateALLgates();

@@ -26,6 +26,7 @@
 #include "Edit.h"
 #include "Actions/Simulate_circuit.h"
 #include "Save.h"
+#include "Actions/ChangeSwitchInput.h"
 
 ApplicationManager::ApplicationManager()
 {
@@ -96,40 +97,65 @@ void ApplicationManager::OperateALLgates()
 {
 	int c = 0;
 	int valid =0;
+	int NofConn = 0;
+	int x = 0;
 	while (c != CompCount)
 	{
-		for (int i = 0; i < CompCount; i++)
-		{
-			if (CompList[i]->getType() == ITM_SWITCH)
+		
+			while (NofConn != getNConnections())
 			{
-				c++;
-			}
-
-			if (CompList[i]->getType() == ITM_CONNECTION)
-			{
-				CompList[i]->Operate();
-				c++;
-			}
-			for (int j = 0; j < CompList[i]->GetnumberofInputPins(); j++)
-			{
-				if (CompList[i]->getType() != ITM_CONNECTION && CompList[i]->getType()!=ITM_SWITCH)
+				for (int i = 0; i < CompCount; i++) 
 				{
-					if (CompList[i]->GetInputPinStatus(j) == NOT_ASSIGNED)
-						break;
-					else
-					{
-						valid++;
-					}
-					if (valid == CompList[i]->GetnumberofInputPins())
+					if (CompList[i]->getType() == ITM_CONNECTION)
 					{
 						CompList[i]->Operate();
-						valid = 0;
 						c++;
+						NofConn++;
+
 					}
 				}
 			}
 
-		}
+			for (int i = 0; i < CompCount; i++)
+			{
+				if (CompList[i]->getType() == ITM_SWITCH)
+				{
+					c++;
+				}
+
+				for (int j = 0; j < CompList[i]->GetnumberofInputPins(); j++)
+				{
+					if (CompList[i]->getType() != ITM_SWITCH && CompList[i]->getType() != ITM_CONNECTION)
+					{
+						if (CompList[i]->GetInputPinStatus(j+1) == NOT_ASSIGNED)
+							break;
+						else
+						{
+							valid++;
+						}
+						if (valid == CompList[i]->GetnumberofInputPins())
+						{
+							CompList[i]->Operate();
+							valid = 0;
+							c++;
+						}
+						while (x != getNConnections())
+						{
+							for (int i = 0; i < CompCount; i++)
+							{
+								if (CompList[i]->getType() == ITM_CONNECTION)
+								{
+									CompList[i]->Operate();
+									x++;
+
+								}
+							}
+						}
+						x = 0;
+					}
+				}
+
+			}
 	}
 }
 
@@ -147,6 +173,17 @@ Component** ApplicationManager::GetArrayofSwitches(int& s)
 	}
 	s = c;
 	return x;
+}
+
+int ApplicationManager::getNConnections()
+{
+	int c = 0;
+	for (int i = 0; i < CompCount; i++)
+	{
+		if (CompList[i]->getType() == ITM_CONNECTION)
+			c++;
+	}
+	return c;
 }
 
 void ApplicationManager::AddToClipboard()
@@ -323,6 +360,10 @@ void ApplicationManager::ExecuteAction(ActionType ActType)
 
 		case SAVE:
 			pAct = new Save(this);
+			break;
+
+		case Change_Switch:
+			pAct = new ChangeSwitchInput(this);
 			break;
 
 		case EXIT:
