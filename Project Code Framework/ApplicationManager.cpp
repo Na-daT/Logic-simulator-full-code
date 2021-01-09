@@ -108,7 +108,7 @@ bool ApplicationManager::OperateALLgates()
 		if (getNConnections() == 0 || getNSwitches() == 0)
 			return false;
 
-		while (NofConn != getNConnections())
+		if (NofConn != getNConnections())
 		{
 			for (int i = 0; i < CompCount; i++) 
 			{
