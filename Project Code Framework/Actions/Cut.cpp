@@ -33,7 +33,7 @@ void Cut::Execute()
 	Output* pOut = pManager->GetOutput();
 	Input* pIn = pManager->GetInput();
 	pManager->AddToClipboard();
-	pManager->DeleteSelectedinComplist();
+	pManager->ExecuteAction(DEL);
 
 }
 

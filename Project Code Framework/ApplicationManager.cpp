@@ -253,13 +253,16 @@ void ApplicationManager::AddToClipboard()
 void ApplicationManager::PasteToCompList()
 {
 	int j = 0;
-	for (int i = CompCount; i < (CompCount + ClipboardCount); i++)
+	int k = CompCount;
+	CompCount += ClipboardCount;
+	for (int i = k; i <CompCount; i++)
 	{
 	
 		CompList[i] = Clipboard[j];
-		CompCount++;
+	
 		j++;
 	}
+
 }
  
 void ApplicationManager::SaveAction(ofstream& SavedFile) {
@@ -379,6 +382,7 @@ void ApplicationManager::ExecuteAction(ActionType ActType)
 			break;
 
 		case COPY:
+		
 			pAct = new Copy(this);
 			break;
 
