@@ -62,7 +62,7 @@ Component* ApplicationManager::getCopiedComp()
 		return NULL;
 }
 
-Connection** ApplicationManager::GetConnectionToGate(Component* mainComp, int&j)
+/*Connection** ApplicationManager::GetConnectionToGate(Component* mainComp, int&j)
 {
 	Connection** n = new Connection*[j];
 	Gate* mainGate = (Gate*)mainComp;
@@ -89,7 +89,7 @@ Connection** ApplicationManager::GetConnectionToGate(Component* mainComp, int&j)
 		}
 	}
 	return n;
-}
+}*/
 
 
 
@@ -125,29 +125,13 @@ void ApplicationManager::DeleteSelectedinComplist()
 
 		if (CompList[CompCount - 1]->getType() == ITM_CONNECTION)
 			DeleteConnection(CompList[CompCount - 1]);
-		/*else
-		{
-			int j = 0;
-			Connection** n;
-			Gate* pgate = (Gate*)CompList[CompCount - 1];
-			n = GetConnectionToGate(pgate, j);
-			if (n)
-			{
-				for (int i = 0; i < j; i++)
-				{
-					DeleteConnection(n[i]);
-					for (int w = 0; w < CompCount; w++)
-						if (CompList[w] == (Component*)n[i])
-							n[i]->setSelected(true);
-				}
-			}
-		}*/
-			delete CompList[CompCount - 1];
-			CompList[CompCount - 1] = NULL;
-			CompCount--;
 
-			if (CompCount == 0)
-				break;
+		delete CompList[CompCount - 1];
+		CompList[CompCount - 1] = NULL;
+		CompCount--;
+
+		if (CompCount == 0)
+			break;
 	}
 
 	if (CompCount != 0)
@@ -158,28 +142,6 @@ void ApplicationManager::DeleteSelectedinComplist()
 			{
 				if (CompList[i]->getType() == ITM_CONNECTION)
 					DeleteConnection(CompList[i]);
-				/*else
-				{
-					int j = 0;
-					Connection** n;
-					Gate* pgate = (Gate*)CompList[i];
-<<<<<<< Updated upstream
-					//CompList[i]
-				}
-=======
-					n = GetConnectionToGate(pgate, j);
-					if (n)
-					{
-						for (int f = 0; f < j; f++)
-						{
-							DeleteConnection(n[f]);
-							for (int w = 0; w < CompCount; w++)
-								if (CompList[w] == (Component*)n[f])
-									n[f]->setSelected(true);
-						}
-					}
-				}*/
->>>>>>> Stashed changes
 
 				delete CompList[i];
 				CompList[i] = NULL;
@@ -331,7 +293,8 @@ int ApplicationManager::getNSwitches()
 
 }*/
 
-void ApplicationManager::SaveAction(ofstream& SavedFile) {
+void ApplicationManager::SaveAction(ofstream& SavedFile) 
+{
 	for (int i = 0; i < CompCount; i++)
 	{
 		if (CompList[i]->getType() != ITM_CONNECTION)

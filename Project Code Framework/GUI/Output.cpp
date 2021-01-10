@@ -476,8 +476,7 @@ void Output::DrawConnection(GraphicsInfo r_GfxInfo, bool selected) const
 }
 
 
-<<<<<<< Updated upstream
-=======
+
 /*bool DrawInDrawingArea(int x, int y)
 {
 	if ()
@@ -486,7 +485,6 @@ void Output::DrawConnection(GraphicsInfo r_GfxInfo, bool selected) const
 		return false;
 	return true;
 }*/
->>>>>>> Stashed changes
 
 Output::~Output()
 {

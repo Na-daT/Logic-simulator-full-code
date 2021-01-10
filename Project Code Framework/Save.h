@@ -1,12 +1,14 @@
 #pragma once
 #include <fstream>
+#include <iostream>
+using namespace std;
 #include "Actions/Action.h"
 
 class Save : public Action
 {
 private:
-	//ofstream SavedFile;
-	//string fileName;
+	ofstream SavedFile;
+	string fileName;
 public:
 	//constructor
 	Save(ApplicationManager* pApp);

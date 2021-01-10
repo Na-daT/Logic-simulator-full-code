@@ -60,6 +60,8 @@ void AddConnections::Execute()
 	src->ConnectTo(pA);
 	src->setComp(pManager->IsGateinsideArea(GfxInfo.x1, GfxInfo.y1));
 
+	dst->SetConnection(pA);
+
 	pA->SetDstPinIndec(IndexDstPin);
 	pManager->AddComponent(pA);
 }

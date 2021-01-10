@@ -17,7 +17,7 @@ void Save::ReadActionParameters()
 	
 	pOut->PrintMsg("enter file name");
 
-	//fileName = pIn->GetSrting(pOut);
+	fileName = pIn->GetSrting(pOut);
 	//Print Action Message
 	pOut->PrintMsg("saving");
 
@@ -27,8 +27,8 @@ void Save::ReadActionParameters()
 void Save::Execute()
 {
 	ReadActionParameters();
-	//SavedFile.open(fileName, ios::out);
-	//pManager->SaveAction(SavedFile);
+	SavedFile.open(fileName, ios::out);
+	pManager->SaveAction(SavedFile);
 
 }
 

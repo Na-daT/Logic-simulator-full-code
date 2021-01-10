@@ -52,7 +52,7 @@ public:
 	void setCopiedComp(Component* pcomp);
 	Component* getCopiedComp();
 
-	Connection** GetConnectionToGate(Component* mainGate, int& j);
+	//Connection** GetConnectionToGate(Component* mainGate, int& j);
 
 	
 

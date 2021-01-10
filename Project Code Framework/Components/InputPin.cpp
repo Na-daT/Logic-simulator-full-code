@@ -24,3 +24,13 @@ bool InputPin::getConnected()
 {
 	return Connected;
 }
+
+void InputPin::SetConnection(Connection* conn)
+{
+	pConn = conn;
+}
+
+Connection* InputPin::GetConnection()
+{
+	return pConn;
+}
