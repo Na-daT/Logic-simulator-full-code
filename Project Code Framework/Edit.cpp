@@ -1,10 +1,13 @@
 #include "../Project Code Framework/ApplicationManager.h" 
 #include "Edit.h"
 #include "Actions/Label.h"
+#include "Components/Connection.h"
+#include "Components/Gate.h"
 
 
 Edit::Edit(ApplicationManager* pApp) :Action(pApp)
 {
+
 }
 
 Edit::~Edit(void)
@@ -41,7 +44,7 @@ void Edit::Execute()
 	pOut->PrintMsg("Enter New Label");
 
 	string s = pIn->GetSrting(pOut);
-
+	int n;
 	Component* pComp = pManager->IsGateinsideArea(x, y);
 	if (pComp)
 	{
@@ -51,7 +54,17 @@ void Edit::Execute()
 		}
 		else
 		{
-
+			pIn->GetPointClicked(x, y);
+			Component* sourcecomp = pManager->IsGateinsideArea(x, y);
+			Gate* pGate1 = (Gate*)sourcecomp;
+			pIn->GetPointClicked(x, y);
+			Component* destcomp = pManager->IsGateinsideArea(x, y);
+			Gate* pgate2 = (Gate*)destcomp;
+			Connection* pCon=(Connection*)pComp;
+			pCon->setSourcePin(pGate1->getSrcPin());
+			pCon->setDestPin(pgate2->getDstPin(n));
+			
+			
 		}
 	}
 
