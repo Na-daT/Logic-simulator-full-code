@@ -66,6 +66,8 @@ public:
 
 	void DeleteSelectedinComplist();
 
+	void CompConnectionArray(Component * c);
+
 	void DeleteConnection(Component* comp);
 
 	void SaveAction(ofstream& SavedFile);

@@ -114,7 +114,7 @@ void ApplicationManager::DeleteSelectedinComplist()
 				else
 				{
 					Gate* pgate = (Gate*)CompList[i];
-					//pgate->getSrcPin()->;
+					//CompList[i]
 				}
 
 				delete CompList[i];

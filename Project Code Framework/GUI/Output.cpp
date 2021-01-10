@@ -476,14 +476,6 @@ void Output::DrawConnection(GraphicsInfo r_GfxInfo, bool selected) const
 }
 
 
-bool DrawInDrawingArea(int x, int y)
-{
-	if ()
-		return false;
-	if ()
-		return false;
-	return true;
-}
 
 Output::~Output()
 {

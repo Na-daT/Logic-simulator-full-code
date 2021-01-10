@@ -18,6 +18,18 @@ bool Component::IsClickInsideArea(int x, int y)
 		return false;
 }
 
+bool Component::DrawInDrawingArea(int y) 
+{
+	y = m_GfxInfo.y1;
+	if (y <= UI.ToolBarHeight)
+	{
+		return false;
+	}
+	else if (y <= UI.height && y >= (UI.height - UI.StatusBarHeight))
+		return false;
+	else 
+		return true;
+}
 
 void Component::setSelected(bool IsSel)
 {

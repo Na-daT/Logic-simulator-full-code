@@ -52,6 +52,7 @@ public:
 	void SetID(int id);
 	int GetID();
 
+	virtual bool DrawInDrawingArea(int y);
 	virtual bool IsOperated();
 	virtual void SetOperated(bool op);
 
