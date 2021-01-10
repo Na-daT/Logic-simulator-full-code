@@ -30,12 +30,14 @@ void Load::Execute()
 {
 	ReadActionParameters();
 	string type;
+	DsgnMenuItem t;
 	int n = 20;
 	while (!File.eof())
 	{
 		//File.getline(type, n, ' ');
+		//pManager->LoadAction(ActionType);
 	}
-	//pManager->LoadAction(ActionType);
+	
 }
 
 void Load::Undo()
