@@ -22,11 +22,6 @@ void Edit::ReadActionParameters()
 	Output* pOut = pManager->GetOutput();
 	Input* pIn = pManager->GetInput();  
 
-	pOut->PrintMsg("click on gate to select or deselct");
-
-	//Wait for User Input
-	pIn->GetPointClicked(x, y);
-
 	//Print Action Message
 	pOut->PrintMsg("Edit Label or Connections");
 
@@ -37,7 +32,7 @@ void Edit::ReadActionParameters()
 
 void Edit::Execute()
 {
-	ReadActionParameters();
+
 	//Get a Pointer to the Input / Output Interfaces
 	Output* pOut = pManager->GetOutput();
 	Input* pIn = pManager->GetInput();
@@ -47,6 +42,8 @@ void Edit::Execute()
 	string s2;
 	Component* sourcecomp;
 	Component* destcomp;
+
+	pIn->GetPointClicked(x, y);
 	Component* pComp = pManager->IsGateinsideArea(x, y);
 	Gate* pGate1;
 	Gate* pGate2;
@@ -81,8 +78,7 @@ void Edit::Execute()
 		}
 
 	}
-	else if
-		(s == "g")
+	else if(s == "g")
 	{
 		pOut->PrintMsg("edit label");
 		string s3 = pIn->GetSrting(pOut);
