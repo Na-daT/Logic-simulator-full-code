@@ -62,6 +62,37 @@ Component* ApplicationManager::getCopiedComp()
 		return NULL;
 }
 
+Connection** ApplicationManager::GetConnectionToGate(Component* mainComp, int&j)
+{
+	Connection** n = new Connection*[j];
+	Gate* mainGate = (Gate*)mainComp;
+	for (int i = 0; i < CompCount; i++)
+	{
+		if (CompList[i]->getType() == ITM_CONNECTION)
+		{
+			Connection* pConn = (Connection *) CompList[i];
+			if (pConn->getSourcePin() == mainGate->getSrcPin())
+			{
+				n[j] = pConn;
+				j++;
+			}
+			else
+			{
+				for(int x = 0; x< mainGate->GetnumberofInputPins(); x++)
+					if (pConn->getDestPin() == mainGate->getDstPin(x))
+					{
+						n[j] = pConn;
+						j++;
+					}
+			}
+
+		}
+	}
+	return n;
+}
+
+
+
 
 int ApplicationManager::GetCompCount()
 {
@@ -94,7 +125,23 @@ void ApplicationManager::DeleteSelectedinComplist()
 
 		if (CompList[CompCount - 1]->getType() == ITM_CONNECTION)
 			DeleteConnection(CompList[CompCount - 1]);
-
+		/*else
+		{
+			int j = 0;
+			Connection** n;
+			Gate* pgate = (Gate*)CompList[CompCount - 1];
+			n = GetConnectionToGate(pgate, j);
+			if (n)
+			{
+				for (int i = 0; i < j; i++)
+				{
+					DeleteConnection(n[i]);
+					for (int w = 0; w < CompCount; w++)
+						if (CompList[w] == (Component*)n[i])
+							n[i]->setSelected(true);
+				}
+			}
+		}*/
 			delete CompList[CompCount - 1];
 			CompList[CompCount - 1] = NULL;
 			CompCount--;
@@ -111,11 +158,28 @@ void ApplicationManager::DeleteSelectedinComplist()
 			{
 				if (CompList[i]->getType() == ITM_CONNECTION)
 					DeleteConnection(CompList[i]);
-				else
+				/*else
 				{
+					int j = 0;
+					Connection** n;
 					Gate* pgate = (Gate*)CompList[i];
+<<<<<<< Updated upstream
 					//CompList[i]
 				}
+=======
+					n = GetConnectionToGate(pgate, j);
+					if (n)
+					{
+						for (int f = 0; f < j; f++)
+						{
+							DeleteConnection(n[f]);
+							for (int w = 0; w < CompCount; w++)
+								if (CompList[w] == (Component*)n[f])
+									n[f]->setSelected(true);
+						}
+					}
+				}*/
+>>>>>>> Stashed changes
 
 				delete CompList[i];
 				CompList[i] = NULL;

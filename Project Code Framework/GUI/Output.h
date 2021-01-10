@@ -50,7 +50,7 @@ public:
 
 	//Nada
 	void PrintInDrawingArea(string msg, int X, int Y) const;  // print message in drawing area
-	bool DrawInDrawingArea(int x, int y);
+	//bool DrawInDrawingArea(int x, int y);
 
 	~Output();
 };

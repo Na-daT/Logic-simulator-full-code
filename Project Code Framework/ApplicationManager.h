@@ -6,6 +6,7 @@
 #include "GUI\Input.h"
 #include "Actions\Action.h"
 #include "Components\Component.h"
+#include "Components/Connection.h"
 
 
 //Main class that manages everything in the application.
@@ -51,6 +52,7 @@ public:
 	void setCopiedComp(Component* pcomp);
 	Component* getCopiedComp();
 
+	Connection** GetConnectionToGate(Component* mainGate, int& j);
 
 	
 
