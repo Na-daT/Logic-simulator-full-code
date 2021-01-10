@@ -50,7 +50,24 @@ bool Component::IsClickOnConnection(int x, int y)
 		return true;
 	else if (m_GfxInfo.y1 == m_GfxInfo.y2 && y == m_GfxInfo.y1)
 		return true;
-	//else if(s)
+	else 
+	{
+		if (m_GfxInfo.x1 > m_GfxInfo.x2)
+		{
+			if (m_GfxInfo.y1 > m_GfxInfo.y2 && x >= m_GfxInfo.x2 && x<= m_GfxInfo.x1 && y>=m_GfxInfo.y2 && y <= m_GfxInfo.y1)
+				return true;
+			else if (m_GfxInfo.y1 < m_GfxInfo.y2 && x >= m_GfxInfo.x2 && x <= m_GfxInfo.x1 && y<=m_GfxInfo.y2 && y >= m_GfxInfo.y1)
+				return true;
+		}
+		else if (m_GfxInfo.x1 < m_GfxInfo.x2)
+		{
+			if (m_GfxInfo.y1 > m_GfxInfo.y2 && x <= m_GfxInfo.x2 && x>= m_GfxInfo.x1 && y>=m_GfxInfo.y2 && y <= m_GfxInfo.y1)
+				return true;
+			else if (m_GfxInfo.y1 < m_GfxInfo.y2 && x <= m_GfxInfo.x2 && x >= m_GfxInfo.x1 && y<=m_GfxInfo.y2 && y >= m_GfxInfo.y1)
+				return true;
+		}
+	}
+	return false;
 
 }
 

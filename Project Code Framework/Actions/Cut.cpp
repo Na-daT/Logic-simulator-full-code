@@ -17,13 +17,6 @@ void Cut::ReadActionParameters()
 	Input* pIn = pManager->GetInput();
 
 	pOut->PrintMsg("copied to clipboard");
-
-
-
-
-	//Clear Status Bar
-	pOut->ClearStatusBar();
-
 }
 
 void Cut::Execute()

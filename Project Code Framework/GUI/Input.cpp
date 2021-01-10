@@ -28,6 +28,7 @@ string Input::GetSrting(Output* pOut)
 	char button;//save key pressed in
 	string input;//string input by user
 
+	pWind->WaitKeyPress(button);
 	do {
 		pOut->PrintMsg("enter text: " + input);
 		pWind->WaitKeyPress(button);

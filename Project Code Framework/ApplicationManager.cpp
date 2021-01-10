@@ -32,6 +32,7 @@
 ApplicationManager::ApplicationManager()
 {
 	CompCount = 0;
+	ClipboardCount = 0;
 
 	for (int i = 0; i < MaxCompCount; i++)
 		CompList[i] = NULL;
@@ -63,8 +64,11 @@ Component* ApplicationManager::IsGateinsideArea(int x, int y)
 			if (CompList[i]->IsClickInsideArea(x, y))
 				n = CompList[i];
 		}
-	/*	else
-			CompList[i]->IsClickInsideArea()*/
+		else
+		{
+			if (CompList[i]->IsClickOnConnection(x, y))
+				n = CompList[i];
+		}
 	}
 	return n;
 }
@@ -196,23 +200,18 @@ void ApplicationManager::AddToClipboard()
 	{
 		for (int i = 0; i < ClipboardCount; i++)
 		{
-			delete Clipboard[i];
 			Clipboard[i] = NULL;
 		}
 		ClipboardCount = 0;
 	}
-	int c = 0;
 
 	for (int i = 0; i < CompCount; i++)
 	{
-		if (CompList[i]->GetSelected() == true)
+		if (CompList[i]->GetSelected() == true && CompList[i]->getType()!=ITM_CONNECTION)
 		{
-			Clipboard[c] = CompList[i];
-			c++;
+			Clipboard[ClipboardCount++] = CompList[i];
 		}
 	}
-	ClipboardCount = c;
-
 }
 void ApplicationManager::PasteToCompList()
 {
@@ -249,7 +248,7 @@ void ApplicationManager::SaveAction(ofstream& SavedFile) {
 void ApplicationManager::LoadAction(ifstream& File)
 {
 	ComponentType CompType;
-	Action* pAct;
+	Action* pAct = NULL;
 	switch (CompType)
 	{
 	case AND_2_gate:
@@ -428,6 +427,9 @@ void ApplicationManager::ExecuteAction(ActionType ActType)
 	case COPY:
 
 		pAct = new Copy(this);
+		break;
+	case CUT:
+		pAct = new Cut(this);
 		break;
 
 	case PASTE:

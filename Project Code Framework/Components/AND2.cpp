@@ -96,5 +96,5 @@ void AND2::Save(ofstream& SavedFile)
 
 void AND2::Load(ifstream& File)
 {
-	File >> "AND2" >> " " >> m_GfxInfo.x1 >> " " >> m_GfxInfo.y1 >> GetLabel();
+	//File >> "AND2" >> " " >> m_GfxInfo.x1 >> " " >> m_GfxInfo.y1 >> GetLabel();
 }

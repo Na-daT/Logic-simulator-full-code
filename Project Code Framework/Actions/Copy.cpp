@@ -19,20 +19,15 @@ void Copy::ReadActionParameters()
 	
 	pOut->PrintMsg("copied");
 
-	
-
-	//Clear Status Bar
-	pOut->ClearStatusBar();
-
 }
 
 void Copy::Execute()
 {
 	ReadActionParameters();
-	//Get a Pointer to the Input / Output Interfaces
 	Output* pOut = pManager->GetOutput();
-	Input* pIn = pManager->GetInput();
+	//Get a Pointer to the Input / Output Interfaces
 	pManager->AddToClipboard();
+	pOut->ClearStatusBar();
 
 }
 

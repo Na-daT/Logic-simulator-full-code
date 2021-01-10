@@ -4,7 +4,8 @@
 class Edit : public Action
 {
 	int x, y;
-	string s;
+
+	Component* pComp;
 public:
 	Edit(ApplicationManager* pApp);
 	virtual ~Edit(void);
