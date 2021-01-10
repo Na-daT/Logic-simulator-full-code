@@ -43,6 +43,7 @@ void AddXNORgate3::Execute()
 	GInfo.y2 = Cy + Wdth / 2;
 	XNOR3* pA = new XNOR3(GInfo, XNOR2_FANOUT);
 	pManager->AddComponent(pA);
+	pA->SetID(pManager->RetrunIndex());
 }
 
 void AddXNORgate3::Undo()

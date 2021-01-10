@@ -79,8 +79,8 @@ InputPin* NAND2::getDstPin(int n)
 
 void NAND2::Save(ofstream& SavedFile)
 {
-	SavedFile.open("file1.txt", ios::out);
-	SavedFile << "NAND2" << " " /*ID*/ << m_GfxInfo.x1 << " " << m_GfxInfo.y1 << endl;
+
+	SavedFile << "NAND2" << " " << GetID() << " " << GetLabel() << " " << m_GfxInfo.x1 << " " << m_GfxInfo.y1 << endl;
 }
 
 void NAND2::Load(ifstream& File)

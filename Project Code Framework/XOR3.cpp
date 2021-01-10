@@ -72,7 +72,7 @@ InputPin* XOR3::getDstPin(int n)
 void XOR3::Save(ofstream& SavedFile)
 {
 	SavedFile.open("file1.txt", ios::out);
-	SavedFile << "XOR3" << " " /*ID*/ << m_GfxInfo.x1 << " " << m_GfxInfo.y1 << endl;
+	SavedFile << "XOR3" << " " << GetID() << m_GfxInfo.x1 << " " << m_GfxInfo.y1 << endl;
 }
 
 void XOR3::Load(ifstream& File)

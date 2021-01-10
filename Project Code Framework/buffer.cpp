@@ -60,8 +60,8 @@ InputPin* buffer::getDstPin(int n)
 
 void buffer::Save(ofstream& SavedFile)
 {
-	SavedFile.open("file1.txt", ios::out);
-	SavedFile << "BUFFER" << " " /* ID*/ << m_GfxInfo.x1 << " " << m_GfxInfo.y1 << endl;
+
+	SavedFile << "buffer" << " " << GetID() << " " << GetLabel() << " " << m_GfxInfo.x1 << " " << m_GfxInfo.y1 << endl;
 }
 
 void buffer::Load(ifstream& File)

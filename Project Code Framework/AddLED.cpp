@@ -43,6 +43,7 @@ void AddLED::Execute()
 	GInfo.y2 = Cy + Wdth / 2;
 	LED* pA = new LED(GInfo);
 	pManager->AddComponent(pA);
+	pA->SetID(pManager->RetrunIndex());
 }
 
 void AddLED::Undo()

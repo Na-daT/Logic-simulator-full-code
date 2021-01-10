@@ -43,6 +43,7 @@ void AddORgate3::Execute()
 	GInfo.y2 = Cy + Wdth / 2;
 	OR3* pA = new OR3(GInfo, OR3_FANOUT);
 	pManager->AddComponent(pA);
+	pA->SetID(pManager->RetrunIndex());
 }
 
 void AddORgate3::Undo()

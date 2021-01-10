@@ -1,11 +1,13 @@
 #pragma once
 #include <fstream>
+#include <iostream>
+using namespace std;
 #include "Actions/Action.h"
 
 class Load : public Action
 {
 private:
-	//ifstream File;
+	ifstream File;
 
 public:
 	//constructor

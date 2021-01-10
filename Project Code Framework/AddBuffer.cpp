@@ -43,6 +43,8 @@ void AddBuffer::Execute()
 	GInfo.y2 = Cy + Wdth / 2;
 	buffer* pA = new buffer(GInfo, BUFFER_FANOUT);
 	pManager->AddComponent(pA);
+
+	pA->SetID(pManager->RetrunIndex());
 }
 
 void AddBuffer::Undo()

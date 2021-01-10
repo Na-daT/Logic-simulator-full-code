@@ -66,8 +66,8 @@ InputPin* NOR3::getDstPin(int n)
 
 void NOR3::Save(ofstream& SavedFile)
 {
-	SavedFile.open("file1.txt", ios::out);
-	SavedFile << "NOR3" << " " /*ID*/ << m_GfxInfo.x1 << " " << m_GfxInfo.y1 << endl;
+
+	SavedFile << "NOR3" << " " << GetID() << " " << GetLabel() << " " << m_GfxInfo.x1 << " " << m_GfxInfo.y1 << endl;
 }
 
 void NOR3::Load(ifstream& File)

@@ -15,14 +15,18 @@ void Load::ReadActionParameters()
 	Output* pOut = pManager->GetOutput();
 	Input* pIn = pManager->GetInput();
 
-	//File.open("LoadedFile.txt");
+	string s;
+	s = pIn->GetSrting(pOut);
+
+	File.open(s);
 	pOut->PrintMsg("File is loaded");
 }
 
 void Load::Execute()
 {
 	ReadActionParameters();
-	pManager->UpdateInterface();
+
+
 	//pManager->LoadAction(File);
 }
 

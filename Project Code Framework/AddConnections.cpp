@@ -64,6 +64,8 @@ void AddConnections::Execute()
 
 	pA->SetDstPinIndec(IndexDstPin);
 	pManager->AddComponent(pA);
+
+
 }
 
 

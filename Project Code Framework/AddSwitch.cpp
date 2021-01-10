@@ -43,6 +43,7 @@ void AddSwitch::Execute()
 	GInfo.y2 = Cy + Wdth / 2;
 	SWITCH* pA = new SWITCH(GInfo, SWITCH_FANOUT);
 	pManager->AddComponent(pA);
+	pA->SetID(pManager->RetrunIndex());
 }
 
 void AddSwitch::Undo()

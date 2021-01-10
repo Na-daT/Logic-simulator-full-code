@@ -43,6 +43,7 @@ void AddNORgate3::Execute()
 	GInfo.y2 = Cy + Wdth / 2;
 	NOR3* pA = new NOR3(GInfo, NOR3_FANOUT);
 	pManager->AddComponent(pA);
+	pA->SetID(pManager->RetrunIndex());
 }
 
 void AddNORgate3::Undo()

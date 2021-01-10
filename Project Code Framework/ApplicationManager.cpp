@@ -293,101 +293,102 @@ int ApplicationManager::getNSwitches()
 
 }*/
 
-void ApplicationManager::SaveAction(ofstream& SavedFile) 
+void ApplicationManager::SaveAction(ofstream& SavedFile)
 {
 	for (int i = 0; i < CompCount; i++)
 	{
+		if (CompList[i]->getType() != ITM_CONNECTION)
 			CompList[i]->Save(SavedFile);
 	}
 
 	SavedFile << "CONNECTIONS" << endl;
 
-	/*for (int i = 0; i < CompCount; i++)
+	for (int i = 0; i < CompCount; i++)
 	{
 		if (CompList[i]->getType() == ITM_CONNECTION)
 			CompList[i]->Save(SavedFile);
-	}*/
+
+	}
 }
 
-
-void ApplicationManager::LoadAction(ifstream& File)
+/*void ApplicationManager::LoadAction(ActionType)
 {
-	ComponentType CompType;
 	Action* pAct = NULL;
-	switch (CompType)
+	switch (ActType)
 	{
-	case AND_2_gate:
+	case ADD_AND_GATE_2:
 		pAct = new AddANDgate2(this);
 		break;
 
-	case AND_3_gate:
+	case ADD_AND_GATE_3:
 		pAct = new AddANDgate3(this);
 		break;
 
-	case OR_2_gate:
+	case ADD_OR_GATE_2:
 		pAct = new AddORgate2(this);
 		break;
 
-	case OR_3_gate:
+	case ADD_OR_GATE_3:
 		pAct = new AddORgate3(this);
 		break;
 
-	case NAND_2_gate:
+	case ADD_NAND_GATE_2:
 		pAct = new AddNANDgate2(this);
 		break;
 
-	case NAND_3_gate:
+	case ADD_NAND_GATE_3:
 		pAct = new AddNANDgate3(this);
 		break;
 
-	case NOR_2_gate:
+	case ADD_NOR_GATE_2:
 		pAct = new AddNORgate2(this);
 		break;
 
-	case NOR_3_gate:
+	case ADD_NOR_GATE_3:
 		pAct = new AddNORgate3(this);
 		break;
 
-	case XOR_2_gate:
+	case ADD_XOR_GATE_2:
 		pAct = new AddXORgate2(this);
 		break;
 
-	case XOR_3_gate:
+	case ADD_XOR_GATE_3:
 		pAct = new AddXORgate3(this);
 		break;
 
-	case XNOR_2_gate:
+	case ADD_XNOR_GATE_2:
 		pAct = new AddXNORgate2(this);
 		break;
 
-	case XNOR_3_gate:
+	case ADD_XNOR_GATE_3:
 		pAct = new AddXNORgate3(this);
 		break;
 
-	case Led_gate:
+	case ADD_LED:
 		pAct = new AddLED(this);
 		break;
 
-	case BUFFER_gate:
+	case ADD_Buff:
 		pAct = new AddBuffer(this);
 		break;
 
-	case Switch_gate:
+	case ADD_Switch:
 		pAct = new AddSwitch(this);
 		break;
 
-	case NOT_gate:
+	case ADD_INV:
 		pAct = new AddNOTgate(this);
 		break;
 
-	case Connection_:
+	case ADD_CONNECTION:
+		//TODO: Create AddConection Action here
 		pAct = new AddConnections(this);
 		break;
 	}
-	pAct->Execute();
+	pAct->Load();
 	delete pAct;
 	pAct = NULL;
-}
+}*/
 
 int ApplicationManager::RetrunIndex()
 {
