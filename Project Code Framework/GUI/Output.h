@@ -44,7 +44,7 @@ public:
 	void DrawBuffer(GraphicsInfo r_GfxInfo, bool selected = false, string label = " ") const;
 
 	// Draws Connection
-	void DrawConnection(GraphicsInfo r_GfxInfo, bool selected = false) const;
+	void DrawConnection(GraphicsInfo r_GfxInfo, bool selected = false , string label = " ") const;
 
 	void PrintMsg(string msg) const;	//Print a message on Status bar
 
