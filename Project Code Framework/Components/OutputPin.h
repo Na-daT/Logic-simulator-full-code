@@ -11,7 +11,7 @@
 #include "Component.h"
 
 class Connection;	//Forward class declartion
-
+class ApplicationManager;
 
 class OutputPin: public Pin	//inherited from class Pin
 {
@@ -22,10 +22,12 @@ private:
 	int m_FanOut;	//Maximum No. of connections connected to that output pin (depends on the component)
 	int m_Conn;		//Actual No. of connections connected to that output pin
 	Component* pComp;
+	
 public:
 	OutputPin(int r_FanOut);	
 	bool ConnectTo(Connection *r_Conn);	//connect to a new connection
 	Component* gettheComponent();
+	void DelConn();
 	void setComp(Component* comp);
 	void Disconnect(Connection* C_Conn);
 };
