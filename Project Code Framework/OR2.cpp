@@ -34,7 +34,7 @@ void OR2::Operate()
 
 void OR2::Draw(Output* pOut)
 {
-	pOut->DrawOR2(m_GfxInfo, isSelected);
+	pOut->DrawOR2(m_GfxInfo, isSelected, GetLabel());
 
 }
 

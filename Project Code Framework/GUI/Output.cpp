@@ -70,7 +70,6 @@ void Output::PrintInDrawingArea(string msg, int X, int Y) const
 	if (msg.empty())
 		return;
 
-	ClearDrawingArea();
 	pWind->SetFont(20, BOLD | ITALICIZED, BY_NAME, "Arial");
 	pWind->SetPen(UI.MsgColor);
 	pWind->DrawString(X, Y, msg);
@@ -176,9 +175,9 @@ void Output::CreateSimulationToolBar() const
 	
 	string MenuItemImages[ITM_SIM_CNT];
 	MenuItemImages[ITM_SIM] = "images\\Menu\\SIMULATE.jpg";
-	MenuItemImages[ITM_TRUTH] = "images\\Gates\\AND_2.jpg";
+	MenuItemImages[ITM_TRUTH] = "images\\Menu\\TruthTable.jpg";
 	MenuItemImages[ITM_VALIDATE] = "images\\Gates\\AND_2.jpg";
-	MenuItemImages[ITM_SWITCH_TO_DESIGN_MODE] = "images\\Gates\\AND_2.jpg";	
+	MenuItemImages[ITM_SWITCH_TO_DESIGN_MODE] = "images\\Menu\\draw.jpg";	
 	
 	//DONE: Prepare image for each menu item and add it to the list
 
@@ -210,11 +209,11 @@ void Output::DrawAND2(GraphicsInfo r_GfxInfo, bool selected, string label) const
 	}
 	else
 		GateImage = "images\\Gates\\AND_2.jpg";
-	int x12 = r_GfxInfo.x1 - 100;
-	int y12 = r_GfxInfo.y1 - 100;
+	
+	int y12 = r_GfxInfo.y1 - 50;
 	//Draw AND2 Gate at Gfx_Info (1st corner)
 	//Set the Image Width & Height by AND2 Image Parameter in UI_Info
-	PrintInDrawingArea(label, x12, y12);
+	PrintInDrawingArea(label, r_GfxInfo.x1, y12);
 	pWind->DrawImage(GateImage, r_GfxInfo.x1, r_GfxInfo.y1, UI.AND2_Width, UI.AND2_Height);
 
 }
@@ -222,7 +221,7 @@ void Output::DrawAND2(GraphicsInfo r_GfxInfo, bool selected, string label) const
 //TODO: Add similar functions to draw all components
 
 
-void Output::DrawOR2(GraphicsInfo r_GfxInfo, bool selected) const
+void Output::DrawOR2(GraphicsInfo r_GfxInfo, bool selected, string label) const
 {
 	string GateImage;
 	if (selected)
@@ -230,7 +229,10 @@ void Output::DrawOR2(GraphicsInfo r_GfxInfo, bool selected) const
 	else
 		GateImage = "images\\Gates\\OR_2.jpg"; //IMAGE TO BE ADDED
 
-
+	int y12 = r_GfxInfo.y1 - 50;
+	//Draw AND2 Gate at Gfx_Info (1st corner)
+	//Set the Image Width & Height by AND2 Image Parameter in UI_Info
+	PrintInDrawingArea(label, r_GfxInfo.x1, y12);
 	pWind->DrawImage(GateImage, r_GfxInfo.x1, r_GfxInfo.y1, UI.OR2_Width, UI.OR2_Height);
 }
 

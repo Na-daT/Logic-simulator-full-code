@@ -37,7 +37,6 @@ enum ActionType
 	DEL,		//Delete a Component, a Connection
 	MOVE,         //Move a Component, a Connection
 
-
 	COPY,
 	PASTE,
 	CUT,

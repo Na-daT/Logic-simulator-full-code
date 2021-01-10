@@ -9,7 +9,7 @@ class Simulate_Circuit
 {
 private:
 	int Cx, Cy; //check if point clicked is a switch
-
+	bool Stop_Sim = false;
 public:
 
 	Simulate_Circuit(ApplicationManager* pApp);

@@ -120,17 +120,26 @@ ActionType Input::GetUserAction() const
 	}
 	else	//Application is in Simulation mode
 	{
-		int ClickedItemOrder = (x / UI.ToolItemWidth);
-
-		switch (ClickedItemOrder)
+		if (y >= 0 && y < UI.ToolBarHeight)
 		{
-		case ITM_SIM: return SIMULATE_CIRCUIT;
-		case ITM_TRUTH: return Create_TruthTable;
-		case ITM_VALIDATE: return VALIDATE_CIRCUIT;
-		case ITM_SWITCH_TO_DESIGN_MODE: return SIM_MODE;
+			int ClickedItemOrder = (x / UI.ToolItemWidth);
 
-		default: return SIM_TOOL;
+			switch (ClickedItemOrder)
+			{
+			case ITM_SIM: return SIMULATE_CIRCUIT;
+			case ITM_TRUTH: return Create_TruthTable;
+			case ITM_VALIDATE: return VALIDATE_CIRCUIT;
+			case ITM_SWITCH_TO_DESIGN_MODE: return DSN_MODE;
+
+			default: return SIM_TOOL;
+			}
 		}
+
+		if (y >= UI.ToolBarHeight && y < UI.height - UI.StatusBarHeight)
+		{
+			return Change_Switch;	//user want to select/unselect a component
+		}
+
 	}
 
 }
