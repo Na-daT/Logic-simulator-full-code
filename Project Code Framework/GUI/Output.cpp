@@ -400,7 +400,7 @@ void Output::DrawSwitch(GraphicsInfo r_GfxInfo, STATUS s, bool selected, string 
 		pWind->DrawImage(GateImage, r_GfxInfo.x1, r_GfxInfo.y1, UI.Switch_Width, UI.Switch_Height);
 	}
 }
-
+//
 void Output::DrawLED(GraphicsInfo r_GfxInfo, STATUS s, bool selected, string label) const
 {
 	string GateImage;
