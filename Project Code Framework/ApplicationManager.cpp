@@ -77,14 +77,17 @@ void ApplicationManager::DeleteSelectedinComplist()
 {
 	while (CompList[CompCount - 1]->GetSelected() == true)
 	{
-		delete CompList[CompCount - 1];
-		CompList[CompCount - 1] = NULL;
-		CompCount--;
 
-		if (CompCount == 0)
-			break;
+		if (CompList[CompCount - 1]->getType() == ITM_CONNECTION)
+			DeleteConnection(CompList[CompCount - 1]);
+
+			delete CompList[CompCount - 1];
+			CompList[CompCount - 1] = NULL;
+			CompCount--;
+
+			if (CompCount == 0)
+				break;
 	}
-
 
 	if (CompCount != 0)
 	{
@@ -92,6 +95,9 @@ void ApplicationManager::DeleteSelectedinComplist()
 		{
 			if (CompList[i]->GetSelected())
 			{
+				if (CompList[i]->getType() == ITM_CONNECTION)
+					DeleteConnection(CompList[i]);
+
 				delete CompList[i];
 				CompList[i] = NULL;
 
@@ -103,6 +109,15 @@ void ApplicationManager::DeleteSelectedinComplist()
 			}
 		}
 	}
+}
+
+void ApplicationManager::DeleteConnection(Component* comp)
+{
+	Connection* conn = (Connection*)comp;
+	conn->getSourcePin()->Disconnect(conn);
+
+	Gate* pG=(Gate*)conn->getDestPin()->getComponent();
+	pG->DisconnectInputPin(conn->getDestPin()->getComponent());
 }
 
 void ApplicationManager::OperateConnections()
@@ -209,6 +224,10 @@ void ApplicationManager::AddToClipboard()
 	{
 		if (CompList[i]->GetSelected() == true && CompList[i]->getType()!=ITM_CONNECTION)
 		{
+			int s = CompList[i]->getType();
+
+
+			
 			Clipboard[ClipboardCount++] = CompList[i];
 		}
 	}

@@ -57,3 +57,14 @@ int Gate::getInputIndex()
 	}
 	return -1; //if no input pin available
 }
+
+void Gate::DisconnectInputPin(Component* C_Conn)
+{
+	for (int i = 0; i < m_Inputs; i++)
+	{
+		if (m_InputPins[i].getComponent() == C_Conn)
+			m_InputPins[i].setConnected(false);
+	}
+
+}
+

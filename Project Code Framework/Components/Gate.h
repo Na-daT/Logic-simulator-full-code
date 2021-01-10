@@ -27,6 +27,7 @@ public:
 	virtual OutputPin* getSrcPin() = 0;
 	virtual InputPin* getDstPin(int n) = 0;
 	virtual int getInputIndex(); //returns available input pins to connect to
+	virtual void DisconnectInputPin(Component* C_Conn);
 
 };
 
