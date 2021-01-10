@@ -37,7 +37,7 @@ void XNOR2::Operate()
 
 void XNOR2::Draw(Output* pOut)
 {
-	pOut->DrawXNOR2(m_GfxInfo, isSelected);
+	pOut->DrawXNOR2(m_GfxInfo, isSelected, GetLabel());
 
 }
 

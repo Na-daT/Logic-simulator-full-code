@@ -35,7 +35,7 @@ void NOR2::Operate()
 
 void NOR2::Draw(Output* pOut)
 {
-	pOut->DrawNOR2(m_GfxInfo, isSelected);
+	pOut->DrawNOR2(m_GfxInfo, isSelected, GetLabel());
 
 }
 

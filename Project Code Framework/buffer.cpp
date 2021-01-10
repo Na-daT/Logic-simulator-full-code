@@ -26,7 +26,7 @@ void buffer::Operate()
 void buffer::Draw(Output* pOut)
 {
 	//Call output class and pass gate drawing info to it.
-	pOut->DrawBuffer(m_GfxInfo, isSelected);
+	pOut->DrawBuffer(m_GfxInfo, isSelected, GetLabel());
 }
 
 //returns status of outputpin

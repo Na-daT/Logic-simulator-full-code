@@ -23,7 +23,7 @@ void NOT::Operate()
 
 void NOT::Draw(Output* pOut)
 {
-	pOut->DrawNOT(m_GfxInfo, isSelected);
+	pOut->DrawNOT(m_GfxInfo, isSelected, GetLabel());
 
 }
 

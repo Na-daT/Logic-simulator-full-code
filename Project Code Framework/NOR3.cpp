@@ -34,7 +34,7 @@ void NOR3::Operate()
 
 void NOR3::Draw(Output* pOut)
 {
-	pOut->DrawNOR3(m_GfxInfo, isSelected);
+	pOut->DrawNOR3(m_GfxInfo, isSelected, GetLabel());
 
 }
 

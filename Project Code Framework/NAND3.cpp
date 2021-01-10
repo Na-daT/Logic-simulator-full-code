@@ -35,7 +35,7 @@ void NAND3::Operate()
 
 void NAND3::Draw(Output* pOut)
 {
-	pOut->DrawNAND3(m_GfxInfo, isSelected);
+	pOut->DrawNAND3(m_GfxInfo, isSelected, GetLabel());
 }
 
 int NAND3::GetOutPinStatus()

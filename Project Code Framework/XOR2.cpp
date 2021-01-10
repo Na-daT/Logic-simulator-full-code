@@ -37,7 +37,7 @@ void XOR2::Operate()
 
 void XOR2::Draw(Output* pOut)
 {
-	pOut->DrawXOR2(m_GfxInfo, isSelected);
+	pOut->DrawXOR2(m_GfxInfo, isSelected, GetLabel());
 
 }
 
