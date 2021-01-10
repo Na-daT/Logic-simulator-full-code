@@ -297,17 +297,16 @@ void ApplicationManager::SaveAction(ofstream& SavedFile)
 {
 	for (int i = 0; i < CompCount; i++)
 	{
-		if (CompList[i]->getType() != ITM_CONNECTION)
 			CompList[i]->Save(SavedFile);
 	}
 
 	SavedFile << "CONNECTIONS" << endl;
 
-	for (int i = 0; i < CompCount; i++)
+	/*for (int i = 0; i < CompCount; i++)
 	{
 		if (CompList[i]->getType() == ITM_CONNECTION)
 			CompList[i]->Save(SavedFile);
-	}
+	}*/
 }
 
 
