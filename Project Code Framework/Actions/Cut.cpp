@@ -21,12 +21,12 @@ void Cut::ReadActionParameters()
 
 void Cut::Execute()
 {
-	ReadActionParameters();
+	/*ReadActionParameters();
 	//Get a Pointer to the Input / Output Interfaces
 	Output* pOut = pManager->GetOutput();
 	Input* pIn = pManager->GetInput();
 	pManager->AddToClipboard();
-	pManager->ExecuteAction(DEL);
+	pManager->ExecuteAction(DEL);*/
 
 }
 

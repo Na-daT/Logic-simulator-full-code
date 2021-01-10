@@ -54,7 +54,7 @@ void Edit::Execute()
 	if (pComp->getType()==ITM_CONNECTION)
 	{
 		Connection* pCon = (Connection*)pComp;
-		pOut->PrintMsg("Enter 1 for Label, 2 for source pin, or 3 for destination pin");
+		pOut->PrintMsg("Enter 1 for Label, 2 to edit the connection src and dst");
 		string s1 = pIn->GetSrting(pOut);
 		switch (stoi(s1))
 		{
@@ -84,14 +84,15 @@ void Edit::Execute()
 
 			pManager->UpdateInterface();
 			break;*/
-		case 3:
+		/*case 3:
 			pOut->PrintMsg("click on new destination component");
 			pIn->GetPointClicked(x, y);
 			destcomp = pManager->IsGateinsideArea(x, y);
 			pGate2 = (Gate*)destcomp;
 			int n = pGate2->getInputIndex();
 			pCon->setDestPin(pGate2->getDstPin(n));
-			pManager->UpdateInterface();
+			pManager->UpdateInterface();*/
+
 		}
 
 	}

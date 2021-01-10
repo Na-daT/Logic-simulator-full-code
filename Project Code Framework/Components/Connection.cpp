@@ -62,6 +62,7 @@ void Connection::setInputPinStatus(int n, STATUS s)
 	SrcPin->setStatus(s);
 }
 
+
 void Connection::Save(ofstream& SavedFile)
 {
 	SavedFile << "CONNECTION" << " " << SrcPin->gettheComponent()->GetID() << " " << DstPin->getComponent()->GetID() << " " << GetDstPinIndex() << endl;

@@ -12,7 +12,7 @@ int Component::getType()
 
 bool Component::IsClickInsideArea(int x, int y)
 {
-	if (x > m_GfxInfo.x1 && x < m_GfxInfo.x2 && y> m_GfxInfo.y1 && y < m_GfxInfo.y2)
+	if (x >= m_GfxInfo.x1 && x <= m_GfxInfo.x2 && y>= m_GfxInfo.y1 && y <= m_GfxInfo.y2)
 		return true;
 	else
 		return false;

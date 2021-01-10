@@ -17,6 +17,7 @@ class ApplicationManager
 private:
 	int CompCount;		//Actual number of Components
 	int ClipboardCount;
+	Component* CopidComp;
 	Component* CompList[MaxCompCount];	//List of all Components (Array of pointers)
 	Component* Clipboard[MaxCompCount];
 	Output* OutputInterface; //pointer to the Output Clase Interface
@@ -43,8 +44,15 @@ public:
 	//Adds a new component to the list of components
 	void AddComponent(Component* pComp);
 
-	void AddToClipboard();
-	void PasteToCompList();
+	//void AddToClipboard();
+	//void PasteToCompList();
+
+
+	void setCopiedComp(Component* pcomp);
+	Component* getCopiedComp();
+
+
+	
 
 	int GetCompCount();
 
@@ -58,7 +66,7 @@ public:
 
 	void DeleteSelectedinComplist();
 
-
+	void DeleteConnection(Component* comp);
 
 	void SaveAction(ofstream& SavedFile);
 	void LoadAction(ifstream& File);

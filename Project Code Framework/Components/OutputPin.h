@@ -27,6 +27,7 @@ public:
 	bool ConnectTo(Connection *r_Conn);	//connect to a new connection
 	Component* gettheComponent();
 	void setComp(Component* comp);
+	void Disconnect(Connection* C_Conn);
 };
 
 #endif

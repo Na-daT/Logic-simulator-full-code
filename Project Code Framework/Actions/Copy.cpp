@@ -16,7 +16,11 @@ void Copy::ReadActionParameters()
 	Output* pOut = pManager->GetOutput();
 	Input* pIn = pManager->GetInput();
 
+	pOut->PrintMsg("click on component to be copied");
+	pIn->GetPointClicked(x, y);
 	
+
+
 	pOut->PrintMsg("copied");
 
 }
@@ -26,8 +30,9 @@ void Copy::Execute()
 	ReadActionParameters();
 	Output* pOut = pManager->GetOutput();
 	//Get a Pointer to the Input / Output Interfaces
-	pManager->AddToClipboard();
-	pOut->ClearStatusBar();
+
+	if (pManager->IsGateinsideArea(x, y))
+		pManager->setCopiedComp(pManager->IsGateinsideArea(x, y));
 
 }
 

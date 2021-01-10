@@ -6,6 +6,7 @@ OutputPin::OutputPin(int r_FanOut)
 {
 	m_Conn = 0;		//initially Pin is not connected to anything.
 	m_FanOut = r_FanOut > MAX_CONNS ? MAX_CONNS: r_FanOut;	//set the fan out of the pin.
+
 }
 
 //Functionn ConnectTo:
@@ -29,5 +30,23 @@ Component* OutputPin::gettheComponent()
 void OutputPin::setComp(Component* comp)
 {
 	pComp = comp;
+}
+
+void OutputPin::Disconnect(Connection* C_Conn)
+{
+	for (int i = 0; i < m_Conn; i++)
+	{
+		if (m_Connections[i] == C_Conn)
+		{
+			m_Connections[i] = NULL;
+			if (m_Conn != 1)
+			{
+				m_Connections[i] = m_Connections[m_Conn - 1];
+				m_Connections[m_Conn - 1] = NULL;
+			}
+			m_Conn--;
+		}
+	}
+	
 }
 

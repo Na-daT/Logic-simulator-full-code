@@ -49,6 +49,20 @@ void ApplicationManager::AddComponent(Component* pComp)
 /// //////////////////////////////////////////////////////////////
 
 
+void ApplicationManager::setCopiedComp(Component* pcomp)
+{
+	CopidComp = pcomp;
+}
+
+Component* ApplicationManager::getCopiedComp()
+{
+	if (CopidComp)
+		return CopidComp;
+	else
+		return NULL;
+}
+
+
 int ApplicationManager::GetCompCount()
 {
 	return CompCount;
@@ -77,14 +91,17 @@ void ApplicationManager::DeleteSelectedinComplist()
 {
 	while (CompList[CompCount - 1]->GetSelected() == true)
 	{
-		delete CompList[CompCount - 1];
-		CompList[CompCount - 1] = NULL;
-		CompCount--;
 
-		if (CompCount == 0)
-			break;
+		if (CompList[CompCount - 1]->getType() == ITM_CONNECTION)
+			DeleteConnection(CompList[CompCount - 1]);
+
+			delete CompList[CompCount - 1];
+			CompList[CompCount - 1] = NULL;
+			CompCount--;
+
+			if (CompCount == 0)
+				break;
 	}
-
 
 	if (CompCount != 0)
 	{
@@ -92,6 +109,14 @@ void ApplicationManager::DeleteSelectedinComplist()
 		{
 			if (CompList[i]->GetSelected())
 			{
+				if (CompList[i]->getType() == ITM_CONNECTION)
+					DeleteConnection(CompList[i]);
+				else
+				{
+					Gate* pgate = (Gate*)CompList[i];
+					CompList[i]
+				}
+
 				delete CompList[i];
 				CompList[i] = NULL;
 
@@ -103,6 +128,15 @@ void ApplicationManager::DeleteSelectedinComplist()
 			}
 		}
 	}
+}
+
+void ApplicationManager::DeleteConnection(Component* comp)
+{
+	Connection* conn = (Connection*)comp;
+	conn->getSourcePin()->Disconnect(conn);
+
+	Gate* pG=(Gate*)conn->getDestPin()->getComponent();
+	pG->DisconnectInputPin(conn->getDestPin()->getComponent());
 }
 
 void ApplicationManager::OperateConnections()
@@ -194,7 +228,7 @@ int ApplicationManager::getNSwitches()
 	return c;
 }
 
-void ApplicationManager::AddToClipboard()
+/*void ApplicationManager::AddToClipboard()
 {
 	if (ClipboardCount != 0)
 	{
@@ -209,11 +243,16 @@ void ApplicationManager::AddToClipboard()
 	{
 		if (CompList[i]->GetSelected() == true && CompList[i]->getType()!=ITM_CONNECTION)
 		{
+			int s = CompList[i]->getType();
+
+
+			
 			Clipboard[ClipboardCount++] = CompList[i];
 		}
 	}
-}
-void ApplicationManager::PasteToCompList()
+}*/
+
+/*void ApplicationManager::PasteToCompList()
 {
 	int j = 0;
 	int k = CompCount;
@@ -226,7 +265,7 @@ void ApplicationManager::PasteToCompList()
 		j++;
 	}
 
-}
+}*/
 
 void ApplicationManager::SaveAction(ofstream& SavedFile) {
 	for (int i = 0; i < CompCount; i++)
