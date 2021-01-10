@@ -71,7 +71,7 @@ InputPin* XNOR3::getDstPin(int n)
 void XNOR3::Save(ofstream& SavedFile)
 {
 	SavedFile.open("file1.txt", ios::out);
-	SavedFile << "XNOR3" << " "<< GetID() << m_GfxInfo.x1 << " " << m_GfxInfo.y1 << endl;
+	SavedFile << getType() << " "<< GetID() << m_GfxInfo.x1 << " " << m_GfxInfo.y1 << endl;
 }
 
 void XNOR3::Load(ifstream& File)

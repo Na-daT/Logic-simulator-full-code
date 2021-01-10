@@ -52,7 +52,7 @@ OutputPin* LED::getSrcPin()
 void LED::Save(ofstream& SavedFile)
 {
 
-	SavedFile << "LED" << " " << GetID() << " " << GetLabel() << " " << m_GfxInfo.x1 << " " << m_GfxInfo.y1 << endl;
+	SavedFile << getType() << " " << GetID() << " " << GetLabel() << " " << m_GfxInfo.x1 << " " << m_GfxInfo.y1 << endl;
 }
 
 void LED::Load(ifstream& File)

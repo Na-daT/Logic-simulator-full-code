@@ -91,7 +91,7 @@ InputPin* AND2::getDstPin(int n)
 
 void AND2::Save(ofstream& SavedFile)
 {
-	SavedFile << "AND2" << " " << GetID()<< " " << GetLabel()<< " " << m_GfxInfo.x1 << " " << m_GfxInfo.y1 << endl;	
+	SavedFile << getType() << " " << GetID()<< " " << GetLabel()<< " " << m_GfxInfo.x1 << " " << m_GfxInfo.y1 << endl;
 }
 
 void AND2::Load(ifstream& File)

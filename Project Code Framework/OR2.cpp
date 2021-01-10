@@ -66,7 +66,7 @@ InputPin* OR2::getDstPin(int n)
 void OR2::Save(ofstream& SavedFile)
 {
 	SavedFile.open("file1.txt", ios::out);
-	SavedFile << "OR2" << " " << GetID() << m_GfxInfo.x1 << " " << m_GfxInfo.y1 << endl;
+	SavedFile << getType() << " " << GetID() << m_GfxInfo.x1 << " " << m_GfxInfo.y1 << endl;
 }
 
 void OR2::Load(ifstream& File)
