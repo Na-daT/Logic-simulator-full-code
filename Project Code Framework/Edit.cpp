@@ -41,12 +41,53 @@ void Edit::Execute()
 	//Get a Pointer to the Input / Output Interfaces
 	Output* pOut = pManager->GetOutput();
 	Input* pIn = pManager->GetInput();
-	pOut->PrintMsg("Enter New Label");
-
+	pOut->PrintMsg("Edit c for Connection or g for Gate");
+	int n = 0;
 	string s = pIn->GetSrting(pOut);
-	int n;
+	string s2;
+	Component* sourcecomp;
+	Component* destcomp;
 	Component* pComp = pManager->IsGateinsideArea(x, y);
-	if (pComp)
+	Gate* pGate1;
+	Gate* pGate2;
+	if (s == "c")
+	{
+		if (pComp->getType() != ITM_CONNECTION)
+		{
+			pOut->PrintMsg("Please click on connection");
+			return;
+		}
+		Connection* pCon = (Connection*)pComp;
+		pOut->PrintMsg("Enter 1 for Label, 2 to edit source pin, or 3 to edit destination pin");
+		string s1 = pIn->GetSrting(pOut);
+		switch (stoi(s1))
+		{
+		case 1:
+			s2 = pIn->GetSrting(pOut);
+			pComp->SetLabel(s2);
+			break;
+		case 2:
+			pIn->GetPointClicked(x, y);
+			sourcecomp = pManager->IsGateinsideArea(x, y);
+			pGate1 = (Gate*)sourcecomp;
+			pCon->setSourcePin(pGate1->getSrcPin());
+			break;
+		case 3:
+			pIn->GetPointClicked(x, y);
+			destcomp = pManager->IsGateinsideArea(x, y);
+			pGate2 = (Gate*)destcomp;
+			int n = pGate2->getInputIndex();
+			pCon->setDestPin(pGate2->getDstPin(n));
+		}
+
+	}
+	else if
+		(s == "g")
+	{
+		string s3 = pIn->GetSrting(pOut);
+		pComp->SetLabel(s3);
+	}
+	/*if (pComp)
 	{
 		if (pComp->getType() != ITM_CONNECTION)
 		{
@@ -66,7 +107,7 @@ void Edit::Execute()
 			
 			
 		}
-	}
+	}*/
 
 }
 
