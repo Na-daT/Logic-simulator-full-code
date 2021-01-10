@@ -58,8 +58,13 @@ Component* ApplicationManager::IsGateinsideArea(int x, int y)
 	Component* n = NULL;
 	for (int i = 0; i < CompCount; i++)
 	{
-		if (CompList[i]->IsClickInsideArea(x, y))
-			n = CompList[i];
+		if (CompList[i]->getType() != ITM_CONNECTION)
+		{
+			if (CompList[i]->IsClickInsideArea(x, y))
+				n = CompList[i];
+		}
+	/*	else
+			CompList[i]->IsClickInsideArea()*/
 	}
 	return n;
 }
@@ -162,21 +167,6 @@ bool ApplicationManager::OperateALLgates()
 
 }
 
-Component** ApplicationManager::GetArrayofSwitches(int& s)
-{
-	int c = 0;
-	Component** x = new Component * [c];
-	for (int i = 0; i < CompCount; i++)
-	{
-		if (CompList[i]->getType() == ITM_SWITCH)
-		{
-			x[c] = CompList[i];
-			c++;
-		}
-	}
-	s = c;
-	return x;
-}
 
 int ApplicationManager::getNConnections()
 {

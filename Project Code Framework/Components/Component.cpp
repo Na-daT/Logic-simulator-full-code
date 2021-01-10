@@ -44,6 +44,16 @@ string Component::GetLabel()
 	return m_Label;
 }
 
+bool Component::IsClickOnConnection(int x, int y)
+{
+	if (m_GfxInfo.x1 == m_GfxInfo.x2 && x == m_GfxInfo.x1)
+		return true;
+	else if (m_GfxInfo.y1 == m_GfxInfo.y2 && y == m_GfxInfo.y1)
+		return true;
+	//else if(s)
+
+}
+
 
 void Component::SetID(int id)
 {

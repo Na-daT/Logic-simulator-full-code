@@ -84,6 +84,7 @@ void Edit::Execute()
 	else if
 		(s == "g")
 	{
+		pOut->PrintMsg("edit label");
 		string s3 = pIn->GetSrting(pOut);
 		pComp->SetLabel(s3);
 	}

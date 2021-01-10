@@ -101,6 +101,9 @@ ActionType Input::GetUserAction() const
 			case ITM_PASTE: return PASTE;
 			case ITM_EDIT: return EDIT_Label;
 			case ITM_SAVE: return SAVE;
+			case ITM_CUT: return CUT;
+			case ITM_SELECT: return SELECT;
+			case ITM_UNSELECT:return SELECT;
 				//endnada
 			case ITM_EXIT: return EXIT;
 

@@ -44,21 +44,22 @@ public:
 	void AddComponent(Component* pComp);
 
 	void AddToClipboard();
-
 	void PasteToCompList();
 
 	int GetCompCount();
 
 	Component* IsGateinsideArea(int x, int y);
 
-	Component** GetArrayofSwitches(int& s);
 
 	int getNConnections();
 	int getNSwitches();
-	void DeleteSelectedinComplist();
 	void OperateConnections();
-
 	bool OperateALLgates();
+
+	void DeleteSelectedinComplist();
+
+
+
 	void SaveAction(ofstream& SavedFile);
 
 	int RetrunIndex();
