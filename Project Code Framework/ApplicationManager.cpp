@@ -49,6 +49,20 @@ void ApplicationManager::AddComponent(Component* pComp)
 /// //////////////////////////////////////////////////////////////
 
 
+void ApplicationManager::setCopiedComp(Component* pcomp)
+{
+	CopidComp = pcomp;
+}
+
+Component* ApplicationManager::getCopiedComp()
+{
+	if (CopidComp)
+		return CopidComp;
+	else
+		return NULL;
+}
+
+
 int ApplicationManager::GetCompCount()
 {
 	return CompCount;
@@ -97,6 +111,11 @@ void ApplicationManager::DeleteSelectedinComplist()
 			{
 				if (CompList[i]->getType() == ITM_CONNECTION)
 					DeleteConnection(CompList[i]);
+				else
+				{
+					Gate* pgate = (Gate*)CompList[i];
+					CompList[i]
+				}
 
 				delete CompList[i];
 				CompList[i] = NULL;
@@ -209,7 +228,7 @@ int ApplicationManager::getNSwitches()
 	return c;
 }
 
-void ApplicationManager::AddToClipboard()
+/*void ApplicationManager::AddToClipboard()
 {
 	if (ClipboardCount != 0)
 	{
@@ -231,8 +250,9 @@ void ApplicationManager::AddToClipboard()
 			Clipboard[ClipboardCount++] = CompList[i];
 		}
 	}
-}
-void ApplicationManager::PasteToCompList()
+}*/
+
+/*void ApplicationManager::PasteToCompList()
 {
 	int j = 0;
 	int k = CompCount;
@@ -245,7 +265,7 @@ void ApplicationManager::PasteToCompList()
 		j++;
 	}
 
-}
+}*/
 
 void ApplicationManager::SaveAction(ofstream& SavedFile) {
 	for (int i = 0; i < CompCount; i++)
