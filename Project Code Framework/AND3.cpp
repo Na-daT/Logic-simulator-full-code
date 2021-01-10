@@ -68,7 +68,7 @@ void AND3::Save(ofstream& SavedFile)
 	SavedFile << "AND3" << " " /*ID*/ << m_GfxInfo.x1 << " " << m_GfxInfo.y1 << endl;
 }
 
-void AND3::Load()
+void AND3::Load(ifstream& File)
 {
 
 }

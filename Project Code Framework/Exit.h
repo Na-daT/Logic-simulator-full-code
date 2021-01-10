@@ -1,17 +1,19 @@
 #pragma once
-#include <fstream>
-#include "Actions/Action.h"
 
-class Save : public Action
+#include "Actions/Action.h"
+#include <fstream>
+
+class Exit : public Action
 {
 private:
-	ofstream SavedFile;
-	string fileName;
+	
+
+
 public:
 	//constructor
-	Save(ApplicationManager* pApp);
+	Exit(ApplicationManager* pApp);
 	//destructor
-	virtual ~Save(void);
+	virtual ~Exit(void);
 
 	//Reads parameters required for action to execute
 	virtual void ReadActionParameters();
@@ -23,5 +25,6 @@ public:
 
 
 };
+
 
 

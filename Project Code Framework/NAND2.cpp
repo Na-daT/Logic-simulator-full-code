@@ -83,7 +83,7 @@ void NAND2::Save(ofstream& SavedFile)
 	SavedFile << "NAND2" << " " /*ID*/ << m_GfxInfo.x1 << " " << m_GfxInfo.y1 << endl;
 }
 
-void NAND2::Load()
+void NAND2::Load(ifstream& File)
 {
 
 }

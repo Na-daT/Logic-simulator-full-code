@@ -2,16 +2,16 @@
 #include <fstream>
 #include "Actions/Action.h"
 
-class Save : public Action
+class Load : public Action
 {
 private:
-	ofstream SavedFile;
-	string fileName;
+	ifstream File;
+
 public:
 	//constructor
-	Save(ApplicationManager* pApp);
+	Load(ApplicationManager* pApp);
 	//destructor
-	virtual ~Save(void);
+	virtual ~Load(void);
 
 	//Reads parameters required for action to execute
 	virtual void ReadActionParameters();

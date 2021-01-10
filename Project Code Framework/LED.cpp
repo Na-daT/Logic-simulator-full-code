@@ -55,7 +55,7 @@ void LED::Save(ofstream& SavedFile)
 	SavedFile << "LED" << " " /*ID*/ << m_GfxInfo.x1 << " " << m_GfxInfo.y1 << endl;
 }
 
-void LED::Load()
+void LED::Load(ifstream& File)
 {
 
 }

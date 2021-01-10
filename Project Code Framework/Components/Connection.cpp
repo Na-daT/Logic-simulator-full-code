@@ -67,7 +67,7 @@ void Connection::Save(ofstream& SavedFile)
 	SavedFile << "CONNECTION" << " " << SrcPin->gettheComponent()->GetID() << " " << DstPin->getComponent()->GetID() << " " << GetDstPinIndex() << endl;
 }
 
-void Connection::Load()
+void Connection::Load(ifstream& File)
 {
 
 }

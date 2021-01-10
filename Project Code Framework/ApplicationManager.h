@@ -59,6 +59,7 @@ public:
 
 	bool OperateALLgates();
 	void SaveAction(ofstream& SavedFile);
+	void LoadAction(ifstream& File);
 
 	int RetrunIndex();
 	//destructor

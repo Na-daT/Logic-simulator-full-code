@@ -72,7 +72,7 @@ void XOR2::Save(ofstream& SavedFile)
 	SavedFile << "XOR2" << " " /*ID*/ << m_GfxInfo.x1 << " " << m_GfxInfo.y1 << endl;
 }
 
-void XOR2::Load()
+void XOR2::Load(ifstream& File)
 {
 
 }

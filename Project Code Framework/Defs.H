@@ -165,7 +165,7 @@ enum FANOUT
 
 };
 
-/*
+
 enum ComponentType
 {
 	AND_2_gate,
@@ -186,7 +186,6 @@ enum ComponentType
 	Led_gate,
 	Connection_
 };
-*/
 
 //A structure to contain drawing parameters for each component
 //Each component occupies a rectangluar area so it needs 2 points to represent that area

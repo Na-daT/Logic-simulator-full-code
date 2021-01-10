@@ -46,7 +46,7 @@ public:
  
 
 	virtual void Save(ofstream& SavedFile)=0;
-	virtual void Load()=0;
+	virtual void Load(ifstream& File)=0;
 
 	void SetID(int id);
 	int GetID();

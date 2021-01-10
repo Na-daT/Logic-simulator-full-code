@@ -198,9 +198,11 @@
     <ClCompile Include="ApplicationManager.cpp" />
     <ClCompile Include="Design_mode.cpp" />
     <ClCompile Include="Edit.cpp" />
+    <ClCompile Include="Exit.cpp" />
     <ClCompile Include="GUI\Input.cpp" />
     <ClCompile Include="GUI\Output.cpp" />
     <ClCompile Include="LED.cpp" />
+    <ClCompile Include="Load.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="NAND2.cpp" />
     <ClCompile Include="NAND3.cpp" />
@@ -277,10 +279,12 @@
     <ClInclude Include="Defs.H" />
     <ClInclude Include="Design_mode.h" />
     <ClInclude Include="Edit.h" />
+    <ClInclude Include="Exit.h" />
     <ClInclude Include="GUI\Input.h" />
     <ClInclude Include="GUI\Output.h" />
     <ClInclude Include="GUI\UI_Info.h" />
     <ClInclude Include="LED.h" />
+    <ClInclude Include="Load.h" />
     <ClInclude Include="NAND2.h" />
     <ClInclude Include="NAND3.h" />
     <ClInclude Include="NOR2.h" />

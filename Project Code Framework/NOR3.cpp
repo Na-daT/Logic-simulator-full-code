@@ -70,7 +70,7 @@ void NOR3::Save(ofstream& SavedFile)
 	SavedFile << "NOR3" << " " /*ID*/ << m_GfxInfo.x1 << " " << m_GfxInfo.y1 << endl;
 }
 
-void NOR3::Load()
+void NOR3::Load(ifstream& File)
 {
 
 }

@@ -74,7 +74,7 @@ void XNOR3::Save(ofstream& SavedFile)
 	SavedFile << "XNOR3" << " " /*ID*/ << m_GfxInfo.x1 << " " << m_GfxInfo.y1 << endl;
 }
 
-void XNOR3::Load()
+void XNOR3::Load(ifstream& File)
 {
 
 }

@@ -64,7 +64,7 @@ void buffer::Save(ofstream& SavedFile)
 	SavedFile << "BUFFER" << " " /* ID*/ << m_GfxInfo.x1 << " " << m_GfxInfo.y1 << endl;
 }
 
-void buffer::Load()
+void buffer::Load(ifstream& File)
 {
 
 }

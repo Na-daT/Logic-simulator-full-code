@@ -281,6 +281,86 @@ void ApplicationManager::SaveAction(ofstream& SavedFile) {
 	}
 }
 
+
+void ApplicationManager::LoadAction(ifstream& File)
+{
+	ComponentType CompType;
+	Action* pAct;
+	switch (CompType)
+	{
+	case AND_2_gate:
+		pAct = new AddANDgate2(this);
+		break;
+
+	case AND_3_gate:
+		pAct = new AddANDgate3(this);
+		break;
+
+	case OR_2_gate:
+		pAct = new AddORgate2(this);
+		break;
+
+	case OR_3_gate:
+		pAct = new AddORgate3(this);
+		break;
+
+	case NAND_2_gate:
+		pAct = new AddNANDgate2(this);
+		break;
+
+	case NAND_3_gate:
+		pAct = new AddNANDgate3(this);
+		break;
+
+	case NOR_2_gate:
+		pAct = new AddNORgate2(this);
+		break;
+
+	case NOR_3_gate:
+		pAct = new AddNORgate3(this);
+		break;
+
+	case XOR_2_gate:
+		pAct = new AddXORgate2(this);
+		break;
+
+	case XOR_3_gate:
+		pAct = new AddXORgate3(this);
+		break;
+
+	case XNOR_2_gate:
+		pAct = new AddXNORgate2(this);
+		break;
+
+	case XNOR_3_gate:
+		pAct = new AddXNORgate3(this);
+		break;
+
+	case Led_gate:
+		pAct = new AddLED(this);
+		break;
+
+	case BUFFER_gate:
+		pAct = new AddBuffer(this);
+		break;
+
+	case Switch_gate:
+		pAct = new AddSwitch(this);
+		break;
+
+	case NOT_gate:
+		pAct = new AddNOTgate(this);
+		break;
+
+	case Connection_:
+		pAct = new AddConnections(this);
+		break;
+	}
+	pAct->Execute();
+	delete pAct;
+	pAct = NULL;
+}
+
 int ApplicationManager::RetrunIndex()
 {
 	return CompCount;

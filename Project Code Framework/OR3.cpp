@@ -70,7 +70,7 @@ void OR3::Save(ofstream& SavedFile)
 	SavedFile << "OR3" << " " /*ID*/ << m_GfxInfo.x1 << " " << m_GfxInfo.y1 << endl;
 }
 
-void OR3::Load()
+void OR3::Load(ifstream& File)
 {
 
 }
