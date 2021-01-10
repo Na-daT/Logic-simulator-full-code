@@ -44,6 +44,7 @@ public:
 
 	virtual string GetLabel();
  
+	bool IsClickOnConnection(int x, int y);
 
 	virtual void Save(ofstream& SavedFile)=0;
 	virtual void Load(ifstream& File)=0;

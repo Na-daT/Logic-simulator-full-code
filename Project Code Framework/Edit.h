@@ -4,6 +4,7 @@
 class Edit : public Action
 {
 	int x, y;
+	string s;
 public:
 	Edit(ApplicationManager* pApp);
 	virtual ~Edit(void);
@@ -12,7 +13,6 @@ public:
 	virtual void ReadActionParameters();
 	//Execute action (code depends on action type)
 	virtual void Execute();
-
 	virtual void Undo();
 	virtual void Redo();
 };

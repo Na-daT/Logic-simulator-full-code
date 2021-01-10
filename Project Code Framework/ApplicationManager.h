@@ -16,7 +16,7 @@ class ApplicationManager
 
 private:
 	int CompCount;		//Actual number of Components
-	int ClipboardCount; 
+	int ClipboardCount;
 	Component* CompList[MaxCompCount];	//List of all Components (Array of pointers)
 	Component* Clipboard[MaxCompCount];
 	Output* OutputInterface; //pointer to the Output Clase Interface
@@ -25,15 +25,15 @@ private:
 public:
 
 
-public:	
+public:
 	ApplicationManager(); //constructor
 
 	//Reads the required action from the user and returns the corresponding action type
 	ActionType GetUserAction();
-	
+
 	//Creates an action and executes it
 	void ExecuteAction(ActionType);
-	
+
 	void UpdateInterface();	//Redraws all the drawing window
 
 	//Gets a pointer to Input / Output Object
@@ -44,20 +44,22 @@ public:
 	void AddComponent(Component* pComp);
 
 	void AddToClipboard();
-
 	void PasteToCompList();
 
 	int GetCompCount();
 
 	Component* IsGateinsideArea(int x, int y);
 
-	Component** GetArrayofSwitches(int& s);
 
 	int getNConnections();
 	int getNSwitches();
+	void OperateConnections();
+	bool OperateALLgates();
+
 	void DeleteSelectedinComplist();
 
-	bool OperateALLgates();
+
+
 	void SaveAction(ofstream& SavedFile);
 	void LoadAction(ifstream& File);
 
