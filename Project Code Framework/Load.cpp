@@ -1,4 +1,8 @@
 #include "Load.h"
+#include <fstream>
+#include <string> 
+#include<iostream>
+using namespace std;
 #include "ApplicationManager.h"
 
 Load::Load(ApplicationManager* pApp) :Action(pApp)
@@ -25,9 +29,13 @@ void Load::ReadActionParameters()
 void Load::Execute()
 {
 	ReadActionParameters();
-
-
-	//pManager->LoadAction(File);
+	string type;
+	int n = 20;
+	while (!File.eof())
+	{
+		//File.getline(type, n, ' ');
+	}
+	//pManager->LoadAction(ActionType);
 }
 
 void Load::Undo()
