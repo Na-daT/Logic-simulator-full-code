@@ -10,7 +10,7 @@ void Simulate_Circuit::ReadActionParameters()
 	Output* pOut = pManager->GetOutput();
 	Input* pIn = pManager->GetInput();
 
-	pOut->PrintMsg("Simulating circuit");
+	pOut->PrintMsg("Simulating circuit, click on the same button to stop");
 	pIn->GetPointClicked(Cx, Cy);//we need a point to see if user click on a switch
 }
 

@@ -46,7 +46,7 @@ void Output::ChangeTitle(string Title) const
 //////////////////////////////////////////////////////////////////////////////////
 void Output::CreateStatusBar() const
 {
-	pWind->SetPen(RED, 3);
+	pWind->SetPen(BLACK, 2);
 	pWind->DrawLine(0, UI.height - UI.StatusBarHeight, UI.width, UI.height - UI.StatusBarHeight);
 }
 //////////////////////////////////////////////////////////////////////////////////
@@ -76,7 +76,7 @@ void Output::PrintInDrawingArea(string msg, int X, int Y) const
 }
 void Output::ClearDesignToolBar() const
 {
-	pWind->SetPen(RED, 1);
+	pWind->SetPen(BLACK, 1);
 	pWind->SetBrush(WHITE);
 	pWind->DrawRectangle(0, 0, UI.width, UI.ToolBarHeight);
 }
@@ -96,7 +96,7 @@ void Output::ClearStatusBar()const
 //Clears the drawing (degin) area
 void Output::ClearDrawingArea() const
 {
-	pWind->SetPen(RED, 1);
+	pWind->SetPen(BLACK, 1);
 	pWind->SetBrush(WHITE);
 	pWind->DrawRectangle(0, UI.ToolBarHeight, UI.width, UI.height - UI.StatusBarHeight);
 
@@ -145,8 +145,8 @@ void Output::CreateDesignToolBar() const
 	MenuItemImages[ITM_UNSELECT] = "Images\\Menu\\Select.jpg";
 	MenuItemImages[ITM_DELETE] = "Images\\Menu\\Delete.jpg";
 	MenuItemImages[ITM_MOVE] = "Images\\Menu\\move.jpg";
-	MenuItemImages[ITM_SAVE] = "Images\\Menu\\Save.jpg";
-	MenuItemImages[ITM_LOAD] = "Images\\Menu\\Load.jpg";
+	MenuItemImages[ITM_SAVE] = "Images\\Menu\\Save_.jpg";
+	MenuItemImages[ITM_LOAD] = "Images\\Menu\\Load_.jpg";
 	MenuItemImages[ITM_COPY] = "Images\\Menu\\copy.jpg";
 	MenuItemImages[ITM_CUT] = "Images\\Menu\\cut.jpg";
 	MenuItemImages[ITM_PASTE] = "Images\\Menu\\paste.jpg";
@@ -161,7 +161,7 @@ void Output::CreateDesignToolBar() const
 
 
 	//Draw a line under the toolbar
-	pWind->SetPen(RED, 3);
+	pWind->SetPen(BLACK, 2);
 	pWind->DrawLine(0, UI.ToolBarHeight, UI.width, UI.ToolBarHeight);
 
 }
@@ -187,7 +187,7 @@ void Output::CreateSimulationToolBar() const
 	
 
 	//Draw a line under the toolbar
-	pWind->SetPen(RED, 3);
+	pWind->SetPen(BLACK, 3);
 	pWind->DrawLine(0, UI.ToolBarHeight, UI.width, UI.ToolBarHeight);
 	
 
@@ -517,15 +517,27 @@ void Output::DrawBuffer(GraphicsInfo r_GfxInfo, bool selected, string label) con
 }
 
 
-void Output::DrawConnection(GraphicsInfo r_GfxInfo, bool selected, string label) const
+void Output::DrawConnection(GraphicsInfo r_GfxInfo,STATUS s, bool selected, string label) const
 {
 	
 	//TODO: Add code to draw connection
-	
+	if (UI.AppMode == SIMULATION)
+	{
+		if (s == HIGH)
+			pWind->SetPen(MEDIUMSPRINGGREEN, 3);
+		else
+			pWind->SetPen(BLACK, 3);
+	}
+	else
+	{
+		if (selected)
+			pWind->SetPen(RED, 3);
+		else
+			pWind->SetPen(BLACK, 3);
+	}
 		//draw highlighted connection
 		if (selected)
 		{
-			pWind->SetPen(RED, 3);
 			if ((r_GfxInfo.y1 == r_GfxInfo.y2) || (r_GfxInfo.x1 == r_GfxInfo.x2))
 			{
 				pWind->DrawLine(r_GfxInfo.x1, r_GfxInfo.y1, r_GfxInfo.x2, r_GfxInfo.y2);
@@ -537,11 +549,10 @@ void Output::DrawConnection(GraphicsInfo r_GfxInfo, bool selected, string label)
 				pWind->DrawLine(r_GfxInfo.x2, r_GfxInfo.y1, r_GfxInfo.x2, r_GfxInfo.y2);
 			}
 		}
-		//draw normal connection
+		
 		else
 		{
-			pWind->SetPen(BLUE, 3);
-			if ((r_GfxInfo.y1 == r_GfxInfo.y2) || (r_GfxInfo.x1 == r_GfxInfo.x2))
+			if ((r_GfxInfo.y1 == r_GfxInfo.y2) || (r_GfxInfo.x1 == r_GfxInfo.x2))//draw normal connection
 			{
 				pWind->DrawLine(r_GfxInfo.x1, r_GfxInfo.y1, r_GfxInfo.x2, r_GfxInfo.y2);
 			}
@@ -552,6 +563,8 @@ void Output::DrawConnection(GraphicsInfo r_GfxInfo, bool selected, string label)
 				pWind->DrawLine(r_GfxInfo.x2, r_GfxInfo.y1, r_GfxInfo.x2, r_GfxInfo.y2);
 			}
 		}
+		
+		
 		int y12 = r_GfxInfo.y1 - 50;
 		if (label != "-")
 		{
