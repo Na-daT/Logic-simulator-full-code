@@ -127,6 +127,28 @@ void ApplicationManager::DeleteSelectedinComplist()
 		if (CompList[CompCount - 1]->getType() == ITM_CONNECTION)
 			DeleteConnection(CompList[CompCount - 1]);
 
+		if (CompList[CompCount - 1]->getType() != ITM_CONNECTION)
+		{
+			Gate* pgate = (Gate*)CompList[CompCount - 1];
+			int nInPins = pgate->GetnumberofInputPins();
+			for (int n = 0; n < nInPins; n++)
+			{
+				Component* Pconn = (Component*) pgate->getDstPin(n)->GetConnection();
+				Pconn->setSelected(true);
+				DeleteConnection(Pconn);
+			}
+
+			int nOutPinConn = 0;
+			Connection** l = pgate->getSrcPin()->returnConnections(nOutPinConn);
+
+			for (int n = 0; n < nOutPinConn; n++)
+			{
+				l[n]->setSelected(true);
+				DeleteConnection(l[n]);
+			}
+		}
+			
+
 		delete CompList[CompCount - 1];
 		CompList[CompCount - 1] = NULL;
 		CompCount--;
@@ -144,6 +166,36 @@ void ApplicationManager::DeleteSelectedinComplist()
 				if (CompList[i]->getType() == ITM_CONNECTION)
 					DeleteConnection(CompList[i]);
 
+				if (CompList[i]->getType() != ITM_CONNECTION)
+				{
+					Gate* pgate = (Gate*)CompList[i];
+					int nInPins = pgate->GetnumberofInputPins();
+					for (int n = 0; n < nInPins; n++)
+					{
+						Component* Pconn = (Component*)pgate->getDstPin(n)->GetConnection();
+						if (Pconn)
+						{
+							Connection* pConn = (Connection*) Pconn;
+							Pconn->setSelected(true);
+							DeleteConnection(Pconn);
+							pConn->setDestPin(NULL);
+							pConn->setSourcePin(NULL);
+						}
+					}
+					int nOutPinConn = 0;
+					Connection** l = pgate->getSrcPin()->returnConnections(nOutPinConn);
+
+					for (int n = 0; n < 5; n++)
+					{
+						if (l[n])
+						{
+							l[n]->setSelected(true);
+							DeleteConnection(l[n]);
+						}
+	
+					}
+				}
+
 				delete CompList[i];
 				CompList[i] = NULL;
 
@@ -155,15 +207,29 @@ void ApplicationManager::DeleteSelectedinComplist()
 			}
 		}
 	}
+	for (int i = 0;i < CompCount;i++)
+	{
+		if (CompList[i]->GetSelected())
+			DeleteSelectedinComplist();
+
+	}
 }
 
 void ApplicationManager::DeleteConnection(Component* comp)
 {
 	Connection* conn = (Connection*)comp;
-	conn->getSourcePin()->Disconnect(conn);
+	if (conn->getSourcePin())
+		conn->getSourcePin()->Disconnect(conn);
 
-	Gate* pG=(Gate*)conn->getDestPin()->getComponent();
-	pG->DisconnectInputPin(conn->getDestPin()->getComponent());
+
+	if (conn->getDestPin())
+	{
+		Gate* pG = (Gate*)conn->getDestPin()->getComponent();
+		if (pG)
+		{
+			pG->DisconnectInputPin(conn->getDestPin()->getComponent());
+		}
+	}
 }
 
 void ApplicationManager::OperateConnections()

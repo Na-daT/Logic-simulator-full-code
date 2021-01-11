@@ -3,6 +3,8 @@
 InputPin::InputPin()
 {
 	Connected = false;
+	pConn = NULL;
+	pComp = NULL;
 }
 
 void InputPin::setComponent(Component *pCmp)
@@ -12,7 +14,11 @@ void InputPin::setComponent(Component *pCmp)
 
 Component* InputPin::getComponent()
 {
-	return pComp;
+	if (pComp)
+		return pComp;
+	else
+		return NULL;
+	
 }
 
 void InputPin::setConnected(bool s)
@@ -32,5 +38,9 @@ void InputPin::SetConnection(Connection* conn)
 
 Connection* InputPin::GetConnection()
 {
-	return pConn;
+	if (pConn) {
+		return pConn;
+	}
+	else
+		return NULL;
 }

@@ -30,6 +30,7 @@ public:
 	//void DelConn();
 	void setComp(Component* comp);
 	void Disconnect(Connection* C_Conn);
+	Connection** returnConnections(int& j);
 };
 
 #endif

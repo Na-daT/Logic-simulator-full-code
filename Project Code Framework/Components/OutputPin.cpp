@@ -59,3 +59,9 @@ void OutputPin::Disconnect(Connection* C_Conn)
 	
 }
 
+Connection** OutputPin::returnConnections(int& j)
+{
+	j = m_Conn;
+	return m_Connections;
+}
+
