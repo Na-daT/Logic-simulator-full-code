@@ -67,7 +67,7 @@ void AND3::Save(ofstream& SavedFile)
 {
 	SavedFile << getType() << " " << GetID() << " " << GetLabel() << " " << m_GfxInfo.x1 << " " << m_GfxInfo.y1 << endl;
 }
-void AND3::Load(ifstream& File)
+void AND3::Load(ifstream& SavedFile)
 {
 
 }

@@ -29,15 +29,16 @@ void Load::ReadActionParameters()
 void Load::Execute()
 {
 	ReadActionParameters();
-	string type;
-	DsgnMenuItem t;
-	int n = 20;
+	int f;
+	string s;
 	while (!File.eof())
 	{
-		//File.getline(type, n, ' ');
-		//pManager->LoadAction(ActionType);
+		File >> f;
+		for (string line; getline(File, line);)
+		{
+			pManager->LoadAction(f, line);
+		}
 	}
-	
 }
 
 void Load::Undo()

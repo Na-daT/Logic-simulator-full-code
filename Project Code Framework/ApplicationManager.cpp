@@ -311,84 +311,35 @@ void ApplicationManager::SaveAction(ofstream& SavedFile)
 	}
 }
 
-/*void ApplicationManager::LoadAction(ActionType)
+void ApplicationManager::LoadAction(int c, string l)
 {
 	Action* pAct = NULL;
-	switch (ActType)
+	switch (c)
 	{
-	case ADD_AND_GATE_2:
+	case ITM_AND2: 
 		pAct = new AddANDgate2(this);
 		break;
-
-	case ADD_AND_GATE_3:
-		pAct = new AddANDgate3(this);
-		break;
-
-	case ADD_OR_GATE_2:
-		pAct = new AddORgate2(this);
-		break;
-
-	case ADD_OR_GATE_3:
-		pAct = new AddORgate3(this);
-		break;
-
-	case ADD_NAND_GATE_2:
-		pAct = new AddNANDgate2(this);
-		break;
-
-	case ADD_NAND_GATE_3:
-		pAct = new AddNANDgate3(this);
-		break;
-
-	case ADD_NOR_GATE_2:
-		pAct = new AddNORgate2(this);
-		break;
-
-	case ADD_NOR_GATE_3:
-		pAct = new AddNORgate3(this);
-		break;
-
-	case ADD_XOR_GATE_2:
-		pAct = new AddXORgate2(this);
-		break;
-
-	case ADD_XOR_GATE_3:
-		pAct = new AddXORgate3(this);
-		break;
-
-	case ADD_XNOR_GATE_2:
-		pAct = new AddXNORgate2(this);
-		break;
-
-	case ADD_XNOR_GATE_3:
-		pAct = new AddXNORgate3(this);
-		break;
-
-	case ADD_LED:
-		pAct = new AddLED(this);
-		break;
-
-	case ADD_Buff:
-		pAct = new AddBuffer(this);
-		break;
-
-	case ADD_Switch:
-		pAct = new AddSwitch(this);
-		break;
-
-	case ADD_INV:
-		pAct = new AddNOTgate(this);
-		break;
-
-	case ADD_CONNECTION:
-		//TODO: Create AddConection Action here
-		pAct = new AddConnections(this);
-		break;
+	/*case ITM_OR2: return ADD_OR_GATE_2;
+	case ITM_OR3: return ADD_OR_GATE_3;
+	case ITM_NAND2: return ADD_NAND_GATE_2;
+	case ITM_NAND3: return ADD_NAND_GATE_3;
+	case ITM_NOR2: return ADD_NOR_GATE_2;
+	case ITM_XOR2: return ADD_XOR_GATE_2;
+	case ITM_XNOR2: return ADD_XNOR_GATE_2;
+	case ITM_NOT: return ADD_INV;
+	case ITM_AND3:return ADD_AND_GATE_3;
+	case ITM_NOR3:return ADD_NOR_GATE_3;
+	case ITM_XOR3: return ADD_XOR_GATE_3;
+	case ITM_SWITCH: return ADD_Switch;
+	case ITM_LED: return ADD_LED;
+	case ITM_BUFF:return ADD_Buff;
+	case ITM_XNOR3: return ADD_XNOR_GATE_3;*/
 	}
-	pAct->Load();
-	delete pAct;
-	pAct = NULL;
-}*/
+	for (int i = 0;i < CompCount;i++)
+	{
+		CompList[i]->Load(l);
+	}
+}
 
 int ApplicationManager::RetrunIndex()
 {

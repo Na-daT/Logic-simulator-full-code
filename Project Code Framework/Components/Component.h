@@ -9,7 +9,7 @@
 class Component
 {
 private:
-	string m_Label;
+	string m_Label = "-";
 	
 protected:
 	GraphicsInfo m_GfxInfo;	//The parameters required to draw a component

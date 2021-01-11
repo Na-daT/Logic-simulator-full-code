@@ -23,7 +23,7 @@ public:
 
 
 	// Draws 2-input AND gate
-	void DrawAND2(GraphicsInfo r_GfxInfo, bool selected = false, string label=" ") const;
+	void DrawAND2(GraphicsInfo r_GfxInfo, bool selected = false, string label="-") const;
 
 	///TODO: Make similar functions for drawing all other gates, switch, and LED, .. etc
 	

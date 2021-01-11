@@ -213,7 +213,10 @@ void Output::DrawAND2(GraphicsInfo r_GfxInfo, bool selected, string label) const
 	int y12 = r_GfxInfo.y1 - 50;
 	//Draw AND2 Gate at Gfx_Info (1st corner)
 	//Set the Image Width & Height by AND2 Image Parameter in UI_Info
-	PrintInDrawingArea(label, r_GfxInfo.x1, y12);
+	if (label != "-")
+	{
+		PrintInDrawingArea(label, r_GfxInfo.x1, y12);
+	}
 	pWind->DrawImage(GateImage, r_GfxInfo.x1, r_GfxInfo.y1, UI.AND2_Width, UI.AND2_Height);
 
 }
@@ -232,7 +235,10 @@ void Output::DrawOR2(GraphicsInfo r_GfxInfo, bool selected, string label) const
 	int y12 = r_GfxInfo.y1 - 50;
 	//Draw AND2 Gate at Gfx_Info (1st corner)
 	//Set the Image Width & Height by AND2 Image Parameter in UI_Info
-	PrintInDrawingArea(label, r_GfxInfo.x1, y12);
+	if (label != "-")
+	{
+		PrintInDrawingArea(label, r_GfxInfo.x1, y12);
+	}
 	pWind->DrawImage(GateImage, r_GfxInfo.x1, r_GfxInfo.y1, UI.OR2_Width, UI.OR2_Height);
 }
 
@@ -245,7 +251,10 @@ void Output::DrawNAND2(GraphicsInfo r_GfxInfo, bool selected, string label) cons
 	else
 		GateImage = "images\\Gates\\NAND_2.jpg"; //IMAGE TO BE ADDED0
 	int y12 = r_GfxInfo.y1 - 50;
-	PrintInDrawingArea(label, r_GfxInfo.x1, y12);
+	if (label != "-")
+	{
+		PrintInDrawingArea(label, r_GfxInfo.x1, y12);
+	}
 	pWind->DrawImage(GateImage, r_GfxInfo.x1, r_GfxInfo.y1, UI.NAND2_Width, UI.NAND2_Height);
 }
 
@@ -259,7 +268,10 @@ void Output::DrawNOR2(GraphicsInfo r_GfxInfo, bool selected, string label) const
 	else
 		GateImage = "images\\Gates\\NOR_2.jpg"; //IMAGE TO BE ADDED
 	int y12 = r_GfxInfo.y1 - 50;
-	PrintInDrawingArea(label, r_GfxInfo.x1, y12);
+	if (label != "-")
+	{
+		PrintInDrawingArea(label, r_GfxInfo.x1, y12);
+	}
 	pWind->DrawImage(GateImage, r_GfxInfo.x1, r_GfxInfo.y1, UI.NOR2_Width, UI.NOR2_Height);
 }
 
@@ -272,7 +284,10 @@ void Output::DrawXOR2(GraphicsInfo r_GfxInfo, bool selected, string label) const
 	else
 		GateImage = "images\\Gates\\XOR_2.jpg"; //IMAGE TO BE ADDED
 	int y12 = r_GfxInfo.y1 - 50;
-	PrintInDrawingArea(label, r_GfxInfo.x1, y12);
+	if (label != "-")
+	{
+		PrintInDrawingArea(label, r_GfxInfo.x1, y12);
+	}
 	pWind->DrawImage(GateImage, r_GfxInfo.x1, r_GfxInfo.y1, UI.XOR2_Width, UI.XOR2_Height);
 }
 
@@ -284,7 +299,10 @@ void Output::DrawXNOR2(GraphicsInfo r_GfxInfo, bool selected, string label) cons
 	else
 		GateImage = "images\\Gates\\XNOR_2.jpg"; //IMAGE TO BE ADDED
 	int y12 = r_GfxInfo.y1 - 50;
-	PrintInDrawingArea(label, r_GfxInfo.x1, y12);
+	if (label != "-")
+	{
+		PrintInDrawingArea(label, r_GfxInfo.x1, y12);
+	}
 	pWind->DrawImage(GateImage, r_GfxInfo.x1, r_GfxInfo.y1, UI.XNOR2_Width, UI.XNOR2_Height);
 }
 
@@ -297,7 +315,10 @@ void Output::DrawAND3(GraphicsInfo r_GfxInfo, bool selected, string label) const
 	else
 		GateImage = "images\\Gates\\AND_3.jpg"; //IMAGE TO BE ADDED
 	int y12 = r_GfxInfo.y1 - 50;
-	PrintInDrawingArea(label, r_GfxInfo.x1, y12);
+	if (label != "-")
+	{
+		PrintInDrawingArea(label, r_GfxInfo.x1, y12);
+	}
 	pWind->DrawImage(GateImage, r_GfxInfo.x1, r_GfxInfo.y1, UI.AND3_Width, UI.AND3_Height);
 }
 
@@ -310,7 +331,10 @@ void Output::DrawNOR3(GraphicsInfo r_GfxInfo, bool selected, string label) const
 	else
 		GateImage = "images\\Gates\\NOR_3.jpg"; //IMAGE TO BE ADDED
 	int y12 = r_GfxInfo.y1 - 50;
-	PrintInDrawingArea(label, r_GfxInfo.x1, y12);
+	if (label != "-")
+	{
+		PrintInDrawingArea(label, r_GfxInfo.x1, y12);
+	}
 	pWind->DrawImage(GateImage, r_GfxInfo.x1, r_GfxInfo.y1, UI.NOR3_Width, UI.NOR3_Height);
 }
 
@@ -323,7 +347,10 @@ void Output::DrawXOR3(GraphicsInfo r_GfxInfo, bool selected, string label) const
 	else
 		GateImage = "images\\Gates\\XOR_3.jpg"; //IMAGE TO BE ADDED
 	int y12 = r_GfxInfo.y1 - 50;
-	PrintInDrawingArea(label, r_GfxInfo.x1, y12);
+	if (label != "-")
+	{
+		PrintInDrawingArea(label, r_GfxInfo.x1, y12);
+	}
 	pWind->DrawImage(GateImage, r_GfxInfo.x1, r_GfxInfo.y1, UI.XOR3_Width, UI.XOR3_Height);
 }
 
@@ -335,7 +362,10 @@ void Output::DrawXNOR3(GraphicsInfo r_GfxInfo, bool selected, string label) cons
 	else
 		GateImage = "images\\Gates\\XNOR_3.jpg"; //IMAGE TO BE ADDED
 	int y12 = r_GfxInfo.y1 - 50;
-	PrintInDrawingArea(label, r_GfxInfo.x1, y12);
+	if (label != "-")
+	{
+		PrintInDrawingArea(label, r_GfxInfo.x1, y12);
+	}
 	pWind->DrawImage(GateImage, r_GfxInfo.x1, r_GfxInfo.y1, UI.XNOR3_Width, UI.XNOR3_Height);
 }
 
@@ -347,7 +377,10 @@ void Output::DrawOR3(GraphicsInfo r_GfxInfo, bool selected, string label) const
 	else
 		GateImage = "images\\Gates\\OR_3.jpg"; //IMAGE TO BE ADDED
 	int y12 = r_GfxInfo.y1 - 50;
-	PrintInDrawingArea(label, r_GfxInfo.x1, y12);
+	if (label != "-")
+	{
+		PrintInDrawingArea(label, r_GfxInfo.x1, y12);
+	}
 	pWind->DrawImage(GateImage, r_GfxInfo.x1, r_GfxInfo.y1, UI.OR3_Width, UI.OR3_Height);
 }
 
@@ -360,7 +393,10 @@ void Output::DrawNAND3(GraphicsInfo r_GfxInfo, bool selected, string label) cons
 	else
 		GateImage = "images\\Gates\\NAND_3.jpg"; //IMAGE TO BE ADDED
 	int y12 = r_GfxInfo.y1 - 50;
-	PrintInDrawingArea(label, r_GfxInfo.x1, y12);
+	if (label != "-")
+	{
+		PrintInDrawingArea(label, r_GfxInfo.x1, y12);
+	}
 	pWind->DrawImage(GateImage, r_GfxInfo.x1, r_GfxInfo.y1, UI.NAND3_Width, UI.NAND3_Height);
 }
 
@@ -386,7 +422,10 @@ void Output::DrawSwitch(GraphicsInfo r_GfxInfo, STATUS s, bool selected, string 
 				GateImage = "images\\Gates\\switch.jpg";//IMAGE TO BE ADDED
 		}
 		int y12 = r_GfxInfo.y1 - 50;
-		PrintInDrawingArea(label, r_GfxInfo.x1, y12);
+		if (label != "-")
+		{
+			PrintInDrawingArea(label, r_GfxInfo.x1, y12);
+		}
 		pWind->DrawImage(GateImage, r_GfxInfo.x1, r_GfxInfo.y1, UI.Switch_Width, UI.Switch_Height);
 	}
 	else
@@ -396,7 +435,10 @@ void Output::DrawSwitch(GraphicsInfo r_GfxInfo, STATUS s, bool selected, string 
 		else
 			GateImage = "images\\Gates\\switch.jpg";//IMAGE TO BE ADDED
 		int y12 = r_GfxInfo.y1 - 50;
-		PrintInDrawingArea(label, r_GfxInfo.x1, y12);
+		if (label != "-")
+		{
+			PrintInDrawingArea(label, r_GfxInfo.x1, y12);
+		}
 		pWind->DrawImage(GateImage, r_GfxInfo.x1, r_GfxInfo.y1, UI.Switch_Width, UI.Switch_Height);
 	}
 }
@@ -422,7 +464,10 @@ void Output::DrawLED(GraphicsInfo r_GfxInfo, STATUS s, bool selected, string lab
 				GateImage = "images\\Gates\\LED.jpg";//IMAGE TO BE ADDED
 		}
 		int y12 = r_GfxInfo.y1 - 50;
-		PrintInDrawingArea(label, r_GfxInfo.x1, y12);
+		if (label != "-")
+		{
+			PrintInDrawingArea(label, r_GfxInfo.x1, y12);
+		}
 		pWind->DrawImage(GateImage, r_GfxInfo.x1, r_GfxInfo.y1, UI.LED_Width, UI.LED_Height);
 	}
 	else
@@ -432,7 +477,10 @@ void Output::DrawLED(GraphicsInfo r_GfxInfo, STATUS s, bool selected, string lab
 		else
 			GateImage = "images\\Gates\\LED.jpg";//IMAGE TO BE ADDED
 		int y12 = r_GfxInfo.y1 - 50;
-		PrintInDrawingArea(label, r_GfxInfo.x1, y12);
+		if (label != "-")
+		{
+			PrintInDrawingArea(label, r_GfxInfo.x1, y12);
+		}
 		pWind->DrawImage(GateImage, r_GfxInfo.x1, r_GfxInfo.y1, UI.Switch_Width, UI.Switch_Height);
 	}
 }
@@ -445,7 +493,10 @@ void Output::DrawNOT(GraphicsInfo r_GfxInfo, bool selected, string label) const
 	else
 		GateImage = "images\\Gates\\NOT.jpg"; //IMAGE TO BE ADDED
 	int y12 = r_GfxInfo.y1 - 50;
-	PrintInDrawingArea(label, r_GfxInfo.x1, y12);
+	if (label != "-")
+	{
+		PrintInDrawingArea(label, r_GfxInfo.x1, y12);
+	}
 	pWind->DrawImage(GateImage, r_GfxInfo.x1, r_GfxInfo.y1, UI.NOT_Width, UI.NOT_Height);
 }
 
@@ -458,7 +509,10 @@ void Output::DrawBuffer(GraphicsInfo r_GfxInfo, bool selected, string label) con
 	else
 		GateImage = "images\\Gates\\buffer.jpg"; //IMAGE TO BE ADDED
 	int y12 = r_GfxInfo.y1 - 50;
-	PrintInDrawingArea(label, r_GfxInfo.x1, y12);
+	if (label != "-")
+	{
+		PrintInDrawingArea(label, r_GfxInfo.x1, y12);
+	}
 	pWind->DrawImage(GateImage, r_GfxInfo.x1, r_GfxInfo.y1, UI.Buffer_Width, UI.Buffer_Height);
 }
 
@@ -499,7 +553,10 @@ void Output::DrawConnection(GraphicsInfo r_GfxInfo, bool selected, string label)
 			}
 		}
 		int y12 = r_GfxInfo.y1 - 50;
-		PrintInDrawingArea(label, r_GfxInfo.x1, y12);
+		if (label != "-")
+		{
+			PrintInDrawingArea(label, r_GfxInfo.x1, y12);
+		}
 }
 
 

@@ -62,7 +62,6 @@ InputPin* SWITCH::getDstPin(int n)
 
 void SWITCH::Save(ofstream& SavedFile)
 {
-	SavedFile.open("file1.txt", ios::out);
 	SavedFile << getType() << " " << GetID() << m_GfxInfo.x1 << " " << m_GfxInfo.y1 << endl;
 }
 

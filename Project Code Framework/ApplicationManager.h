@@ -73,7 +73,7 @@ public:
 	void DeleteConnection(Component* comp);
 
 	void SaveAction(ofstream& SavedFile);
-	void LoadAction(ifstream& File);
+	void LoadAction(int c, string l);
 
 	int RetrunIndex();
 	//destructor
