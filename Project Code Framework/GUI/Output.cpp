@@ -142,15 +142,15 @@ void Output::CreateDesignToolBar() const
 
 	MenuItemImages[ITM_LABEL] = "Images\\Menu\\tag.jpg";
 	MenuItemImages[ITM_SELECT] = "Images\\Menu\\Select.jpg";
-	MenuItemImages[ITM_UNSELECT] = "Images\\Gates\\AND_2.jpg";
+	MenuItemImages[ITM_UNSELECT] = "Images\\Menu\\Select.jpg";
 	MenuItemImages[ITM_DELETE] = "Images\\Menu\\Delete.jpg";
-	MenuItemImages[ITM_MOVE] = "Images\\Gates\\AND_2.jpg";
+	MenuItemImages[ITM_MOVE] = "Images\\Menu\\move.jpg";
 	MenuItemImages[ITM_SAVE] = "Images\\Menu\\Save.jpg";
 	MenuItemImages[ITM_LOAD] = "Images\\Menu\\Load.jpg";
-	MenuItemImages[ITM_COPY] = "Images\\Gates\\AND_2.jpg";
-	MenuItemImages[ITM_CUT] = "Images\\Gates\\AND_2.jpg";
-	MenuItemImages[ITM_PASTE] = "Images\\Gates\\AND_2.jpg";
-	MenuItemImages[ITM_SWITCH_TO_SIMULATION] = "Images\\Gates\\AND_2.jpg";
+	MenuItemImages[ITM_COPY] = "Images\\Menu\\copy.jpg";
+	MenuItemImages[ITM_CUT] = "Images\\Menu\\cut.jpg";
+	MenuItemImages[ITM_PASTE] = "Images\\Menu\\paste.jpg";
+	MenuItemImages[ITM_SWITCH_TO_SIMULATION] = "Images\\Menu\\play.jpg";
 	MenuItemImages[ITM_EDIT] = "Images\\Menu\\Edit.jpg";
 	MenuItemImages[ITM_EXIT] = "Images\\Menu\\exit.jpg";
 	//TODO: Prepare image for each menu item and add it to the list
@@ -174,7 +174,7 @@ void Output::CreateSimulationToolBar() const
 
 	
 	string MenuItemImages[ITM_SIM_CNT];
-	MenuItemImages[ITM_SIM] = "images\\Menu\\SIMULATE.jpg";
+	MenuItemImages[ITM_SIM] = "images\\Menu\\play.jpg";
 	MenuItemImages[ITM_TRUTH] = "images\\Menu\\TruthTable.jpg";
 	MenuItemImages[ITM_VALIDATE] = "images\\Gates\\AND_2.jpg";
 	MenuItemImages[ITM_SWITCH_TO_DESIGN_MODE] = "images\\Menu\\draw.jpg";	
