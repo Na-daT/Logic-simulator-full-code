@@ -28,6 +28,7 @@
 #include "Save.h"
 #include "Actions/ChangeSwitchInput.h"
 #include "Design_mode.h"
+#include "Load.h"
 
 ApplicationManager::ApplicationManager()
 {
@@ -467,6 +468,10 @@ void ApplicationManager::ExecuteAction(ActionType ActType)
 
 	case SAVE:
 		pAct = new Save(this);
+		break;
+
+	case LOAD:
+		pAct = new Load(this);
 		break;
 
 	case Change_Switch:

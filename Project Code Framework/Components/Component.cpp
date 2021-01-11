@@ -105,6 +105,11 @@ void Component::SetOperated(bool op)
 	operated = op;
 }
 
+void Component::setType(int i)
+{
+	type = i;
+}
+
 Component::Component()
 {}
 

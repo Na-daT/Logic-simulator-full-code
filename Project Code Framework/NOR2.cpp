@@ -70,7 +70,7 @@ void NOR2::Save(ofstream& SavedFile)
 	SavedFile << getType() << " " << GetID() << " " << GetLabel() << " " << m_GfxInfo.x1 << " " << m_GfxInfo.y1 << endl;
 }
 
-void NOR2::Load(ifstream& File)
+void NOR2::Load(string l)
 {
 
 }

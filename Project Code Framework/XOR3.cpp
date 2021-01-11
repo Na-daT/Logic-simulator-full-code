@@ -75,7 +75,7 @@ void XOR3::Save(ofstream& SavedFile)
 	SavedFile << getType() << " " << GetID() << m_GfxInfo.x1 << " " << m_GfxInfo.y1 << endl;
 }
 
-void XOR3::Load(ifstream& File)
+void XOR3::Load(string l)
 {
 
 }

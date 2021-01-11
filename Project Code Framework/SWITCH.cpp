@@ -65,7 +65,7 @@ void SWITCH::Save(ofstream& SavedFile)
 	SavedFile << getType() << " " << GetID() << m_GfxInfo.x1 << " " << m_GfxInfo.y1 << endl;
 }
 
-void SWITCH::Load(ifstream& File)
+void SWITCH::Load(string l)
 {
 
 }

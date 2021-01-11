@@ -59,7 +59,7 @@ void NOT::Save(ofstream& SavedFile)
 	SavedFile << getType() << " " << GetID() << m_GfxInfo.x1 << " " << m_GfxInfo.y1 << endl;
 }
 
-void NOT::Load(ifstream& File)
+void NOT::Load(string l)
 {
 
 }

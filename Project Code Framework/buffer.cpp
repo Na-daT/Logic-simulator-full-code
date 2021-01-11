@@ -64,7 +64,7 @@ void buffer::Save(ofstream& SavedFile)
 	SavedFile << getType() << " " << GetID() << " " << GetLabel() << " " << m_GfxInfo.x1 << " " << m_GfxInfo.y1 << endl;
 }
 
-void buffer::Load(ifstream& File)
+void buffer::Load(string l)
 {
 
 }

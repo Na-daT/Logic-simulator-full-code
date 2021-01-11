@@ -47,7 +47,7 @@ public:
 	bool IsClickOnConnection(int x, int y);
 
 	virtual void Save(ofstream& SavedFile)=0;
-	virtual void Load(ifstream& File)=0;
+	virtual void Load(string l) = 0;
 
 	void SetID(int id);
 	int GetID();
@@ -55,6 +55,8 @@ public:
 	virtual bool DrawInDrawingArea(int y);
 	virtual bool IsOperated();
 	virtual void SetOperated(bool op);
+
+	void setType(int i);
 
 	
 	Component();	

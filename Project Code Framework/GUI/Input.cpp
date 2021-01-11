@@ -105,6 +105,7 @@ ActionType Input::GetUserAction() const
 			case ITM_CUT: return CUT;
 			case ITM_SELECT: return SELECT;
 			case ITM_UNSELECT:return SELECT;
+			case ITM_LOAD: return LOAD;
 				//endnada
 			case ITM_EXIT: return EXIT;
 

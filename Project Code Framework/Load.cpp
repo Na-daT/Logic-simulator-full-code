@@ -19,10 +19,11 @@ void Load::ReadActionParameters()
 	Output* pOut = pManager->GetOutput();
 	Input* pIn = pManager->GetInput();
 
+	pOut->PrintMsg("loading");
 	string s;
 	s = pIn->GetSrting(pOut);
 
-	File.open(s);
+	File.open(s, ios::out);
 	pOut->PrintMsg("File is loaded");
 }
 

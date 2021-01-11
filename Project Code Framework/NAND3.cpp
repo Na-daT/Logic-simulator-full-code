@@ -69,7 +69,7 @@ void NAND3::Save(ofstream& SavedFile)
 	SavedFile << getType() << " " << GetID() << " " << GetLabel() << " " << m_GfxInfo.x1 << " " << m_GfxInfo.y1 << endl;
 }
 
-void NAND3::Load(ifstream& File)
+void NAND3::Load(string l)
 {
 
 }

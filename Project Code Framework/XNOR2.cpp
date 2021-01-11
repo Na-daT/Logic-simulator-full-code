@@ -72,7 +72,7 @@ void XNOR2::Save(ofstream& SavedFile)
 	SavedFile << getType() << " " << GetID() << m_GfxInfo.x1 << " " << m_GfxInfo.y1 << endl;
 }
 
-void XNOR2::Load(ifstream& File)
+void XNOR2::Load(string l)
 {
 
 }

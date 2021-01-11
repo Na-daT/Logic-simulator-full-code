@@ -69,7 +69,7 @@ void OR2::Save(ofstream& SavedFile)
 	SavedFile << getType() << " " << GetID() << m_GfxInfo.x1 << " " << m_GfxInfo.y1 << endl;
 }
 
-void OR2::Load(ifstream& File)
+void OR2::Load(string l)
 {
 
 }
