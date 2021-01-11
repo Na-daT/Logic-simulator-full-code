@@ -17,7 +17,7 @@ void Label::ReadActionParameters()
 	Input* pIn = pManager->GetInput();
 
 	//Print Action Message
-	pOut->PrintMsg("Add Label to item");
+	pOut->PrintMsg("click on gate then type label");
 
 	//Wait for User Input
 	pIn->GetPointClicked(x, y);

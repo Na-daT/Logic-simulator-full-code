@@ -72,7 +72,7 @@ InputPin* XOR3::getDstPin(int n)
 void XOR3::Save(ofstream& SavedFile)
 {
 
-	SavedFile << getType() << " " << GetID() << " " << GetLabel() << " " << m_GfxInfo.x1 << " " << m_GfxInfo.y1 << endl;
+	SavedFile << getType() << " " << GetID() << " " << GetLabel() << " " << m_GfxInfo.x1 << " " << m_GfxInfo.y1 << " " << m_GfxInfo.x2 << " " << m_GfxInfo.y2 << endl;
 }
 
 void XOR3::Load(ifstream& loadedfile)
@@ -92,4 +92,12 @@ void XOR3::Load(ifstream& loadedfile)
 	int y1;
 	loadedfile >> y1;
 	m_GfxInfo.y1 = y1;
+
+	int x2;
+	loadedfile >> x2;
+	m_GfxInfo.x2 = x2;
+
+	int y2;
+	loadedfile >> y2;
+	m_GfxInfo.y2 = y2;
 }

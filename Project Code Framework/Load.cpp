@@ -19,7 +19,7 @@ void Load::ReadActionParameters()
 	Output* pOut = pManager->GetOutput();
 	Input* pIn = pManager->GetInput();
 
-	pOut->PrintMsg("loading");
+	pOut->PrintMsg("Type file name");
 	string s;
 	s = pIn->GetSrting(pOut);
 
