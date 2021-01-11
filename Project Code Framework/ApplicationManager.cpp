@@ -121,6 +121,7 @@ Component* ApplicationManager::IsGateinsideArea(int x, int y)
 			}
 		}
 	}
+	return n;
 }
 
 void ApplicationManager::DeleteSelectedinComplist()
@@ -131,29 +132,6 @@ void ApplicationManager::DeleteSelectedinComplist()
 		if (CompList[CompCount - 1]->getType() == ITM_CONNECTION)
 			DisconnectConnection(CompList[CompCount - 1]);
 
-		/*else if (CompList[CompCount - 1]->getType() != ITM_CONNECTION)
-		{
-
-			deleteAssociatedConn(CompList[CompCount - 1]);
-
-			Gate* pgate = (Gate*)CompList[CompCount - 1];
-			int nInPins = pgate->GetnumberofInputPins();
-			for (int n = 0; n < nInPins; n++)
-			{
-				Component* Pconn = (Component*) pgate->getDstPin(n)->GetConnection();
-				Pconn->setSelected(true);
-				DisconnectConnection(Pconn);
-			}
-
-			int nOutPinConn = 0;
-			Connection** l = pgate->getSrcPin()->returnConnections(nOutPinConn);
-
-			for (int n = 0; n < nOutPinConn; n++)
-			{
-				l[n]->setSelected(true);
-				DisconnectConnection(l[n]);
-			}
-		}*/
 			
 
 		delete CompList[CompCount - 1];
@@ -176,32 +154,7 @@ void ApplicationManager::DeleteSelectedinComplist()
 				if (CompList[i]->getType() != ITM_CONNECTION)
 				{
 					deleteAssociatedConn(CompList[i]);
-					/*Gate* pgate = (Gate*)CompList[i];
-					int nInPins = pgate->GetnumberofInputPins();
-					for (int n = 0; n < nInPins; n++)
-					{
-						Component* Pconn = (Component*)pgate->getDstPin(n)->GetConnection();
-						if (Pconn)
-						{
-							Connection* pConn = (Connection*) Pconn;
-							Pconn->setSelected(true);
-							DisconnectConnection(Pconn);
-							pConn->setDestPin(NULL);
-							pConn->setSourcePin(NULL);
-						}
-					}
-					int nOutPinConn = 0;
-					Connection** l = pgate->getSrcPin()->returnConnections(nOutPinConn);
 
-					for (int n = 0; n < 5; n++)
-					{
-						if (l[n])
-						{
-							l[n]->setSelected(true);
-							DisconnectConnection(l[n]);
-						}
-	
-					}*/
 				}
 
 				delete CompList[i];
@@ -488,34 +441,71 @@ void ApplicationManager::SaveAction(ofstream& SavedFile)
 	}
 }
 
-void ApplicationManager::LoadAction(int c, string l)
+void ApplicationManager::LoadAction(int c, ifstream& loadedfile)
 {
-	Action* pAct = NULL;
+	Component* newComp = NULL;
+	GraphicsInfo DummyGfxInfo;
+	DummyGfxInfo.x1 = 0;
+	DummyGfxInfo.x2 = 0;
+	DummyGfxInfo.y1 = 0;
+	DummyGfxInfo.y2 = 0;
+	
 	switch (c)
 	{
 	case ITM_AND2: 
-		pAct = new AddANDgate2(this);
+		newComp = new AND2(DummyGfxInfo, AND2_FANOUT);
 		break;
-	/*case ITM_OR2: return ADD_OR_GATE_2;
-	case ITM_OR3: return ADD_OR_GATE_3;
-	case ITM_NAND2: return ADD_NAND_GATE_2;
-	case ITM_NAND3: return ADD_NAND_GATE_3;
-	case ITM_NOR2: return ADD_NOR_GATE_2;
-	case ITM_XOR2: return ADD_XOR_GATE_2;
-	case ITM_XNOR2: return ADD_XNOR_GATE_2;
-	case ITM_NOT: return ADD_INV;
-	case ITM_AND3:return ADD_AND_GATE_3;
-	case ITM_NOR3:return ADD_NOR_GATE_3;
-	case ITM_XOR3: return ADD_XOR_GATE_3;
-	case ITM_SWITCH: return ADD_Switch;
-	case ITM_LED: return ADD_LED;
-	case ITM_BUFF:return ADD_Buff;
-	case ITM_XNOR3: return ADD_XNOR_GATE_3;*/
+	case ITM_OR2: 
+		newComp = new OR2(DummyGfxInfo, AND2_FANOUT);
+		break;
+	case ITM_OR3:
+		newComp = new OR3(DummyGfxInfo, AND2_FANOUT);
+		break;
+	case ITM_NAND2:
+		newComp = new NAND2(DummyGfxInfo, AND2_FANOUT);
+		break;
+	case ITM_NAND3:
+		newComp = new NAND3(DummyGfxInfo, AND2_FANOUT);
+		break;
+	case ITM_NOR2:
+		newComp = new NOR2(DummyGfxInfo, AND2_FANOUT);
+		break;
+	case ITM_XOR2:
+		newComp = new XOR2(DummyGfxInfo, AND2_FANOUT);
+		break;
+	case ITM_XNOR2:
+		newComp = new XNOR2(DummyGfxInfo, AND2_FANOUT);
+		break;
+	case ITM_NOT:
+		newComp = new NOT(DummyGfxInfo, AND2_FANOUT);
+		break;
+	case ITM_AND3:
+		newComp = new AND3(DummyGfxInfo, AND2_FANOUT);
+		break;
+	case ITM_NOR3:
+		newComp = new NOR3(DummyGfxInfo, AND2_FANOUT);
+		break;
+	case ITM_XOR3:
+		newComp = new XOR3(DummyGfxInfo, AND2_FANOUT);
+		break;
+	case ITM_SWITCH:
+		newComp = new SWITCH(DummyGfxInfo, AND2_FANOUT);
+		break;
+	case ITM_LED:
+		newComp = new LED(DummyGfxInfo);
+		break;
+	case ITM_BUFF:
+		newComp = new buffer(DummyGfxInfo, AND2_FANOUT);
+		break;
+	case ITM_XNOR3:
+		newComp = new XNOR3(DummyGfxInfo, AND2_FANOUT);
+		break;
 	}
-	for (int i = 0;i < CompCount;i++)
-	{
-		CompList[i]->Load(l);
-	}
+	
+	newComp->Load(loadedfile);
+
+	AddComponent(newComp);
+	
 }
 
 Component* ApplicationManager::returnSelectedComp(int& indx)

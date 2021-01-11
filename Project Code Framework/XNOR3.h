@@ -19,6 +19,6 @@ public:
 	virtual OutputPin* getSrcPin();
 	virtual InputPin* getDstPin(int n);
 	virtual void Save(ofstream& SavedFile);
-	virtual void Load(string l);
+	virtual void Load(ifstream& loadedfile);
 };
 #endif

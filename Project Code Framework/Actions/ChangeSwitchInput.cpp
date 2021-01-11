@@ -1,8 +1,16 @@
 #include "ChangeSwitchInput.h"
 #include "..\ApplicationManager.h"
 
+ChangeSwitchInput::ChangeSwitchInput(ApplicationManager* pApp, int x, int y) :Action(pApp)
+{
+	Cx = x;
+	Cy = y;
+}
+
 ChangeSwitchInput::ChangeSwitchInput(ApplicationManager* pApp) :Action(pApp)
 {
+	Cx = -1;
+	Cy = -1;
 }
 
 ChangeSwitchInput::~ChangeSwitchInput(void)
@@ -11,23 +19,24 @@ ChangeSwitchInput::~ChangeSwitchInput(void)
 
 void ChangeSwitchInput::ReadActionParameters()
 {
-	//Get a Pointer to the Input / Output Interfaces
-	Output* pOut = pManager->GetOutput();
-	Input* pIn = pManager->GetInput();
+	if (Cx == -1 || Cy == -1)
+	{
+		Output* pOut = pManager->GetOutput();
+		Input* pIn = pManager->GetInput();
 
-	//Wait for User Input
-	pIn->GetPointClicked(Cx, Cy);
+		pIn->GetPointClicked(Cx, Cy);
+	}
 
 }
 
 void ChangeSwitchInput::Execute()
 {
-	ReadActionParameters();
 	//Get a Pointer to the Input / Output Interfaces
 	Output* pOut = pManager->GetOutput();
 	Input* pIn = pManager->GetInput();
 	// Code to show highlighted component
 
+	ReadActionParameters();
 	Component* pComp;
 	pComp = pManager->IsGateinsideArea(Cx, Cy);
 

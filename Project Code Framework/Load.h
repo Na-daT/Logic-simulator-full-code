@@ -7,7 +7,7 @@ using namespace std;
 class Load : public Action
 {
 private:
-	ifstream File;
+	ifstream loadedfile;
 
 public:
 	//constructor

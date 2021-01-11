@@ -70,7 +70,21 @@ void NOR3::Save(ofstream& SavedFile)
 	SavedFile << getType() << " " << GetID() << " " << GetLabel() << " " << m_GfxInfo.x1 << " " << m_GfxInfo.y1 << endl;
 }
 
-void NOR3::Load(string l)
+void NOR3::Load(ifstream& loadedfile)
 {
+	int id;
+	loadedfile >> id;
+	SetID(id);
 
+	string label;
+	loadedfile >> label;
+	SetLabel(label);
+
+	int x1;
+	loadedfile >> x1;
+	m_GfxInfo.x1 = x1;
+
+	int y1;
+	loadedfile >> y1;
+	m_GfxInfo.y1 = y1;
 }

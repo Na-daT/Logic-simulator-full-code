@@ -78,7 +78,7 @@ void Output::ClearDesignToolBar() const
 {
 	pWind->SetPen(RED, 1);
 	pWind->SetBrush(WHITE);
-	pWind->DrawRectangle(0, UI.ToolBarHeight, UI.width, UI.ToolBarHeight);
+	pWind->DrawRectangle(0, 0, UI.width, UI.ToolBarHeight);
 }
 //////////////////////////////////////////////////////////////////////////////////
 void Output::ClearStatusBar()const

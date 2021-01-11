@@ -94,38 +94,21 @@ void AND2::Save(ofstream& SavedFile)
 	SavedFile << getType() << " " << GetID()<< " " << GetLabel()<< " " << m_GfxInfo.x1 << " " << m_GfxInfo.y1 << endl;
 }
 
-void AND2::Load(string l)
+void AND2::Load(ifstream& loadedfile)
 {
-	string n;
-	//std::size_t found = l.find_first_of(" ");
+	int id;
+	loadedfile >> id;
+	SetID(id);
 
-	//n = l[found];
+	string label;
+	loadedfile >> label;
+	SetLabel(label);
 
-	size_t find(' ');
-	n = l[find];
-	setType(stoi(n));
-	l.erase(0, find);
+	int x1;
+	loadedfile >> x1;
+	m_GfxInfo.x1 = x1;
 
-	size_t fi(' ');
-	n = l[fi];
-	SetID(stoi(n));
-	l.erase(0, fi);
-
-	size_t fin(' ');
-	n = l[fin];
-	SetLabel(n);
-	l.erase(0, fin);
-
-	size_t f(' ');
-	n = l[f];
-	m_GfxInfo.x1 = stoi(n);
-	l.erase(0, f);
-
-	size_t fnd(' ');
-	n = l[fnd];
-	m_GfxInfo.y1 = stoi(n);
-	l.erase(0, fnd);
-
-	
-	//File >> "AND2" >> " " >> m_GfxInfo.x1 >> " " >> m_GfxInfo.y1 >> GetLabel();
+	int y1;
+	loadedfile >> y1;
+	m_GfxInfo.y1 = y1;
 }

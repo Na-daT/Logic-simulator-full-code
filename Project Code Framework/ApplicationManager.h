@@ -74,7 +74,7 @@ public:
 	void DisconnectConnection(Component* comp);
 	void deleteAssociatedConn(Component* pComp);
 	void SaveAction(ofstream& SavedFile);
-	void LoadAction(int c, string l);
+	void LoadAction(int c, ifstream& loadedfile);
 
 	Component* returnSelectedComp(int&indx);
 

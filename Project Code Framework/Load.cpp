@@ -23,7 +23,7 @@ void Load::ReadActionParameters()
 	string s;
 	s = pIn->GetSrting(pOut);
 
-	File.open(s, ios::out);
+	loadedfile.open(s, ios::in);
 	pOut->PrintMsg("File is loaded");
 }
 
@@ -32,13 +32,9 @@ void Load::Execute()
 	ReadActionParameters();
 	int f;
 	string s;
-	while (!File.eof())
+	while (loadedfile >> f)
 	{
-		File >> f;
-		for (string line; getline(File, line);)
-		{
-			pManager->LoadAction(f, line);
-		}
+		pManager->LoadAction(f, loadedfile);
 	}
 }
 

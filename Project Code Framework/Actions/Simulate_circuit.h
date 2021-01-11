@@ -3,7 +3,7 @@
 #include "../LED.h"
 #include "../SWITCH.h"
 #include <vector>
-
+#include "ChangeSwitchInput.h"
 class Simulate_Circuit
 	:public Action
 {

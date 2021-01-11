@@ -85,6 +85,10 @@ bool Component::IsClickOnConnection(int x, int y)
 }
 
 
+void Component::Load(ifstream& loadedfile)
+{
+}
+
 void Component::SetID(int id)
 {
 	ID = id;

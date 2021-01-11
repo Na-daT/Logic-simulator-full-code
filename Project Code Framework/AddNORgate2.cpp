@@ -20,6 +20,12 @@ void AddNORgate2::ReadActionParameters()
 
 	//Wait for User Input
 	pIn->GetPointClicked(Cx, Cy);
+	while (Cy <= UI.ToolBarHeight || Cy >= (UI.height - UI.StatusBarHeight))
+	{
+		pOut->PrintMsg("Please Click in the Drawing Area");
+		pIn->GetPointClicked(Cx, Cy);
+	}
+
 
 	//Clear Status Bar
 	pOut->ClearStatusBar();

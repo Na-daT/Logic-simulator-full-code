@@ -49,7 +49,7 @@ public:
 	bool IsClickOnConnection(int x, int y);
 
 	virtual void Save(ofstream& SavedFile)=0;
-	virtual void Load(string l) = 0;
+	virtual void Load(ifstream& loadedfile)=0;
 
 	void SetID(int id);
 	int GetID();

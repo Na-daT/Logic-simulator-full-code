@@ -41,7 +41,9 @@ void Simulate_Circuit::Execute()
 			Stop_Sim = true;
 		else
 		{
-			pManager->ExecuteAction(Change_Switch);
+
+			ChangeSwitchInput changeswitch(pManager, Cx, Cy);
+			changeswitch.Execute();
 			pManager->UpdateInterface();
 		}
 	}
