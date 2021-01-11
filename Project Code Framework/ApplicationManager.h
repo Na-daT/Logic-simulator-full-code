@@ -18,7 +18,7 @@ class ApplicationManager
 private:
 	int CompCount;		//Actual number of Components
 	int ClipboardCount;
-	Component* CopidComp;
+	int CopiedComptype;
 	Component* CompList[MaxCompCount];	//List of all Components (Array of pointers)
 	Component* Clipboard[MaxCompCount];
 	Output* OutputInterface; //pointer to the Output Clase Interface
@@ -49,8 +49,8 @@ public:
 	//void PasteToCompList();
 
 
-	void setCopiedComp(Component* pcomp);
-	Component* getCopiedComp();
+	void setCopiedComptype(int cType);
+	int getCopiedComptype();
 
 	//Connection** GetConnectionToGate(Component* mainGate, int& j);
 

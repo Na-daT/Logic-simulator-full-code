@@ -29,8 +29,8 @@ void Paste::Execute()
 {
 	ReadActionParameters();
 
-	Component* pComp = pManager->getCopiedComp();
-	int c = pComp->getType();
+	
+	int c = pManager->getCopiedComptype();
 
 	ActionType t = ReturnActType(c);
 

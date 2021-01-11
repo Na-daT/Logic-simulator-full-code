@@ -50,17 +50,16 @@ void ApplicationManager::AddComponent(Component* pComp)
 /// //////////////////////////////////////////////////////////////
 
 
-void ApplicationManager::setCopiedComp(Component* pcomp)
+void ApplicationManager::setCopiedComptype(int cType)
 {
-	CopidComp = pcomp;
+	CopiedComptype = cType;
 }
 
-Component* ApplicationManager::getCopiedComp()
+int ApplicationManager::getCopiedComptype()
 {
-	if (CopidComp)
-		return CopidComp;
-	else
-		return NULL;
+
+	return CopiedComptype;
+
 }
 
 /*Connection** ApplicationManager::GetConnectionToGate(Component* mainComp, int&j)

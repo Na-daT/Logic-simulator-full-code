@@ -32,7 +32,7 @@ void Copy::Execute()
 	//Get a Pointer to the Input / Output Interfaces
 
 	if (pManager->IsGateinsideArea(x, y))
-		pManager->setCopiedComp(pManager->IsGateinsideArea(x, y));
+		pManager->setCopiedComptype(pManager->IsGateinsideArea(x, y)->getType());
 
 }
 
