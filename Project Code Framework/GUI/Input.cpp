@@ -57,6 +57,11 @@ string Input::GetSrting(Output* pOut)
 	return input;
 }
 
+/*buttonstate Input::getbuttonState(button btmouse, int& ix, int& iy)
+{
+	return pWind->GetButtonState(btmouse, ix, iy);
+}*/
+
 //This function reads the position where the user clicks to determine the desired action
 ActionType Input::GetUserAction() const
 {
@@ -106,6 +111,7 @@ ActionType Input::GetUserAction() const
 			case ITM_SELECT: return SELECT;
 			case ITM_UNSELECT:return SELECT;
 			case ITM_LOAD: return LOAD;
+			case ITM_MOVE:return MOVE;
 				//endnada
 			case ITM_EXIT: return EXIT;
 

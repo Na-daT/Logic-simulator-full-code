@@ -14,6 +14,8 @@ public:
 	void GetPointClicked(int &, int &);	//Get coordinate where user clicks
 	string GetSrting(Output*);		//Returns a string entered by the user
 
+	//buttonstate getbuttonState(button btmouse, int& ix, int& iy);
+
 	ActionType GetUserAction() const; //Reads the user click and maps it to an action
 
 	~Input();

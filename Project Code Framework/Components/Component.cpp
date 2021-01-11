@@ -6,6 +6,20 @@ Component::Component(const GraphicsInfo &r_GfxInfo)
 	m_GfxInfo = r_GfxInfo;	
 }
 
+GraphicsInfo Component::returnGfxInfo()
+{
+	return m_GfxInfo;
+}
+
+void Component::setGfxInfo(int x1, int x2, int y1, int y2)
+{
+	m_GfxInfo.x1 = x1;
+	m_GfxInfo.x2 = x2;
+	m_GfxInfo.y1 = y1;
+	m_GfxInfo.y2 = y2;
+
+}
+
 int Component::getType()
 {
 	return type;

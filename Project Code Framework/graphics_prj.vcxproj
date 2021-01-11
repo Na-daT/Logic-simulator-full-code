@@ -204,6 +204,7 @@
     <ClCompile Include="LED.cpp" />
     <ClCompile Include="Load.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="Move.cpp" />
     <ClCompile Include="NAND2.cpp" />
     <ClCompile Include="NAND3.cpp" />
     <ClCompile Include="NOR2.cpp" />
@@ -285,6 +286,7 @@
     <ClInclude Include="GUI\UI_Info.h" />
     <ClInclude Include="LED.h" />
     <ClInclude Include="Load.h" />
+    <ClInclude Include="Move.h" />
     <ClInclude Include="NAND2.h" />
     <ClInclude Include="NAND3.h" />
     <ClInclude Include="NOR2.h" />

@@ -29,6 +29,7 @@
 #include "Actions/ChangeSwitchInput.h"
 #include "Design_mode.h"
 #include "Load.h"
+#include "Move.h"
 
 ApplicationManager::ApplicationManager()
 {
@@ -654,6 +655,10 @@ void ApplicationManager::ExecuteAction(ActionType ActType)
 
 	case LOAD:
 		pAct = new Load(this);
+		break;
+
+	case MOVE:
+		pAct = new Move(this);
 		break;
 
 	case Change_Switch:

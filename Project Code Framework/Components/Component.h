@@ -66,8 +66,9 @@ public:
 	void setGateOutputConnected(bool s);
 	bool getGateOutputConnected();
 
+	GraphicsInfo returnGfxInfo();
+	void setGfxInfo(int x1, int x2, int y1, int y2);
 
-	
 	Component();	
 	
 	//Destructor must be virtual
