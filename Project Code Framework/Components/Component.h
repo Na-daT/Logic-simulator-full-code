@@ -18,6 +18,8 @@ protected:
 	int numberofinputpins;
 	int ID;
 	bool operated = false;
+	bool isGateInputConnected = false;
+	bool isGateOutputConnected = false;
 
 	//int ID;
 public:
@@ -57,6 +59,13 @@ public:
 	virtual void SetOperated(bool op);
 
 	void setType(int i);
+
+	void setGateInputConnected(bool s);
+	bool getGateInputConnected();
+
+	void setGateOutputConnected(bool s);
+	bool getGateOutputConnected();
+
 
 	
 	Component();	

@@ -50,7 +50,7 @@ void AddANDgate2::Execute()
 
 	pManager->AddComponent(pA);
 
-	pA->SetID(pManager->RetrunIndex());
+	pA->SetID(pManager->RetrunIndex(pA));
 }
 
 void AddANDgate2::Undo()

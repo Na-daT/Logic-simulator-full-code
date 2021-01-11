@@ -67,15 +67,18 @@ public:
 	bool OperateALLgates();
 
 	void DeleteSelectedinComplist();
+	//void DeleteSelectedComp();
+	//void DeleteSelectedConn(Component* pComp, int indx);
+	//void CompConnectionArray(Component * c);
 
-	void CompConnectionArray(Component * c);
-
-	void DeleteConnection(Component* comp);
-
+	void DisconnectConnection(Component* comp);
+	void deleteAssociatedConn(Component* pComp);
 	void SaveAction(ofstream& SavedFile);
 	void LoadAction(int c, string l);
 
-	int RetrunIndex();
+	Component* returnSelectedComp(int&indx);
+
+	int RetrunIndex(Component* comp);
 	//destructor
 	~ApplicationManager();
 };

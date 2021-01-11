@@ -110,6 +110,25 @@ void Component::setType(int i)
 	type = i;
 }
 
+void Component::setGateInputConnected(bool s)
+{
+	isGateInputConnected = s;
+}
+
+bool Component::getGateInputConnected()
+{
+	return isGateInputConnected;
+}
+
+void Component::setGateOutputConnected(bool s)
+{
+	isGateOutputConnected = s;
+}
+
+bool Component::getGateOutputConnected()
+{
+	return isGateOutputConnected;
+}
 Component::Component()
 {}
 

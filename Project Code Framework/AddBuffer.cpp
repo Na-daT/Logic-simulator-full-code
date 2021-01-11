@@ -44,7 +44,7 @@ void AddBuffer::Execute()
 	buffer* pA = new buffer(GInfo, BUFFER_FANOUT);
 	pManager->AddComponent(pA);
 
-	pA->SetID(pManager->RetrunIndex());
+	pA->SetID(pManager->RetrunIndex(pA));
 }
 
 void AddBuffer::Undo()

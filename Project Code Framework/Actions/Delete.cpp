@@ -18,7 +18,7 @@ void Delete::ReadActionParameters()
 	pOut->PrintMsg("Deleteing Selected gates");
 
 	//Clear Status Bar
-	pOut->ClearStatusBar();
+	
 
 }
 
@@ -27,6 +27,7 @@ void Delete::Execute()
 	ReadActionParameters();
 
 	// code to delete comp from array
+	
 	pManager->DeleteSelectedinComplist();
 	
 

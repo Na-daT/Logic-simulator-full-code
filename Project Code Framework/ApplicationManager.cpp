@@ -108,15 +108,20 @@ Component* ApplicationManager::IsGateinsideArea(int x, int y)
 		if (CompList[i]->getType() != ITM_CONNECTION)
 		{
 			if (CompList[i]->IsClickInsideArea(x, y))
+			{
 				n = CompList[i];
+				return n;
+			}
 		}
 		else
 		{
 			if (CompList[i]->IsClickOnConnection(x, y))
+			{
 				n = CompList[i];
+				return n;
+			}
 		}
 	}
-	return n;
 }
 
 void ApplicationManager::DeleteSelectedinComplist()
@@ -125,17 +130,20 @@ void ApplicationManager::DeleteSelectedinComplist()
 	{
 
 		if (CompList[CompCount - 1]->getType() == ITM_CONNECTION)
-			DeleteConnection(CompList[CompCount - 1]);
+			DisconnectConnection(CompList[CompCount - 1]);
 
-		if (CompList[CompCount - 1]->getType() != ITM_CONNECTION)
+		/*else if (CompList[CompCount - 1]->getType() != ITM_CONNECTION)
 		{
+
+			deleteAssociatedConn(CompList[CompCount - 1]);
+
 			Gate* pgate = (Gate*)CompList[CompCount - 1];
 			int nInPins = pgate->GetnumberofInputPins();
 			for (int n = 0; n < nInPins; n++)
 			{
 				Component* Pconn = (Component*) pgate->getDstPin(n)->GetConnection();
 				Pconn->setSelected(true);
-				DeleteConnection(Pconn);
+				DisconnectConnection(Pconn);
 			}
 
 			int nOutPinConn = 0;
@@ -144,9 +152,9 @@ void ApplicationManager::DeleteSelectedinComplist()
 			for (int n = 0; n < nOutPinConn; n++)
 			{
 				l[n]->setSelected(true);
-				DeleteConnection(l[n]);
+				DisconnectConnection(l[n]);
 			}
-		}
+		}*/
 			
 
 		delete CompList[CompCount - 1];
@@ -164,11 +172,12 @@ void ApplicationManager::DeleteSelectedinComplist()
 			if (CompList[i]->GetSelected())
 			{
 				if (CompList[i]->getType() == ITM_CONNECTION)
-					DeleteConnection(CompList[i]);
+					DisconnectConnection(CompList[i]);
 
 				if (CompList[i]->getType() != ITM_CONNECTION)
 				{
-					Gate* pgate = (Gate*)CompList[i];
+					deleteAssociatedConn(CompList[i]);
+					/*Gate* pgate = (Gate*)CompList[i];
 					int nInPins = pgate->GetnumberofInputPins();
 					for (int n = 0; n < nInPins; n++)
 					{
@@ -177,7 +186,7 @@ void ApplicationManager::DeleteSelectedinComplist()
 						{
 							Connection* pConn = (Connection*) Pconn;
 							Pconn->setSelected(true);
-							DeleteConnection(Pconn);
+							DisconnectConnection(Pconn);
 							pConn->setDestPin(NULL);
 							pConn->setSourcePin(NULL);
 						}
@@ -190,10 +199,10 @@ void ApplicationManager::DeleteSelectedinComplist()
 						if (l[n])
 						{
 							l[n]->setSelected(true);
-							DeleteConnection(l[n]);
+							DisconnectConnection(l[n]);
 						}
 	
-					}
+					}*/
 				}
 
 				delete CompList[i];
@@ -211,11 +220,92 @@ void ApplicationManager::DeleteSelectedinComplist()
 	{
 		if (CompList[i]->GetSelected())
 			DeleteSelectedinComplist();
-
 	}
 }
 
-void ApplicationManager::DeleteConnection(Component* comp)
+/*void ApplicationManager::DeleteSelectedComp()
+{
+	int indx;
+	Component* sComp = returnSelectedComp(indx);
+	if (sComp)
+	{
+
+		if (sComp->getType() == ITM_CONNECTION)
+			DeleteConnection(sComp);
+		else
+		{
+			Gate* sGate = (Gate*)sComp;
+
+			if (sComp->getGateOutputConnected())
+			{
+				int nConn = 0;
+				Connection** aConn = sGate->getSrcPin()->returnConnections(nConn);
+				for (int i = 0; i < nConn; i++)
+				{
+					int in = RetrunIndex(aConn[i]);
+					DeleteSelectedConn(aConn[i], in);
+				}
+			}
+			if (sComp->getGateInputConnected())
+			{
+				for (int i = 0; i < sGate->GetnumberofInputPins(); i++)
+				{
+					if (sGate->getDstPin(i)->GetConnection())
+					{
+						int in = RetrunIndex(sGate->getDstPin(i)->GetConnection());
+						DeleteSelectedConn(sGate->getDstPin(i)->GetConnection(), in);
+					}
+				}
+			}
+		}
+
+		if (indx == CompCount - 1)
+		{
+			delete CompList[indx];
+			CompList[indx] = NULL;
+			CompCount--;
+		}
+		else
+		{
+			delete CompList[indx];
+			CompList[indx] = NULL;
+
+			CompList[indx] = CompList[CompCount - 1];
+
+			CompList[CompCount - 1] = NULL;
+
+			CompCount--;
+		}
+	}
+}*/
+
+/*void ApplicationManager::DeleteSelectedConn(Component* pComp, int indx)
+{
+	if (pComp)
+	{
+		DeleteConnection(pComp);
+
+		if (indx == CompCount - 1)
+		{
+			delete CompList[indx];
+			CompList[indx] = NULL;
+			CompCount--;
+		}
+		else
+		{
+			delete CompList[indx];
+			CompList[indx] = NULL;
+
+			CompList[indx] = CompList[CompCount - 1];
+
+			CompList[CompCount - 1] = NULL;
+
+			CompCount--;
+		}
+	}
+}*/
+
+void ApplicationManager::DisconnectConnection(Component* comp)
 {
 	Connection* conn = (Connection*)comp;
 	if (conn->getSourcePin())
@@ -228,6 +318,27 @@ void ApplicationManager::DeleteConnection(Component* comp)
 		if (pG)
 		{
 			pG->DisconnectInputPin(conn->getDestPin()->getComponent());
+		}
+	}
+}
+
+void ApplicationManager::deleteAssociatedConn(Component* pComp)
+{
+	for (int i = 0;i < CompCount;i++)
+	{
+		if (CompList[i]->getType() == ITM_CONNECTION)
+		{
+			Connection* pConn = (Connection*)CompList[i];
+			if (pConn->getDestPin()->getComponent() == pComp)
+			{
+				pConn->setSelected(true);
+				pConn->getDestPin()->setComponent(NULL);
+			}
+			if (pConn->getSourcePin()->gettheComponent() == pComp)
+			{
+				pConn->setSelected(true);
+				//pConn->getSourcePin()->setComp(NULL);
+			}
 		}
 	}
 }
@@ -408,9 +519,25 @@ void ApplicationManager::LoadAction(int c, string l)
 	}
 }
 
-int ApplicationManager::RetrunIndex()
+Component* ApplicationManager::returnSelectedComp(int& indx)
 {
-	return CompCount;
+	Component* n = NULL;
+	for (int i = 0; i < CompCount; i++)
+		if (CompList[i]->GetSelected())
+		{
+			indx = i;
+			n = CompList[i];
+			break;
+		}
+	return n;
+	
+}
+
+int ApplicationManager::RetrunIndex(Component* comp)
+{
+	for (int i = 0; i < CompCount; i++)
+		if (CompList[i] == comp)
+			return i;
 }
 
 ////////////////////////////////////////////////////////////////////

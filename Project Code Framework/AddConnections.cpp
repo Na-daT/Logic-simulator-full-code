@@ -79,7 +79,7 @@ bool AddConnections::SetSrcPin()
 	g = (Gate*)c;
 	g->GetOutputPinCoordinates(GfxInfo.x1, GfxInfo.y1);
 	src = g->getSrcPin();
-
+	g->setGateOutputConnected(true);
 	return true;
 }
 
@@ -96,6 +96,7 @@ bool AddConnections::SetDstPin()
 		return false;
 	g->GetInputPinCoordinates(GfxInfo.x2, GfxInfo.y2, IndexDstPin);
 	dst = g->getDstPin(IndexDstPin);
+	g->setGateInputConnected(true);
 	return true;
 }
 

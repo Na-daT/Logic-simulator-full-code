@@ -43,7 +43,7 @@ void AddNANDgate2::Execute()
 	GInfo.y2 = Cy + Wdth / 2;
 	NAND2* pA = new NAND2(GInfo, NAND2_FANOUT);
 	pManager->AddComponent(pA);
-	pA->SetID(pManager->RetrunIndex());
+	pA->SetID(pManager->RetrunIndex(pA));
 }
 
 void AddNANDgate2::Undo()

@@ -44,7 +44,7 @@ void AddANDgate3::Execute()
 	AND3* pA = new AND3(GInfo, AND3_FANOUT);
 	pManager->AddComponent(pA);
 
-	pA->SetID(pManager->RetrunIndex());
+	pA->SetID(pManager->RetrunIndex(pA));
 }
 
 void AddANDgate3::Undo()
