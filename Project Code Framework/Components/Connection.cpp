@@ -1,5 +1,5 @@
 #include "Connection.h"
-
+#include "../ApplicationManager.h"
 Connection::Connection(const GraphicsInfo &r_GfxInfo, OutputPin *pSrcPin,InputPin *pDstPin):Component(r_GfxInfo)	
 	
 {
@@ -70,5 +70,20 @@ void Connection::Save(ofstream& SavedFile)
 
 void Connection::Load(ifstream& loadedfile)
 {
+	/*ApplicationManager* pManager = new ApplicationManager() ;
+
+	int srcID;
+	loadedfile >> srcID;
+	SrcPin = pManager->getCompWID(srcID)->getSrcPin();
+	pManager->getCompWID(srcID)->GetOutputPinCoordinates(m_GfxInfo.x1, m_GfxInfo.y1);
+
+
+	int dstID;
+	loadedfile >> dstID;
+
+	int dstPinN;
+	loadedfile >> dstPinN;
 	
+	DstPin = pManager->getCompWID(dstID)->getDstPin(dstPinN);
+	pManager->getCompWID(dstID)->GetInputPinCoordinates(m_GfxInfo.x2, m_GfxInfo.y2, dstPinN);*/
 }

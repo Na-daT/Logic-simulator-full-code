@@ -7,7 +7,7 @@
 #include "Actions\Action.h"
 #include "Components\Component.h"
 #include "Components/Connection.h"
-
+#include"Components/Gate.h"
 
 //Main class that manages everything in the application.
 class ApplicationManager
@@ -59,7 +59,7 @@ public:
 	int GetCompCount();
 
 	Component* IsGateinsideArea(int x, int y);
-
+	Gate* getCompWID(int x);
 
 	int getNConnections();
 	int getNSwitches();

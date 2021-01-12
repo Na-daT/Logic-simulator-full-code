@@ -125,6 +125,11 @@ Component* ApplicationManager::IsGateinsideArea(int x, int y)
 	return n;
 }
 
+Gate* ApplicationManager::getCompWID(int x)
+{
+	return (Gate*)CompList[x];
+}
+
 void ApplicationManager::DeleteSelectedinComplist()
 {
 	while (CompList[CompCount - 1]->GetSelected() == true)
@@ -432,7 +437,7 @@ void ApplicationManager::SaveAction(ofstream& SavedFile)
 			CompList[i]->Save(SavedFile);
 	}
 
-	SavedFile << "CONNECTIONS" << endl;
+	
 
 	for (int i = 0; i < CompCount; i++)
 	{
@@ -450,6 +455,8 @@ void ApplicationManager::LoadAction(int c, ifstream& loadedfile)
 	DummyGfxInfo.x2 = 0;
 	DummyGfxInfo.y1 = 0;
 	DummyGfxInfo.y2 = 0;
+	OutputPin* dummySrcpin = NULL;
+	InputPin* dummyDstpin = NULL;
 	
 	switch (c)
 	{
@@ -500,6 +507,19 @@ void ApplicationManager::LoadAction(int c, ifstream& loadedfile)
 		break;
 	case ITM_XNOR3:
 		newComp = new XNOR3(DummyGfxInfo, AND2_FANOUT);
+		break;
+	case ITM_CONNECTION:
+		int srcID;
+		loadedfile >> srcID;
+		int dstID;
+		loadedfile >> dstID;
+
+		int dstPinN;
+		loadedfile >> dstPinN;
+		getCompWID(srcID)->GetOutputPinCoordinates(DummyGfxInfo.x1, DummyGfxInfo.y1);
+		getCompWID(dstID)->GetInputPinCoordinates(DummyGfxInfo.x2, DummyGfxInfo.y2, dstPinN+1);
+		newComp = new Connection(DummyGfxInfo, getCompWID(srcID)->getSrcPin(), getCompWID(dstID)->getDstPin(dstPinN));
+
 		break;
 	}
 	
