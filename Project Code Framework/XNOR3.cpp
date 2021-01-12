@@ -28,7 +28,7 @@ void XNOR3::Operate()
 			count++;
 	}
 
-	if (count % 2 == 0)
+	if (count % 2 == 0 || count == 2)
 		m_OutputPin.setStatus((STATUS)1);
 	else
 		m_OutputPin.setStatus((STATUS)0);
