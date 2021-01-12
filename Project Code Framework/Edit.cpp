@@ -54,7 +54,7 @@ void Edit::Execute()
 	if (pComp->getType()==ITM_CONNECTION)
 	{
 		Connection* pCon = (Connection*)pComp;
-		pOut->PrintMsg("Enter 1 for Label, 2 to edit the connection src and dst");
+		pOut->PrintMsg("Enter 1 for Label, 2 to edit the connection source , 3 to edit destination");
 		string s1 = pIn->GetSrting(pOut);
 		switch (stoi(s1))
 		{
@@ -64,13 +64,54 @@ void Edit::Execute()
 			pComp->SetLabel(s2);
 			break;
 		case 2:
+			//rint x1, y1;
+			pOut->PrintMsg("click on new source pin");
+			pIn->GetPointClicked(x, y);
+			if (pManager->IsGateinsideArea(x,y))
+			{
+				Gate* pGate = (Gate*)pManager->IsGateinsideArea(x, y);
+				//pGate->GetOutputPinCoordinates(x1, y1);
+				pCon->setSourcePin(pGate->getSrcPin());
 
-			pCon->setSelected(true);
+				int nX, nY;
+				pGate->GetOutputPinCoordinates(nX, nY);
+				pCon->setGfxInfo(nX, pCon->returnGfxInfo().x2, nY, pCon->returnGfxInfo().y2);
+			}
+			break;
+		case 3:
+			//int iX, iY;
+			pCon->getDestPin()->getComponent()->setGateInputConnected(false);
+			pCon->getDestPin()->setConnected(false);
+
+			pOut->PrintMsg("click on new destination pin");
+			pIn->GetPointClicked(x, y);
+			if (pManager->IsGateinsideArea(x, y))
+			{
+				Gate* pGate = (Gate*)pManager->IsGateinsideArea(x, y);
+				
+				int indx = pGate->getInputIndex();
+				if (indx != -1)
+				{
+					pCon->SetDstPinIndec(indx);
+					pCon->setDestPin(pGate->getDstPin(indx));
+				}
+				else
+				{
+					break;
+				}
+				int nX, nY;
+				pGate->GetInputPinCoordinates(nX, nY, indx+1);
+				pCon->setGfxInfo(pCon->returnGfxInfo().x1, nX, pCon->returnGfxInfo().y1,nY);
+			}
+			break;
+
+
+			/*pCon->setSelected(true);
 			pManager->ExecuteAction(DEL);
 
 			pManager->ExecuteAction(ADD_CONNECTION);
 			pManager->UpdateInterface();
-			break;
+			break;*/
 
 			/*pOut->PrintMsg("click on new source component");
 			pIn->GetPointClicked(x, y);
