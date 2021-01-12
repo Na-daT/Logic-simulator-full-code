@@ -39,6 +39,29 @@ void Move::Execute()
         pIn->GetPointClicked(x, y);
 
         pComp->setGfxInfo(x, x + 50, y, y + 50);
+        Gate* pGate = (Gate*)pComp;
+       if (pComp->getGateOutputConnected())
+       {
+           int j = 0;
+           Connection** aConn = pGate->getSrcPin()->returnConnections(j);
+
+           for (int i = 0;i < j;i++)
+           {
+               aConn[i]->setGfxInfo(x+50, aConn[i]->returnGfxInfo().x2, y+25, aConn[i]->returnGfxInfo().y2);
+           }
+       }
+       if (pComp->getGateInputConnected())
+       {
+           for(int i =0; i < pGate->GetnumberofInputPins();i++)
+           {
+               if (pGate->getDstPin(i)->getConnected())
+               {
+                   Connection* Conn = pGate->getDstPin(i)->GetConnection();
+                   Conn->setGfxInfo(Conn->returnGfxInfo().x1, x , Conn->returnGfxInfo().y1, y+10 );
+               }
+           }
+      
+       }
     }
 	/*if (pManager->IsGateinsideArea(x, y) && pManager->IsGateinsideArea(x,y)->getType()!=ITM_CONNECTION)
 	{
