@@ -138,6 +138,8 @@ void ApplicationManager::DeleteSelectedinComplist()
 		if (CompList[CompCount - 1]->getType() == ITM_CONNECTION)
 			DisconnectConnection(CompList[CompCount - 1]);
 
+		else
+			deleteAssociatedConn(CompList[CompCount - 1]);
 			
 
 		delete CompList[CompCount - 1];

@@ -29,7 +29,6 @@ void Save::Execute()
 	ReadActionParameters();
 	SavedFile.open(fileName, ios::out);
 	pManager->SaveAction(SavedFile);
-
 }
 
 void Save::Undo()
